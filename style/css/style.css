@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.hover-img::before, .mens-items .image::before, .women-items .image::before, .hover-img::after, .mens-items .image::after, .women-items .image::after {
+.hover-img::before, .mens-items .image::before, .women-items .image::before, .ACCESSORIES .accessories-items .image::before, .DISCOVER .discover-items .image::before, .hover-img::after, .mens-items .image::after, .women-items .image::after, .ACCESSORIES .accessories-items .image::after, .DISCOVER .discover-items .image::after {
   content: "";
   position: absolute;
   top: 1.25em;
@@ -13,7 +13,7 @@
   right: 1.25em;
 }
 
-.hover-img::before, .mens-items .image::before, .women-items .image::before {
+.hover-img::before, .mens-items .image::before, .women-items .image::before, .ACCESSORIES .accessories-items .image::before, .DISCOVER .discover-items .image::before {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   transform: scale(0, 1);
@@ -22,12 +22,12 @@
   margin: auto;
 }
 
-.hover-img:hover::before, .mens-items .image:hover::before, .women-items .image:hover::before {
+.hover-img:hover::before, .mens-items .image:hover::before, .women-items .image:hover::before, .ACCESSORIES .accessories-items .image:hover::before, .DISCOVER .discover-items .image:hover::before {
   cursor: pointer;
   transform: scale(1, 1);
 }
 
-.hover-img::after, .mens-items .image::after, .women-items .image::after {
+.hover-img::after, .mens-items .image::after, .women-items .image::after, .ACCESSORIES .accessories-items .image::after, .DISCOVER .discover-items .image::after {
   border-left: 2px solid white;
   border-right: 2px solid white;
   transform: scale(1, 0);
@@ -36,7 +36,7 @@
   margin: auto;
 }
 
-.hover-img:hover::after, .mens-items .image:hover::after, .women-items .image:hover::after {
+.hover-img:hover::after, .mens-items .image:hover::after, .women-items .image:hover::after, .ACCESSORIES .accessories-items .image:hover::after, .DISCOVER .discover-items .image:hover::after {
   cursor: pointer;
   transform: scale(1, 1);
 }
@@ -307,33 +307,33 @@ h4 {
 /* WOMEN Section */
 /*=============================*/
 .WOMENS {
-  background: white;
   width: 61%;
-  position: relative;
   bottom: 408px;
   left: 57px;
+  background: white;
+  position: relative;
   transition: ease-in-out 0.3s;
   transform: translateY(-102%);
 }
 
-.women-items {
+.women-items, .ACCESSORIES .accessories-items {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.women-items ul {
+.women-items ul, .ACCESSORIES .accessories-items ul {
   list-style: none;
 }
 
-.women-items li {
+.women-items li, .ACCESSORIES .accessories-items li {
   line-height: 1.8;
   cursor: pointer;
   position: relative;
   width: fit-content;
 }
 
-.women-items li::after {
+.women-items li::after, .ACCESSORIES .accessories-items li::after {
   content: "";
   display: block;
   width: 0%;
@@ -343,25 +343,67 @@ h4 {
   transition: ease-in .2s;
 }
 
-.women-items li:hover {
+.women-items li:hover, .ACCESSORIES .accessories-items li:hover {
   transition: .8s;
 }
 
-.women-items li:hover::after {
+.women-items li:hover::after, .ACCESSORIES .accessories-items li:hover::after {
   background-color: #000000;
   width: 100%;
 }
 
-.women-items .list-one {
+.women-items .list-one, .ACCESSORIES .accessories-items .list-one {
   padding-left: 2rem;
 }
 
-.women-items .image {
+.women-items .image, .ACCESSORIES .accessories-items .image {
   position: relative;
 }
 
-.women-items img {
+.women-items img, .ACCESSORIES .accessories-items img {
   height: 100%;
+}
+
+/*=============================*/
+/* ACCESSORIES Section */
+/*=============================*/
+.ACCESSORIES {
+  width: 39%;
+  transform: translateY(-102%);
+  left: 10%;
+  bottom: 940px;
+  background: white;
+  position: relative;
+  transition: ease-in-out 0.3s;
+  transform: translateY(-102%);
+}
+
+/*=============================*/
+/* DESCOVER Section */
+/*=============================*/
+.DISCOVER {
+  background: white;
+  position: absolute;
+  transition: ease-in-out 0.3s;
+  top: 100px;
+  left: 8px;
+  transform: translateY(-102%);
+  background: white;
+  transition: ease-in-out 0.3s;
+}
+
+.DISCOVER .discover-items {
+  display: flex;
+  justify-content: center;
+}
+
+.DISCOVER .discover-items .image {
+  position: relative;
+}
+
+.DISCOVER .discover-items img {
+  height: 100%;
+  width: 17.2rem;
 }
 
 /*=========================================*/

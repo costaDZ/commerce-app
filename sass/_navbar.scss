@@ -225,11 +225,12 @@ h4 {
 /* WOMEN Section */
 /*=============================*/
 .WOMENS {
-    background: white;
     width: 61%;
-    position: relative;
     bottom: 408px;
     left: 57px;
+
+    background: white;
+    position: relative;
     transition: ease-in-out 0.3s;
     transform: translateY(-102%);
 }
@@ -260,5 +261,56 @@ h4 {
 
     & img {
         height: 100%;
+    }
+}
+
+/*=============================*/
+/* ACCESSORIES Section */
+/*=============================*/
+
+.ACCESSORIES {
+    width: 39%;
+    transform: translateY(-102%);
+    left: 10%;
+    bottom: 940px;
+
+    background: white;
+    position: relative;
+    transition: ease-in-out 0.3s;
+    transform: translateY(-102%);
+
+    & .accessories-items {
+        @extend .women-items;
+    }
+}
+
+/*=============================*/
+/* DESCOVER Section */
+/*=============================*/
+
+.DISCOVER {
+    background: white;
+    position: absolute;
+    transition: ease-in-out 0.3s;
+    top: 100px;
+    left: 8px;
+    transform: translateY(-102%);
+
+    background: white;
+    transition: ease-in-out 0.3s;
+
+    & .discover-items {
+        display: flex;
+        justify-content: center;
+
+        & .image {
+            position: relative;
+            @extend .hover-img;
+        }
+
+        & img {
+            height: 100%;
+            width: 17.2rem;
+        }
     }
 }

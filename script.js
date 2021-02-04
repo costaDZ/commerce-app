@@ -6,7 +6,9 @@ const header = document.querySelector("header");
 document.querySelector("body").addEventListener("mouseover", (e) => {
     let section = {
         "MENS": document.querySelector(".MENS"),
-        "WOMENS": document.querySelector(".WOMENS")
+        "WOMENS": document.querySelector(".WOMENS"),
+        "ACCESSORIES": document.querySelector(".ACCESSORIES"),
+        "DISCOVER": document.querySelector(".DISCOVER")
     };
     // check if the cursore in above the title
     let target = checkParentElement(e.target, Object.getOwnPropertyNames(section));
@@ -123,7 +125,7 @@ function hoverbullet(b) {
     // change the number of the posotion 
     checkPosition(getBullet)
 }
-
+// set the transform automatic
 let interval = setInterval(() => {
     getBullet++;
     if (getBullet >= imageItems.length - 1) {

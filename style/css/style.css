@@ -1,0 +1,394 @@
+.flex, .navbar, .navbar .category, .navbar .category li, .navbar .activities, .navbar .activities .bag-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hover-img::before, .mens-items .image::before, .women-items .image::before, .hover-img::after, .mens-items .image::after, .women-items .image::after {
+  content: "";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.25em;
+  left: 1.25em;
+  right: 1.25em;
+}
+
+.hover-img::before, .mens-items .image::before, .women-items .image::before {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: scale(0, 1);
+  transition: transform ease-out 250ms;
+  width: 80%;
+  margin: auto;
+}
+
+.hover-img:hover::before, .mens-items .image:hover::before, .women-items .image:hover::before {
+  cursor: pointer;
+  transform: scale(1, 1);
+}
+
+.hover-img::after, .mens-items .image::after, .women-items .image::after {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  transform: scale(1, 0);
+  transition: transform ease-out 250ms;
+  height: 80%;
+  margin: auto;
+}
+
+.hover-img:hover::after, .mens-items .image:hover::after, .women-items .image:hover::after {
+  cursor: pointer;
+  transform: scale(1, 1);
+}
+
+/*=============================*/
+/* navbar styles */
+/*=============================*/
+.navbar {
+  height: 4rem;
+  font-size: 0.1rem;
+  font-weight: 700;
+  font-family: "Roboto Slab", serif;
+  background: white;
+  position: relative;
+  z-index: 5;
+}
+
+.navbar .logo {
+  background-color: #c8c8c8;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar a {
+  margin-right: 1rem;
+  cursor: pointer;
+  position: relative;
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 4px;
+  transition: ease-in .2s;
+}
+
+.navbar a:hover {
+  transition: .8s;
+}
+
+.navbar a:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
+.navbar .category #new {
+  background: #00a7a7ce;
+  color: white;
+  padding: 3px 8px;
+  font-weight: 700;
+  position: relative;
+  bottom: 25px;
+  right: 47px;
+}
+
+.navbar .category #new::after {
+  content: "";
+  border-style: solid;
+  border-width: 8px;
+  border-color: #00a7a7ce transparent transparent transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 19px;
+  right: 14px;
+}
+
+.navbar .activities .languges {
+  display: flex;
+  margin-right: 19px;
+  cursor: pointer;
+}
+
+.navbar .activities .languges img {
+  height: 20px;
+  position: relative;
+  display: inline-block;
+  right: 6px;
+  margin: 0px 0px;
+}
+
+.navbar .activities .bag-logo {
+  font-size: 1.5rem;
+  width: 40px;
+  cursor: pointer;
+}
+
+.navbar .activities .bag-logo #items-number {
+  background: #f04747f0;
+  color: white;
+  font-size: 1rem;
+  border-radius: 50px;
+  height: 26px;
+  display: flex;
+  padding: 9px 7px;
+  align-items: center;
+  position: relative;
+  bottom: 10px;
+  right: 4px;
+  font-weight: 700;
+}
+
+/*=============================*/
+/* MENS Section */
+/*=============================*/
+h4 {
+  margin-bottom: 1rem;
+}
+
+.MENS {
+  background: white;
+  position: relative;
+  transition: ease-in-out 0.3s;
+  transform: translateY(-102%);
+}
+
+.mens-items {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.4rem;
+}
+
+.mens-items .list-one,
+.mens-items .list-two,
+.mens-items .discover {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: 10px;
+  align-self: flex-start;
+  height: 100%;
+}
+
+.mens-items li {
+  line-height: 1.8;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+}
+
+.mens-items li::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 0px;
+  transition: ease-in .2s;
+}
+
+.mens-items li:hover {
+  transition: .8s;
+}
+
+.mens-items li:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
+.mens-items .discover {
+  width: 32%;
+  line-height: 1.8;
+  display: flex;
+  overflow: hidden;
+}
+
+.mens-items .item {
+  margin: 0 60px;
+  transform: translateX(-200%);
+  transition: 0.3s;
+}
+
+.mens-items .discover img {
+  width: 100%;
+  box-shadow: 1px 4px 22px #9b9b9b;
+}
+
+.mens-items .image {
+  position: relative;
+}
+
+.mens-items .image img {
+  height: 100%;
+  width: 100%;
+}
+
+.mens-items .description p {
+  font-weight: 600;
+  word-spacing: 2px;
+}
+
+.mens-items .description .price {
+  color: lightcoral;
+  font-weight: bold;
+}
+
+.mens-items .description .old-price {
+  text-decoration-line: line-through;
+}
+
+.mens-items .description .details {
+  cursor: pointer;
+  font-weight: bold;
+  color: #ff8600;
+  display: inline-block;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+}
+
+.mens-items .description .details::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 0px;
+  transition: ease-in .2s;
+}
+
+.mens-items .description .details:hover {
+  transition: .8s;
+}
+
+.mens-items .description .details:hover::after {
+  background-color: #ff8600;
+  width: 100%;
+}
+
+.changer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #00a7a7ce;
+  width: 23%;
+  position: relative;
+  bottom: 33px;
+  left: 31%;
+}
+
+.changer span {
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  border-radius: 50px;
+  border: 1px solid #00a7a7ce;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.changer i {
+  cursor: pointer;
+}
+
+.changer .active {
+  background-color: #00a7a7ce;
+}
+
+/*=============================*/
+/* WOMEN Section */
+/*=============================*/
+.WOMENS {
+  background: white;
+  width: 61%;
+  position: relative;
+  bottom: 408px;
+  left: 57px;
+  transition: ease-in-out 0.3s;
+  transform: translateY(-102%);
+}
+
+.women-items {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.women-items ul {
+  list-style: none;
+}
+
+.women-items li {
+  line-height: 1.8;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+}
+
+.women-items li::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 0px;
+  transition: ease-in .2s;
+}
+
+.women-items li:hover {
+  transition: .8s;
+}
+
+.women-items li:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
+.women-items .list-one {
+  padding-left: 2rem;
+}
+
+.women-items .image {
+  position: relative;
+}
+
+.women-items img {
+  height: 100%;
+}
+
+/*=========================================*/
+/* main styles */
+/*=========================================*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.landing-page {
+  background: url("/img/WinterSale_HomepageBanner_v3.webp") center/cover no-repeat;
+  height: 90vh;
+  position: absolute;
+  left: 0;
+  top: 104px;
+  width: 100%;
+  z-index: -15;
+}
+/*# sourceMappingURL=style.css.map */

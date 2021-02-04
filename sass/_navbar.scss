@@ -1,0 +1,264 @@
+/*=============================*/
+/* navbar styles */
+/*=============================*/
+.navbar {
+    @extend .flex;
+    height: 4rem;
+    font-size: 0.1rem;
+    font-weight: 700;
+    font-family: "Roboto Slab", serif;
+    background: white;
+    position: relative;
+    z-index: 5;
+
+    & .logo {
+        background-color: #c8c8c8;
+    }
+
+    & ul {
+        list-style: none;
+    }
+
+    & a {
+        margin-right: 1rem;
+        @include lineEffect(4px);
+        color: $black;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    // nabvar first section ========== 01
+    & .category {
+        @extend .flex;
+
+        li {
+            @extend .flex;
+        }
+
+        & #new {
+            background: $cyan;
+            color: white;
+            padding: 3px 8px;
+            font-weight: 700;
+            position: relative;
+            bottom: 25px;
+            right: 47px;
+
+            &::after {
+                content: "";
+                border-style: solid;
+                border-width: 8px;
+                border-color: $cyan transparent transparent transparent;
+                height: 0;
+                width: 0;
+                position: absolute;
+                top: 19px;
+                right: 14px;
+            }
+        }
+    }
+    // nabvar second section ========== 02
+    & .activities {
+        @extend .flex;
+
+        .languges {
+            display: flex;
+            margin-right: 19px;
+            cursor: pointer;
+
+            img {
+                height: 20px;
+                position: relative;
+                display: inline-block;
+                right: 6px;
+                margin: 0px 0px;
+            }
+        }
+
+        & .bag-logo {
+            @extend .flex;
+            font-size: 1.5rem;
+            width: 40px;
+            cursor: pointer;
+
+            & #items-number {
+                background: #f04747f0;
+                color: white;
+                font-size: 1rem;
+                border-radius: 50px;
+                height: 26px;
+                display: flex;
+                padding: 9px 7px;
+                align-items: center;
+                position: relative;
+                bottom: 10px;
+                right: 4px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+/*=============================*/
+/* MENS Section */
+/*=============================*/
+h4 {
+    margin-bottom: 1rem;
+}
+
+.MENS {
+    background: white;
+    position: relative;
+    transition: ease-in-out 0.3s;
+    transform: translateY(-102%);
+}
+
+.mens-items {
+    // the main container
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.4rem;
+    // the categories
+    & .list-one,
+    .list-two,
+    .discover {
+        display: inline-block;
+        list-style: none;
+        margin-bottom: 10px;
+        align-self: flex-start;
+        height: 100%;
+    }
+    // the headings
+
+    //the lists
+    & li {
+        line-height: 1.8;
+        @include lineEffect(0px);
+        width: fit-content;
+    }
+
+    // items kind
+    .discover {
+        width: 32%;
+        line-height: 1.8;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .item {
+        margin: 0 60px;
+        transform: translateX(-200%);
+        transition: 0.3s;
+    }
+
+    .discover img {
+        width: 100%;
+        box-shadow: 1px 4px 22px #9b9b9b;
+    }
+
+    .image {
+        position: relative;
+        @extend .hover-img;
+    }
+
+    .image img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .description p {
+        font-weight: 600;
+        word-spacing: 2px;
+    }
+
+    .description .price {
+        color: $pink;
+        font-weight: bold;
+    }
+
+    .description .old-price {
+        text-decoration-line: line-through;
+    }
+
+    .description .details {
+        cursor: pointer;
+        font-weight: bold;
+        color: $orange;
+        display: inline-block;
+        letter-spacing: 1px;
+        @include lineEffect(0px, $orange);
+    }
+}
+
+// change the items
+.changer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.6rem;
+    color: $cyan;
+    width: 23%;
+    position: relative;
+    bottom: 33px;
+    left: 31%;
+
+    & span {
+        display: inline-block;
+        height: 13px;
+        width: 13px;
+        border-radius: 50px;
+        border: 1px solid $cyan;
+        margin: 0 15px;
+        cursor: pointer;
+    }
+
+    & i {
+        cursor: pointer;
+    }
+
+    .active {
+        background-color: $cyan;
+    }
+}
+
+/*=============================*/
+/* WOMEN Section */
+/*=============================*/
+.WOMENS {
+    background: white;
+    width: 61%;
+    position: relative;
+    bottom: 408px;
+    left: 57px;
+    transition: ease-in-out 0.3s;
+    transform: translateY(-102%);
+}
+
+.women-items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    & ul {
+        list-style: none;
+    }
+
+    & li {
+        line-height: 1.8;
+        @include lineEffect(0px);
+        width: fit-content;
+    }
+
+    & .list-one {
+        padding-left: 2rem;
+    }
+
+    & .image {
+        position: relative;
+        @extend .hover-img;
+    }
+
+    & img {
+        height: 100%;
+    }
+}

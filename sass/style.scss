@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'mixins';
+@import 'global-style';
+
+
+@import 'navbar';
+
+
+
+/*=========================================*/
+            /* main styles */
+/*=========================================*/
+
+* , *::before , *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.landing-page {
+    background: url("/img/WinterSale_HomepageBanner_v3.webp") center / cover no-repeat;
+    height: 90vh;
+    position: absolute;
+    left: 0;
+    top: 104px;
+    width: 100%;
+    z-index: -15;
+}

@@ -1,0 +1,23 @@
+
+// under line effect style
+@mixin lineEffect($top, $col : $black) {
+            cursor: pointer;
+            position: relative;
+            &::after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 2px;
+            position: relative;
+            top: $top;
+            transition: ease-in .2s;
+        }
+        &:hover {
+        transition: .8s;
+
+        &::after {
+            background-color: $col;
+            width: 100%;
+        }
+    }
+}

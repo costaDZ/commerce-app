@@ -2,7 +2,11 @@
 /* navbar styles */
 /*=============================*/
 .navbar {
-    @extend .flex;
+    // @extend .flex;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     height: 4rem;
     font-size: 0.1rem;
     font-weight: 700;
@@ -19,20 +23,20 @@
         list-style: none;
     }
 
-    & a {
-        margin-right: 1rem;
-        @include lineEffect(4px);
-        color: $black;
-        text-decoration: none;
-        display: inline-block;
-    }
-
     // nabvar first section ========== 01
     & .category {
         @extend .flex;
 
         li {
             @extend .flex;
+        }
+
+        a {
+            margin-right: 1rem;
+            @include lineEffect(4px);
+            color: $black;
+            text-decoration: none;
+            display: inline-block;
         }
 
         & #new {
@@ -61,13 +65,22 @@
     & .activities {
         @extend .flex;
 
+        a {
+            margin-right: 1rem;
+            @include lineEffect(4px);
+            color: $black;
+            text-decoration: none;
+            display: inline-block;
+        }
+
         .languges {
             display: flex;
             margin-right: 19px;
+            align-items: center;
             cursor: pointer;
 
             img {
-                height: 20px;
+                height: 18px;
                 position: relative;
                 display: inline-block;
                 right: 6px;
@@ -139,7 +152,7 @@ h4 {
 
     // items kind
     .discover {
-        width: 32%;
+        width: 20rem;
         line-height: 1.8;
         display: flex;
         overflow: hidden;
@@ -227,7 +240,7 @@ h4 {
 .WOMENS {
     width: 61%;
     bottom: 408px;
-    left: 57px;
+    left: 6.2rem;
 
     background: white;
     position: relative;
@@ -271,7 +284,7 @@ h4 {
 .ACCESSORIES {
     width: 39%;
     transform: translateY(-102%);
-    left: 10%;
+    left: 10rem;
     bottom: 940px;
 
     background: white;
@@ -293,7 +306,8 @@ h4 {
     position: absolute;
     transition: ease-in-out 0.3s;
     top: 100px;
-    left: 8px;
+    // left: 8px;
+    width: 100%;
     transform: translateY(-102%);
 
     background: white;
@@ -305,12 +319,79 @@ h4 {
 
         & .image {
             position: relative;
+            width: 100%;
             @extend .hover-img;
         }
 
         & img {
-            height: 100%;
-            width: 17.2rem;
+            height: 10rem;
+            width: 100%;
+        }
+    }
+
+    .more-collection {
+        padding: 8px 0;
+        text-align: center;
+        font-weight: bold;
+
+        a {
+            //@include lineEffect(4px);
+            font-size: 0.5rem;
+            color: $black;
+            text-decoration: underline;
+        }
+    }
+}
+
+/*=============================*/
+/* LANG Section */
+/*=============================*/
+.GBP {
+    position: absolute;
+    background-color: white;
+    top: 103px;
+    right: 118px;
+    text-align: center;
+    transform: translateY(-110%);
+    transition: ease-in-out 0.3s;
+
+    ul {
+        list-style: none;
+    }
+
+    h3 {
+        background-color: #d9d9d9;
+        height: 2rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        font-size: 0.7rem;
+    }
+
+    span {
+        @include lineEffect(0px);
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+
+    .contries {
+        width: 7rem;
+        text-align: left;
+        padding: 11px 15px;
+        line-height: 2;
+
+        img {
+            height: 0.7rem;
+        }
+
+        img:nth-child(2) {
+            margin-right: 2px;
+            width: 3rem;
         }
     }
 }

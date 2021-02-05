@@ -1,14 +1,26 @@
 /*=================navbar=====================*/
 // hover efect 
+
 const navTitles = document.querySelectorAll(".category li");
 const header = document.querySelector("header");
+const landing = document.querySelector(".landing-page");
+const gbp = document.querySelector(".languges");
+
+gbp.addEventListener("click", () => {
+    document.querySelector(".GBP").style.transform = "translateY(0)";
+    gbp.style.height = `113px`;
+})
+
+
 
 document.querySelector("body").addEventListener("mouseover", (e) => {
     let section = {
         "MENS": document.querySelector(".MENS"),
         "WOMENS": document.querySelector(".WOMENS"),
         "ACCESSORIES": document.querySelector(".ACCESSORIES"),
-        "DISCOVER": document.querySelector(".DISCOVER")
+        "DISCOVER": document.querySelector(".DISCOVER"),
+        "GBP": document.querySelector(".GBP"),
+
     };
     // check if the cursore in above the title
     let target = checkParentElement(e.target, Object.getOwnPropertyNames(section));
@@ -18,6 +30,7 @@ document.querySelector("body").addEventListener("mouseover", (e) => {
         showSection(section[target]);
     } else {
         hideSection(section);
+        landing.classList.remove("darken");
     }
 
 });
@@ -39,6 +52,8 @@ function showSection(test) {
     if (test) {
         test.style.transform = "translateY(0%)";
         changeHeight(100);
+        landing.classList.add("darken");
+
     }
 }
 

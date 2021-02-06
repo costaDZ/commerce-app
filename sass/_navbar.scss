@@ -65,6 +65,12 @@
     & .activities {
         @extend .flex;
 
+        a:first-of-type {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         a {
             margin-right: 1rem;
             @include lineEffect(4px);
@@ -87,6 +93,11 @@
                 margin: 0px 0px;
             }
         }
+
+        // #log {
+        //     display: flex;
+        //     align-items: center;
+        // }
 
         & .bag-logo {
             @extend .flex;
@@ -131,6 +142,9 @@ h4 {
     display: flex;
     justify-content: space-evenly;
     font-size: 0.4rem;
+    margin: 0;
+    position: relative;
+    left: 11%;
     // the categories
     & .list-one,
     .list-two,
@@ -355,6 +369,15 @@ h4 {
     transform: translateY(-110%);
     transition: ease-in-out 0.3s;
 
+    // position: relative;
+    // float: right;
+    // background-color: white;
+    // top: 7px;
+    // right: 86px;
+    // text-align: center;
+    // transform: translateY(-110%);
+    // transition: ease-in-out 0.3s;
+
     ul {
         list-style: none;
     }
@@ -392,6 +415,56 @@ h4 {
         img:nth-child(2) {
             margin-right: 2px;
             width: 3rem;
+        }
+    }
+}
+
+.LOG {
+    position: relative;
+    float: right;
+    top: 0.3rem;
+    right: 16rem;
+    font-size: 0.9rem;
+    transition: ease-in-out 0.3s;
+    transform: translateY(-103%);
+
+    h3 {
+        background-color: $gray;
+        height: 2rem;
+        width: 100%;
+        text-align: center;
+        padding-top: 0.3em;
+    }
+
+    .user-info {
+        padding: 16px 20px;
+        background: white;
+        line-height: 2.2;
+
+        input {
+            height: 2rem;
+            text-align: center;
+            font-weight: 600;
+            outline: none;
+            border-radius: 0;
+        }
+
+        .log-btn {
+            @extend .btn;
+            margin: 28px 0;
+            width: 100%;
+            @include setBack($gray);
+        }
+
+        p:nth-last-child(2) {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        button:nth-child(3) {
+            @extend .btn;
+            width: 100%;
+            @include setBack($black);
         }
     }
 }

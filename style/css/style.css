@@ -45,6 +45,16 @@
   filter: brightness(0.5);
 }
 
+.btn, .LOG .user-info .log-btn, .LOG .user-info button:nth-child(3) {
+  display: block;
+  height: 2.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 0;
+  border: none;
+  transition: ease-in-out .3s;
+}
+
 /*=============================*/
 /* navbar styles */
 /*=============================*/
@@ -85,11 +95,11 @@
   height: 2px;
   position: relative;
   top: 4px;
-  transition: ease-in .2s;
+  transition: ease-in 0.2s;
 }
 
 .navbar .category a:hover {
-  transition: .8s;
+  transition: 0.8s;
 }
 
 .navbar .category a:hover::after {
@@ -119,6 +129,12 @@
   right: 14px;
 }
 
+.navbar .activities a:first-of-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .navbar .activities a {
   margin-right: 1rem;
   cursor: pointer;
@@ -135,11 +151,11 @@
   height: 2px;
   position: relative;
   top: 4px;
-  transition: ease-in .2s;
+  transition: ease-in 0.2s;
 }
 
 .navbar .activities a:hover {
-  transition: .8s;
+  transition: 0.8s;
 }
 
 .navbar .activities a:hover::after {
@@ -201,6 +217,9 @@ h4 {
   display: flex;
   justify-content: space-evenly;
   font-size: 0.4rem;
+  margin: 0;
+  position: relative;
+  left: 11%;
 }
 
 .mens-items .list-one,
@@ -227,11 +246,11 @@ h4 {
   height: 2px;
   position: relative;
   top: 0px;
-  transition: ease-in .2s;
+  transition: ease-in 0.2s;
 }
 
 .mens-items li:hover {
-  transition: .8s;
+  transition: 0.8s;
 }
 
 .mens-items li:hover::after {
@@ -297,11 +316,11 @@ h4 {
   height: 2px;
   position: relative;
   top: 0px;
-  transition: ease-in .2s;
+  transition: ease-in 0.2s;
 }
 
 .mens-items .description .details:hover {
-  transition: .8s;
+  transition: 0.8s;
 }
 
 .mens-items .description .details:hover::after {
@@ -376,11 +395,11 @@ h4 {
   height: 2px;
   position: relative;
   top: 0px;
-  transition: ease-in .2s;
+  transition: ease-in 0.2s;
 }
 
 .women-items li:hover, .ACCESSORIES .accessories-items li:hover {
-  transition: .8s;
+  transition: 0.8s;
 }
 
 .women-items li:hover::after, .ACCESSORIES .accessories-items li:hover::after {
@@ -500,11 +519,11 @@ h4 {
   height: 2px;
   position: relative;
   top: 0px;
-  transition: ease-in .2s;
+  transition: ease-in 0.2s;
 }
 
 .GBP span:hover {
-  transition: .8s;
+  transition: 0.8s;
 }
 
 .GBP span:hover::after {
@@ -526,6 +545,66 @@ h4 {
 .GBP .contries img:nth-child(2) {
   margin-right: 2px;
   width: 3rem;
+}
+
+.LOG {
+  position: relative;
+  float: right;
+  top: 0.3rem;
+  right: 16rem;
+  font-size: 0.9rem;
+  transition: ease-in-out 0.3s;
+  transform: translateY(-103%);
+}
+
+.LOG h3 {
+  background-color: #ddd8d8;
+  height: 2rem;
+  width: 100%;
+  text-align: center;
+  padding-top: 0.3em;
+}
+
+.LOG .user-info {
+  padding: 16px 20px;
+  background: white;
+  line-height: 2.2;
+}
+
+.LOG .user-info input {
+  height: 2rem;
+  text-align: center;
+  font-weight: 600;
+  outline: none;
+  border-radius: 0;
+}
+
+.LOG .user-info .log-btn {
+  margin: 28px 0;
+  width: 100%;
+  background-color: #ddd8d8;
+  color: #000000;
+}
+
+.LOG .user-info .log-btn:hover {
+  background-color: #000000;
+  color: #ddd8d8;
+}
+
+.LOG .user-info p:nth-last-child(2) {
+  text-align: center;
+  cursor: pointer;
+}
+
+.LOG .user-info button:nth-child(3) {
+  width: 100%;
+  background-color: #000000;
+  color: #ddd8d8;
+}
+
+.LOG .user-info button:nth-child(3):hover {
+  background-color: #ddd8d8;
+  color: #000000;
 }
 
 /*=========================================*/

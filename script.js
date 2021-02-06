@@ -1,10 +1,18 @@
 /*=================navbar=====================*/
 // hover efect 
-
 const navTitles = document.querySelectorAll(".category li");
 const header = document.querySelector("header");
 const landing = document.querySelector(".landing-page");
 const gbp = document.querySelector(".languges");
+const log = document.querySelector("#log");
+
+
+log.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector(".LOG").style.transform = "translateY(0)";
+    log.firstElementChild.style.cssText = `height: 103px; `;
+
+})
 
 gbp.addEventListener("click", () => {
     document.querySelector(".GBP").style.transform = "translateY(0)";
@@ -20,7 +28,7 @@ document.querySelector("body").addEventListener("mouseover", (e) => {
         "ACCESSORIES": document.querySelector(".ACCESSORIES"),
         "DISCOVER": document.querySelector(".DISCOVER"),
         "GBP": document.querySelector(".GBP"),
-
+        "LOG" :document.querySelector(".LOG")
     };
     // check if the cursore in above the title
     let target = checkParentElement(e.target, Object.getOwnPropertyNames(section));
@@ -39,7 +47,7 @@ document.querySelector("body").addEventListener("mouseover", (e) => {
 function checkParentElement(target, section) {
     for (; target && target !== document; target = target.parentElement) {
         for (sec of section) {
-            if (target.classList.contains(sec) || target.textContent == sec) {
+            if (target.classList.contains(sec) || target.textContent === sec) {
                 return sec;
             }
         }

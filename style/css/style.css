@@ -1,10 +1,8 @@
-.flex, .navbar .category, .navbar .category li, .navbar .activities, .navbar .activities .bag-logo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.hover-img, .image {
+  position: relative;
 }
 
-.hover-img::before, .mens-items .image::before, .women-items .image::before, .ACCESSORIES .accessories-items .image::before, .DISCOVER .discover-items .image::before, .hover-img::after, .mens-items .image::after, .women-items .image::after, .ACCESSORIES .accessories-items .image::after, .DISCOVER .discover-items .image::after {
+.hover-img::before, .image::before, .hover-img::after, .image::after {
   content: "";
   position: absolute;
   top: 1.25em;
@@ -13,7 +11,7 @@
   right: 1.25em;
 }
 
-.hover-img::before, .mens-items .image::before, .women-items .image::before, .ACCESSORIES .accessories-items .image::before, .DISCOVER .discover-items .image::before {
+.hover-img::before, .image::before {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   transform: scale(0, 1);
@@ -22,12 +20,12 @@
   margin: auto;
 }
 
-.hover-img:hover::before, .mens-items .image:hover::before, .women-items .image:hover::before, .ACCESSORIES .accessories-items .image:hover::before, .DISCOVER .discover-items .image:hover::before {
+.hover-img:hover::before, .image:hover::before {
   cursor: pointer;
   transform: scale(1, 1);
 }
 
-.hover-img::after, .mens-items .image::after, .women-items .image::after, .ACCESSORIES .accessories-items .image::after, .DISCOVER .discover-items .image::after {
+.hover-img::after, .image::after {
   border-left: 2px solid white;
   border-right: 2px solid white;
   transform: scale(1, 0);
@@ -36,7 +34,7 @@
   margin: auto;
 }
 
-.hover-img:hover::after, .mens-items .image:hover::after, .women-items .image:hover::after, .ACCESSORIES .accessories-items .image:hover::after, .DISCOVER .discover-items .image:hover::after {
+.hover-img:hover::after, .image:hover::after {
   cursor: pointer;
   transform: scale(1, 1);
 }
@@ -52,7 +50,33 @@
   font-weight: 700;
   border-radius: 0;
   border: none;
-  transition: ease-in-out .3s;
+  transition: ease-in-out 0.3s;
+}
+
+.lis, .mens-items li, .women-items li, .ACCESSORIES .accessories-items li {
+  line-height: 1.8;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+}
+
+.lis::after, .mens-items li::after, .women-items li::after, .ACCESSORIES .accessories-items li::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 0px;
+  transition: ease-in 0.2s;
+}
+
+.lis:hover, .mens-items li:hover, .women-items li:hover, .ACCESSORIES .accessories-items li:hover {
+  transition: 0.8s;
+}
+
+.lis:hover::after, .mens-items li:hover::after, .women-items li:hover::after, .ACCESSORIES .accessories-items li:hover::after {
+  background-color: #000000;
+  width: 100%;
 }
 
 /*=============================*/
@@ -60,8 +84,8 @@
 /*=============================*/
 .navbar {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
   height: 4rem;
   font-size: 0.1rem;
   font-weight: 700;
@@ -72,23 +96,15 @@
 }
 
 .navbar .logo {
-  background-color: #c8c8c8;
+  background-color: #ddd8d8;
 }
 
-.navbar ul {
-  list-style: none;
-}
-
-.navbar .category a {
-  margin-right: 1rem;
+.navbar a:not([href="index.html"]) {
   cursor: pointer;
   position: relative;
-  color: #000000;
-  text-decoration: none;
-  display: inline-block;
 }
 
-.navbar .category a::after {
+.navbar a:not([href="index.html"])::after {
   content: "";
   display: block;
   width: 0%;
@@ -98,13 +114,30 @@
   transition: ease-in 0.2s;
 }
 
-.navbar .category a:hover {
+.navbar a:not([href="index.html"]):hover {
   transition: 0.8s;
 }
 
-.navbar .category a:hover::after {
+.navbar a:not([href="index.html"]):hover::after {
   background-color: #000000;
   width: 100%;
+}
+
+.navbar .category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 18rem;
+  color: #000000;
+  /* a {
+            @include lineEffect(4px);
+        }*/
+}
+
+.navbar .category li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar .category #new {
@@ -115,6 +148,7 @@
   position: relative;
   bottom: 25px;
   right: 47px;
+  letter-spacing: 0.1rem;
 }
 
 .navbar .category #new::after {
@@ -126,61 +160,45 @@
   width: 0;
   position: absolute;
   top: 19px;
-  right: 14px;
+  right: 16px;
+}
+
+.navbar .activities {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 16rem;
+}
+
+.navbar .activities #log {
+  height: 100px;
+  display: flex;
 }
 
 .navbar .activities a:first-of-type {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-}
-
-.navbar .activities a {
-  margin-right: 1rem;
-  cursor: pointer;
-  position: relative;
-  color: #000000;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.navbar .activities a::after {
-  content: "";
-  display: block;
-  width: 0%;
-  height: 2px;
-  position: relative;
-  top: 4px;
-  transition: ease-in 0.2s;
-}
-
-.navbar .activities a:hover {
-  transition: 0.8s;
-}
-
-.navbar .activities a:hover::after {
-  background-color: #000000;
-  width: 100%;
+  align-items: center;
+  flex-direction: column;
 }
 
 .navbar .activities .languges {
   display: flex;
-  margin-right: 19px;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
 }
 
 .navbar .activities .languges img {
   height: 18px;
-  position: relative;
-  display: inline-block;
-  right: 6px;
-  margin: 0px 0px;
+  margin-right: 5px;
 }
 
 .navbar .activities .bag-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
-  width: 40px;
   cursor: pointer;
 }
 
@@ -189,9 +207,7 @@
   color: white;
   font-size: 1rem;
   border-radius: 50px;
-  height: 26px;
-  display: flex;
-  padding: 9px 7px;
+  padding: 0px 5px;
   align-items: center;
   position: relative;
   bottom: 10px;
@@ -202,14 +218,11 @@
 /*=============================*/
 /* MENS Section */
 /*=============================*/
-h4 {
-  margin-bottom: 1rem;
-}
-
 .MENS {
   background: white;
-  position: relative;
+  position: absolute;
   transition: ease-in-out 0.3s;
+  width: 100%;
   transform: translateY(-102%);
 }
 
@@ -217,45 +230,6 @@ h4 {
   display: flex;
   justify-content: space-evenly;
   font-size: 0.4rem;
-  margin: 0;
-  position: relative;
-  left: 11%;
-}
-
-.mens-items .list-one,
-.mens-items .list-two,
-.mens-items .discover {
-  display: inline-block;
-  list-style: none;
-  margin-bottom: 10px;
-  align-self: flex-start;
-  height: 100%;
-}
-
-.mens-items li {
-  line-height: 1.8;
-  cursor: pointer;
-  position: relative;
-  width: fit-content;
-}
-
-.mens-items li::after {
-  content: "";
-  display: block;
-  width: 0%;
-  height: 2px;
-  position: relative;
-  top: 0px;
-  transition: ease-in 0.2s;
-}
-
-.mens-items li:hover {
-  transition: 0.8s;
-}
-
-.mens-items li:hover::after {
-  background-color: #000000;
-  width: 100%;
 }
 
 .mens-items .discover {
@@ -265,7 +239,7 @@ h4 {
   overflow: hidden;
 }
 
-.mens-items .item {
+.mens-items .discover .item {
   margin: 0 60px;
   transform: translateX(-200%);
   transition: 0.3s;
@@ -276,13 +250,13 @@ h4 {
   box-shadow: 1px 4px 22px #9b9b9b;
 }
 
-.mens-items .image {
-  position: relative;
-}
-
 .mens-items .image img {
   height: 100%;
   width: 100%;
+}
+
+.mens-items .description {
+  font-weight: bold;
 }
 
 .mens-items .description p {
@@ -292,7 +266,6 @@ h4 {
 
 .mens-items .description .price {
   color: lightcoral;
-  font-weight: bold;
 }
 
 .mens-items .description .old-price {
@@ -301,7 +274,6 @@ h4 {
 
 .mens-items .description .details {
   cursor: pointer;
-  font-weight: bold;
   color: #ff8600;
   display: inline-block;
   letter-spacing: 1px;
@@ -334,14 +306,11 @@ h4 {
   align-items: center;
   font-size: 1.6rem;
   color: #00a7a7ce;
-  width: 23%;
   position: relative;
-  bottom: 33px;
-  left: 31%;
+  top: 10px;
 }
 
 .changer span {
-  display: inline-block;
   height: 13px;
   width: 13px;
   border-radius: 50px;
@@ -361,12 +330,11 @@ h4 {
 /*=============================*/
 /* WOMEN Section */
 /*=============================*/
-.WOMENS {
-  width: 61%;
-  bottom: 408px;
+.WOMENS, .ACCESSORIES, .DISCOVER {
+  width: 35rem;
   left: 6.2rem;
   background: white;
-  position: relative;
+  position: absolute;
   transition: ease-in-out 0.3s;
   transform: translateY(-102%);
 }
@@ -374,103 +342,50 @@ h4 {
 .women-items, .ACCESSORIES .accessories-items {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-}
-
-.women-items ul, .ACCESSORIES .accessories-items ul {
-  list-style: none;
-}
-
-.women-items li, .ACCESSORIES .accessories-items li {
-  line-height: 1.8;
-  cursor: pointer;
-  position: relative;
-  width: fit-content;
-}
-
-.women-items li::after, .ACCESSORIES .accessories-items li::after {
-  content: "";
-  display: block;
-  width: 0%;
-  height: 2px;
-  position: relative;
-  top: 0px;
-  transition: ease-in 0.2s;
-}
-
-.women-items li:hover, .ACCESSORIES .accessories-items li:hover {
-  transition: 0.8s;
-}
-
-.women-items li:hover::after, .ACCESSORIES .accessories-items li:hover::after {
-  background-color: #000000;
-  width: 100%;
+  align-items: start;
 }
 
 .women-items .list-one, .ACCESSORIES .accessories-items .list-one {
   padding-left: 2rem;
 }
 
-.women-items .image, .ACCESSORIES .accessories-items .image {
-  position: relative;
-}
-
-.women-items img, .ACCESSORIES .accessories-items img {
-  height: 100%;
-}
-
 /*=============================*/
 /* ACCESSORIES Section */
 /*=============================*/
 .ACCESSORIES {
-  width: 39%;
-  transform: translateY(-102%);
+  width: 27rem;
   left: 10rem;
-  bottom: 940px;
-  background: white;
-  position: relative;
-  transition: ease-in-out 0.3s;
-  transform: translateY(-102%);
 }
 
 /*=============================*/
 /* DESCOVER Section */
 /*=============================*/
 .DISCOVER {
-  background: white;
-  position: absolute;
-  transition: ease-in-out 0.3s;
-  top: 100px;
+  left: 0;
   width: 100%;
-  transform: translateY(-102%);
-  background: white;
-  transition: ease-in-out 0.3s;
 }
 
 .DISCOVER .discover-items {
   display: flex;
-  justify-content: center;
 }
 
 .DISCOVER .discover-items .image {
-  position: relative;
   width: 100%;
 }
 
 .DISCOVER .discover-items img {
-  height: 10rem;
+  height: 16rem;
   width: 100%;
 }
 
 .DISCOVER .more-collection {
-  padding: 8px 0;
+  padding: 0px 0 16px;
   text-align: center;
   font-weight: bold;
 }
 
 .DISCOVER .more-collection a {
   font-size: 0.5rem;
-  color: #000000;
   text-decoration: underline;
 }
 
@@ -481,54 +396,17 @@ h4 {
   position: absolute;
   background-color: white;
   top: 103px;
-  right: 118px;
-  text-align: center;
-  transform: translateY(-110%);
+  right: 10%;
   transition: ease-in-out 0.3s;
-}
-
-.GBP ul {
-  list-style: none;
+  transform: translateY(-102%);
 }
 
 .GBP h3 {
-  background-color: #d9d9d9;
-  height: 2rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
+  background-color: #ddd8d8;
+  color: #000000;
   font-size: 0.7rem;
-}
-
-.GBP span {
-  cursor: pointer;
-  position: relative;
-  cursor: pointer;
   text-align: center;
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: bold;
-}
-
-.GBP span::after {
-  content: "";
-  display: block;
-  width: 0%;
-  height: 2px;
-  position: relative;
-  top: 0px;
-  transition: ease-in 0.2s;
-}
-
-.GBP span:hover {
-  transition: 0.8s;
-}
-
-.GBP span:hover::after {
-  background-color: #000000;
-  width: 100%;
+  padding: 0.5rem 0;
 }
 
 .GBP .contries {
@@ -542,27 +420,49 @@ h4 {
   height: 0.7rem;
 }
 
-.GBP .contries img:nth-child(2) {
-  margin-right: 2px;
-  width: 3rem;
+.GBP .contries span {
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
 }
 
-.LOG {
+.GBP .contries span::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
   position: relative;
-  float: right;
-  top: 0.3rem;
-  right: 16rem;
-  font-size: 0.9rem;
+  top: 0px;
+  transition: ease-in 0.2s;
+}
+
+.GBP .contries span:hover {
+  transition: 0.8s;
+}
+
+.GBP .contries span:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
+/*=============================*/
+/* log in Section */
+/*=============================*/
+.LOG {
+  position: absolute;
+  right: 19%;
+  font-size: 0.8rem;
   transition: ease-in-out 0.3s;
   transform: translateY(-103%);
 }
 
 .LOG h3 {
-  background-color: #ddd8d8;
-  height: 2rem;
-  width: 100%;
+  background: #ddd8d8;
   text-align: center;
-  padding-top: 0.3em;
+  padding: 0.6rem 0;
 }
 
 .LOG .user-info {
@@ -610,14 +510,29 @@ h4 {
 /*=========================================*/
 /* main styles */
 /*=========================================*/
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+h4 {
+  margin-bottom: 1rem;
 }
 
 /*.container {

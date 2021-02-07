@@ -1,4 +1,16 @@
+//========================//
+// flex
+//========================//
+@mixin flex($hor:center, $ver:center) {
+    display: flex;
+    justify-content: $hor;
+    align-items: $ver;
+}
+
+//========================//
 // under line effect style
+//========================//
+
 @mixin lineEffect($top, $col: $black) {
     cursor: pointer;
     position: relative;
@@ -21,7 +33,9 @@
     }
 }
 
+//========================//
 // hover background btn
+//========================//
 
 //chech the brightness of the bckgroun
 @function checkColor($color) {
@@ -33,12 +47,14 @@
 }
 
 // set back
-@mixin setBack($color) {
+@mixin setBack($color, $ok : no) {
     background-color: $color;
     color: checkColor($color);
 
-    &:hover {
-        background-color: checkColor($color);
-        color: $color;
+    @if ($ok == hover) {
+        &:hover {
+            background-color: checkColor($color);
+            color: $color;
+        }
     }
 }

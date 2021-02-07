@@ -2,42 +2,36 @@
 /* navbar styles */
 /*=============================*/
 .navbar {
-    // @extend .flex;
+    @include flex(space-around);
 
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
     height: 4rem;
     font-size: 0.1rem;
     font-weight: 700;
     font-family: "Roboto Slab", serif;
-    background: white;
+    background: $white;
     position: relative;
     z-index: 5;
 
-    & .logo {
-        background-color: #c8c8c8;
+    .logo {
+        background-color: $gray;
     }
-
-    & ul {
-        list-style: none;
+    a:not([href="index.html"]) {
+        @include lineEffect(4px);
     }
 
     // nabvar first section ========== 01
-    & .category {
-        @extend .flex;
+    .category {
+        @include flex(space-between);
+        width: 18rem;
+        color: $black;
 
         li {
-            @extend .flex;
+            @include flex();
         }
 
-        a {
-            margin-right: 1rem;
+        /* a {
             @include lineEffect(4px);
-            color: $black;
-            text-decoration: none;
-            display: inline-block;
-        }
+        }*/
 
         & #new {
             background: $cyan;
@@ -47,6 +41,7 @@
             position: relative;
             bottom: 25px;
             right: 47px;
+            letter-spacing: 0.1rem;
 
             &::after {
                 content: "";
@@ -57,62 +52,46 @@
                 width: 0;
                 position: absolute;
                 top: 19px;
-                right: 14px;
+                right: 16px;
             }
         }
     }
     // nabvar second section ========== 02
     & .activities {
-        @extend .flex;
+        @include flex(space-between);
+        width: 16rem;
 
-        a:first-of-type {
+        #log {
+            height: 100px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
-        a {
-            margin-right: 1rem;
-            @include lineEffect(4px);
-            color: $black;
-            text-decoration: none;
-            display: inline-block;
+        a:first-of-type {
+            @include flex();
+            flex-direction: column;
         }
 
         .languges {
-            display: flex;
-            margin-right: 19px;
-            align-items: center;
+            @include flex();
             cursor: pointer;
 
             img {
                 height: 18px;
-                position: relative;
-                display: inline-block;
-                right: 6px;
-                margin: 0px 0px;
+                margin-right: 5px;
             }
         }
 
-        // #log {
-        //     display: flex;
-        //     align-items: center;
-        // }
-
-        & .bag-logo {
-            @extend .flex;
+        .bag-logo {
+            @include flex();
             font-size: 1.5rem;
-            width: 40px;
             cursor: pointer;
 
-            & #items-number {
+            #items-number {
                 background: #f04747f0;
                 color: white;
                 font-size: 1rem;
                 border-radius: 50px;
-                height: 26px;
-                display: flex;
-                padding: 9px 7px;
+                padding: 0px 5px;
                 align-items: center;
                 position: relative;
                 bottom: 10px;
@@ -126,42 +105,23 @@
 /*=============================*/
 /* MENS Section */
 /*=============================*/
-h4 {
-    margin-bottom: 1rem;
-}
 
 .MENS {
     background: white;
-    position: relative;
+    position: absolute;
     transition: ease-in-out 0.3s;
+    width: 100%;
     transform: translateY(-102%);
 }
 
 .mens-items {
-    // the main container
     display: flex;
     justify-content: space-evenly;
     font-size: 0.4rem;
-    margin: 0;
-    position: relative;
-    left: 11%;
-    // the categories
-    & .list-one,
-    .list-two,
-    .discover {
-        display: inline-block;
-        list-style: none;
-        margin-bottom: 10px;
-        align-self: flex-start;
-        height: 100%;
-    }
-    // the headings
 
     //the lists
-    & li {
-        line-height: 1.8;
-        @include lineEffect(0px);
-        width: fit-content;
+    li {
+        @extend .lis;
     }
 
     // items kind
@@ -170,22 +130,17 @@ h4 {
         line-height: 1.8;
         display: flex;
         overflow: hidden;
-    }
 
-    .item {
-        margin: 0 60px;
-        transform: translateX(-200%);
-        transition: 0.3s;
-    }
+        .item {
+            margin: 0 60px;
+            transform: translateX(-200%);
+            transition: 0.3s;
+        }
 
-    .discover img {
-        width: 100%;
-        box-shadow: 1px 4px 22px #9b9b9b;
-    }
-
-    .image {
-        position: relative;
-        @extend .hover-img;
+        & img {
+            width: 100%;
+            box-shadow: 1px 4px 22px #9b9b9b;
+        }
     }
 
     .image img {
@@ -193,44 +148,41 @@ h4 {
         width: 100%;
     }
 
-    .description p {
-        font-weight: 600;
-        word-spacing: 2px;
-    }
-
-    .description .price {
-        color: $pink;
+    .description {
         font-weight: bold;
-    }
 
-    .description .old-price {
-        text-decoration-line: line-through;
-    }
+        p {
+            font-weight: 600;
+            word-spacing: 2px;
+        }
 
-    .description .details {
-        cursor: pointer;
-        font-weight: bold;
-        color: $orange;
-        display: inline-block;
-        letter-spacing: 1px;
-        @include lineEffect(0px, $orange);
+        .price {
+            color: $pink;
+        }
+
+        .old-price {
+            text-decoration-line: line-through;
+        }
+
+        .details {
+            cursor: pointer;
+            color: $orange;
+            display: inline-block;
+            letter-spacing: 1px;
+            @include lineEffect(0px, $orange);
+        }
     }
 }
 
 // change the items
 .changer {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flex(space-evenly);
     font-size: 1.6rem;
     color: $cyan;
-    width: 23%;
     position: relative;
-    bottom: 33px;
-    left: 31%;
+    top: 10px;
 
-    & span {
-        display: inline-block;
+    span {
         height: 13px;
         width: 13px;
         border-radius: 50px;
@@ -239,7 +191,7 @@ h4 {
         cursor: pointer;
     }
 
-    & i {
+    i {
         cursor: pointer;
     }
 
@@ -252,59 +204,33 @@ h4 {
 /* WOMEN Section */
 /*=============================*/
 .WOMENS {
-    width: 61%;
-    bottom: 408px;
+    width: 35rem;
     left: 6.2rem;
-
     background: white;
-    position: relative;
+    position: absolute;
     transition: ease-in-out 0.3s;
     transform: translateY(-102%);
 }
 
 .women-items {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    @include flex(space-between, start);
 
-    & ul {
-        list-style: none;
+    li {
+        @extend .lis;
     }
 
-    & li {
-        line-height: 1.8;
-        @include lineEffect(0px);
-        width: fit-content;
-    }
-
-    & .list-one {
+    .list-one {
         padding-left: 2rem;
-    }
-
-    & .image {
-        position: relative;
-        @extend .hover-img;
-    }
-
-    & img {
-        height: 100%;
     }
 }
 
 /*=============================*/
 /* ACCESSORIES Section */
 /*=============================*/
-
 .ACCESSORIES {
-    width: 39%;
-    transform: translateY(-102%);
+    @extend .WOMENS;
+    width: 27rem;
     left: 10rem;
-    bottom: 940px;
-
-    background: white;
-    position: relative;
-    transition: ease-in-out 0.3s;
-    transform: translateY(-102%);
 
     & .accessories-items {
         @extend .women-items;
@@ -314,44 +240,31 @@ h4 {
 /*=============================*/
 /* DESCOVER Section */
 /*=============================*/
-
 .DISCOVER {
-    background: white;
-    position: absolute;
-    transition: ease-in-out 0.3s;
-    top: 100px;
-    // left: 8px;
+    @extend .WOMENS;
+    left: 0;
     width: 100%;
-    transform: translateY(-102%);
 
-    background: white;
-    transition: ease-in-out 0.3s;
-
-    & .discover-items {
+    .discover-items {
         display: flex;
-        justify-content: center;
 
-        & .image {
-            position: relative;
+        .image {
             width: 100%;
-            @extend .hover-img;
         }
 
-        & img {
-            height: 10rem;
+        img {
+            height: 16rem;
             width: 100%;
         }
     }
 
     .more-collection {
-        padding: 8px 0;
+        padding: 0px 0 16px;
         text-align: center;
         font-weight: bold;
 
         a {
-            //@include lineEffect(4px);
             font-size: 0.5rem;
-            color: $black;
             text-decoration: underline;
         }
     }
@@ -364,42 +277,15 @@ h4 {
     position: absolute;
     background-color: white;
     top: 103px;
-    right: 118px;
-    text-align: center;
-    transform: translateY(-110%);
+    right: 10%;
     transition: ease-in-out 0.3s;
-
-    // position: relative;
-    // float: right;
-    // background-color: white;
-    // top: 7px;
-    // right: 86px;
-    // text-align: center;
-    // transform: translateY(-110%);
-    // transition: ease-in-out 0.3s;
-
-    ul {
-        list-style: none;
-    }
+    transform: translateY(-102%);
 
     h3 {
-        background-color: #d9d9d9;
-        height: 2rem;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        vertical-align: middle;
+        @include setBack($gray);
         font-size: 0.7rem;
-    }
-
-    span {
-        @include lineEffect(0px);
-        cursor: pointer;
         text-align: center;
-        display: inline-block;
-        font-size: 0.7rem;
-        font-weight: bold;
+        padding: 0.5rem 0;
     }
 
     .contries {
@@ -412,33 +298,35 @@ h4 {
             height: 0.7rem;
         }
 
-        img:nth-child(2) {
-            margin-right: 2px;
-            width: 3rem;
+        span {
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: inline-block;
+            @include lineEffect(0px);
         }
     }
 }
 
+/*=============================*/
+/* log in Section */
+/*=============================*/
 .LOG {
-    position: relative;
-    float: right;
-    top: 0.3rem;
-    right: 16rem;
-    font-size: 0.9rem;
+    position: absolute;
+    right: 19%;
+    font-size: 0.8rem;
     transition: ease-in-out 0.3s;
     transform: translateY(-103%);
 
     h3 {
-        background-color: $gray;
-        height: 2rem;
-        width: 100%;
+        background: $gray;
         text-align: center;
-        padding-top: 0.3em;
+        padding: 0.6rem 0;
     }
 
     .user-info {
         padding: 16px 20px;
-        background: white;
+        background: $white;
         line-height: 2.2;
 
         input {
@@ -453,7 +341,7 @@ h4 {
             @extend .btn;
             margin: 28px 0;
             width: 100%;
-            @include setBack($gray);
+            @include setBack($gray, hover);
         }
 
         p:nth-last-child(2) {
@@ -464,7 +352,7 @@ h4 {
         button:nth-child(3) {
             @extend .btn;
             width: 100%;
-            @include setBack($black);
+            @include setBack($black, hover);
         }
     }
 }

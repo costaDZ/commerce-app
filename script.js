@@ -1,27 +1,36 @@
-/*=================navbar=====================*/
-// hover efect 
+/*============================================*/
+        // navbar
+/*============================================*/
+
+//======= show lists ========// 
+// my elements
 const navTitles = document.querySelectorAll(".category li");
 const header = document.querySelector("header");
 const landing = document.querySelector(".landing-page");
 const gbp = document.querySelector(".languges");
 const log = document.querySelector("#log");
 
-
+// add evenet to log in btn
 log.addEventListener("click", (e) => {
     e.preventDefault();
-    document.querySelector(".LOG").style.transform = "translateY(0)";
-    log.firstElementChild.style.cssText = `height: 103px; `;
-
+    showTarget(log, ".LOG");
 })
 
+// add event to contries btn
 gbp.addEventListener("click", () => {
-    document.querySelector(".GBP").style.transform = "translateY(0)";
-    gbp.style.height = `113px`;
-})
+    showTarget(gbp, ".GBP");
+});
 
+///callback function
+function showTarget(target, cla) {
+    document.querySelector(`${cla}`).style.transform = "translateY(0)";
+    target.style.height = `113px`;
+}
 
-
+//======= hover lists ========// 
+// add vent to the document to get the position of the cursor
 document.querySelector("body").addEventListener("mouseover", (e) => {
+    // set the section of the nav to an objects
     let section = {
         "MENS": document.querySelector(".MENS"),
         "WOMENS": document.querySelector(".WOMENS"),
@@ -30,24 +39,28 @@ document.querySelector("body").addEventListener("mouseover", (e) => {
         "GBP": document.querySelector(".GBP"),
         "LOG" :document.querySelector(".LOG")
     };
+
     // check if the cursore in above the title
-    let target = checkParentElement(e.target, Object.getOwnPropertyNames(section));
+    let target = checkElement(e.target, Object.getOwnPropertyNames(section));
 
     if (target) {
         hideSection(section);
         showSection(section[target]);
+        changeHeight(100);
     } else {
         hideSection(section);
         landing.classList.remove("darken");
+        changeHeight(0);
     }
-
 });
 
-///helper function to chech the aria of the target
-function checkParentElement(target, section) {
+///helper function to check the aria of the target [text + content and the classes of parent element]
+function checkElement(target, section) {
+
     for (; target && target !== document; target = target.parentElement) {
         for (sec of section) {
-            if (target.classList.contains(sec) || target.textContent === sec) {
+            if (target.classList.contains(sec) 
+            || target.textContent === sec) {
                 return sec;
             }
         }
@@ -59,76 +72,44 @@ function checkParentElement(target, section) {
 function showSection(test) {
     if (test) {
         test.style.transform = "translateY(0%)";
-        changeHeight(100);
         landing.classList.add("darken");
-
     }
 }
 
-// helper functio hide all sections 
+/// helper functio hide all sections 
 function hideSection(section) {
     for (let i in section) {
-        section[i].style.transform = "translateY(-102%)";
-        changeHeight(0);
+        section[i].style.transform = "translateY(-103%)";
+        gbp.style.height = `0`;
+        log.style.height = `0`;
     }
 }
 
 /// helper function to chnge the width of target <li>
-function changeHeight(width) {
-    navTitles.forEach(li => { li.style.height = `${width}px`; })
+function changeHeight(height) {
+    navTitles.forEach(li =>  li.style.height = `${height}px`);
 }
 
 
-
-
-
-
-// if ((checkParentElement(e.target, "MENS"))) {
-//     mensSection.style.transform = "translateY(0)";
-//     changeHeight(100);
-// } else {
-//     changeHeight(0);
-//     mensSection.style.transform = "translateY(-102%)";
-// }
-
-// if ((checkParentElement(e.target, "WOMENS"))) {
-//     womenSection.style.transform = "translateY(0)";
-//     changeHeight(100);
-// } else {
-//     changeHeight(0);
-//     womenSection.style.transform = "translateY(-102%)";
-// }
-
-
-
-
-
-
-//===================== image slider=================//
+//======= slider image ========//
 const arrows = document.querySelectorAll(".arrow");
-/// select items
 const imageItems = document.querySelectorAll(".item");
-///selet bullets
 const bullets = document.querySelectorAll(".bullet");
 
-//let position = 0;
 let getBullet = 1;
 
 // add gay color to an arrow when loading the document
-if (getBullet === 0) {
-    arrows[1].style.color = "gray";
-}
+if (getBullet === 0) arrows[1].style.color = "gray";
 
 //=========> set the events to my arrows
 arrows.forEach(arrow => {
     arrow.addEventListener("click", () => {
         if (arrow.classList.contains("fa-long-arrow-alt-right")) {
-            changeTheItem(0);
+            changeItem(0);
         } else {
-            changeTheItem(3);
+            changeItem(3);
         }
         clearInterval(interval);
-
     });
 });
 
@@ -139,13 +120,9 @@ bullets.forEach(b => {
 
 /// helper function t active the target bullet
 function hoverbullet(b) {
-    //get the index of the current bullet
     getBullet = [...bullets].indexOf(b);
-    // change the position
-    changeTheItem(getBullet);
-    // clear all the color of the bullet
+    changeItem(getBullet);
     clearBullets(getBullet);
-    // change the number of the posotion 
     checkPosition(getBullet)
 }
 // set the transform automatic
@@ -154,11 +131,11 @@ let interval = setInterval(() => {
     if (getBullet >= imageItems.length - 1) {
         getBullet = 0;
     }
-    changeTheItem(getBullet);
+    changeItem(getBullet);
 }, 3000)
 
 // function to chnge items
-function changeTheItem(position) {
+function changeItem(position) {
     // chek the position
     if (getBullet !== position) {
         position === 0 ? getBullet -= 1 : getBullet += 1;
@@ -166,7 +143,6 @@ function changeTheItem(position) {
     imageItems.forEach(img => {
         img.style.transform = `translateX(${getBullet * (-200)}%)`;
     });
-    // call the helper functions
     clearBullets(getBullet);
     checkPosition(getBullet);
 }
@@ -195,4 +171,3 @@ function checkPosition(pos) {
         arrows[1].removeAttribute("style");
     }
 }
-

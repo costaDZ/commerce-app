@@ -1,12 +1,9 @@
-// flex style
-.flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-// hover over an image
+//========================//
+// image hover style
+//========================//
 .hover-img {
+    position: relative;
+
     &::before,
     &::after {
         content: "";
@@ -49,7 +46,9 @@
     filter: brightness(0.5);
 }
 
-//buttons style
+//========================//
+// btn style
+//========================//
 .btn {
     display: block;
     height: 2.5rem;
@@ -57,5 +56,11 @@
     font-weight: 700;
     border-radius: 0;
     border: none;
-    transition: ease-in-out .3s;
+    transition: ease-in-out 0.3s;
+}
+
+.lis {
+    line-height: 1.8;
+    @include lineEffect(0px);
+    width: fit-content;
 }

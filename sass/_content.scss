@@ -1,0 +1,192 @@
+/*=============================*/
+/* landing-page styles */
+/*=============================*/
+.landing-page {
+    background: url("/img/WinterSale_HomepageBanner_v3.webp") center / cover no-repeat;
+    height: 90vh;
+    position: relative;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .buy-now {
+        @include setBack($black);
+        text-align: center;
+        font-weight: 600;
+        padding: 13px 0;
+        font-size: 0.4rem;
+
+        a {
+            color: $white;
+            text-decoration: underline;
+        }
+    }
+}
+
+/*=============================*/
+/* shop btns styles styles */
+/*=============================*/
+
+.shop-btn {
+    @include flex(space-around);
+    height: 10rem;
+
+    button {
+        @include setBack($white, hover);
+        @include btn(2.8rem, 4px);
+    }
+}
+
+/*=============================*/
+/*mens && womens items */
+/*=============================*/
+
+.mens-womens {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 8rem 25rem);
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    line-height: 2;
+
+    p,
+    button {
+        font-family: "Roboto Slab", serif;
+    }
+
+    img {
+        height: 18rem;
+        border-radius: 2px;
+        box-shadow: 7px 1px 8px $gray;
+    }
+
+    .men-pic,
+    .women-pic {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .model {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.7rem;
+        width: 22vw;
+        width: 21vw;
+        cursor: pointer;
+
+        img:hover {
+            transition: ease-in-out .2s;
+            border: 2px solid black;
+        }
+
+        .des {
+            line-height: 2;
+
+            .prix {
+                display: block;
+                color: $orange;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .title-two {
+        button {
+            @include setBack($white, hover);
+            @include btn();
+        }
+    }
+}
+
+/*=============================*/
+/*mens && womens items */
+/*=============================*/
+.quote {
+    padding: 3rem 4rem;
+    line-height: 2;
+    text-align: center;
+
+    q {
+        font-weight: lighter;
+        font-style: italic;
+        color: #787878;
+    }
+
+    strong {
+        display: block;
+        font-family: "Roboto Slab", serif;
+    }
+}
+
+/*=============================*/
+/* Agile sezction */
+/*=============================*/
+
+.agile {
+    background-image: url(https://cdn11.bigcommerce.com/s-iyqvgyco/images/stencil/1920x1920/h/mens-tanks-cat-header__16092.original.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    color: white;
+    padding: 5rem 5rem;
+    line-height: 2.5;
+    display: flex;
+    align-items: center;
+
+    .agil-content {
+        padding-left: 10%;
+        width: 50%;
+
+        p {
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        button {
+            margin-top: 5px;
+            @include setBack(transparent, hover);
+            @include btn(2.5rem, 2px, 2px solid $white);
+        }
+    }
+}
+
+.sales {
+    @include flex(space-around);
+    margin: 6rem 0;
+    line-height: 2;
+    font-family: "Roboto Slab", serif;
+
+    img {
+        transition: ease-in-out 0.3s;
+        height: 27rem;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    img:hover {
+        @extend .darken;
+        filter: drop-shadow(23px 14px 16px #606363);
+        padding: 10px 0;
+    }
+
+    .mens-sales,
+    .womens-sales {
+        text-align: center;
+
+        a {
+            display: block;
+            // text-decoration: underline;
+            font-family: "Roboto Slab", serif;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            @include lineEffect(-3px);
+            width: fit-content;
+            margin: auto;
+        }
+    }
+}

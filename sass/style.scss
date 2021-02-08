@@ -3,6 +3,7 @@
 @import "global-style";
 
 @import "navbar";
+@import "content";
 
 /*=========================================*/
 /* main styles */
@@ -18,6 +19,8 @@
 
 body {
     font-family: "Roboto", sans-serif;
+    height: 6000px;
+    overflow-x: hidden;
 }
 
 ul {
@@ -42,12 +45,3 @@ h4 {
     margin: auto;
 }*/
 
-.landing-page {
-    background: url("/img/WinterSale_HomepageBanner_v3.webp") center / cover no-repeat;
-    height: 90vh;
-    position: absolute;
-    left: 0;
-    top: 104px;
-    width: 100%;
-    z-index: -15;
-}

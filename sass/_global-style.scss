@@ -43,21 +43,13 @@
 }
 
 .darken {
-    filter: brightness(0.5);
+    filter: brightness(0.9);
 }
 
 //========================//
 // btn style
 //========================//
-.btn {
-    display: block;
-    height: 2.5rem;
-    cursor: pointer;
-    font-weight: 700;
-    border-radius: 0;
-    border: none;
-    transition: ease-in-out 0.3s;
-}
+
 
 .lis {
     line-height: 1.8;

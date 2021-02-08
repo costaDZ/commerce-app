@@ -1,7 +1,7 @@
 //========================//
 // flex
 //========================//
-@mixin flex($hor:center, $ver:center) {
+@mixin flex($hor: center, $ver: center) {
     display: flex;
     justify-content: $hor;
     align-items: $ver;
@@ -34,6 +34,20 @@
 }
 
 //========================//
+// btn
+//========================//
+@mixin btn($height: 2.5rem, $radius: 2px, $border: 1px solid $black) {
+    display: block;
+    height: $height;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: $radius;
+    border: $border;
+    transition: ease-in-out 0.3s;
+    padding: 0 20px;
+}
+
+//========================//
 // hover background btn
 //========================//
 
@@ -41,20 +55,29 @@
 @function checkColor($color) {
     @if (lightness($color) > 60) {
         @return $black;
+    } @else if ($color == transparent) {
+        @return $white;
     } @else {
         @return $gray;
     }
 }
 
 // set back
-@mixin setBack($color, $ok : no) {
+@mixin setBack($color, $ok: no) {
     background-color: $color;
     color: checkColor($color);
 
     @if ($ok == hover) {
-        &:hover {
-            background-color: checkColor($color);
-            color: $color;
+        @if ($color == transparent) {
+            &:hover {
+                background-color: checkColor($color);
+                color: $black;
+            }
+        } @else {
+            &:hover {
+                background-color: checkColor($color);
+                color: $color;
+            }
         }
     }
 }

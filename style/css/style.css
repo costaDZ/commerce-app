@@ -39,18 +39,8 @@
   transform: scale(1, 1);
 }
 
-.darken {
-  filter: brightness(0.5);
-}
-
-.btn, .LOG .user-info .log-btn, .LOG .user-info button:nth-child(3) {
-  display: block;
-  height: 2.5rem;
-  cursor: pointer;
-  font-weight: 700;
-  border-radius: 0;
-  border: none;
-  transition: ease-in-out 0.3s;
+.darken, .sales img:hover {
+  filter: brightness(0.9);
 }
 
 .lis, .mens-items li, .women-items li, .ACCESSORIES .accessories-items li {
@@ -86,7 +76,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 4rem;
+  width: 100%;
+  height: 4.4rem;
   font-size: 0.1rem;
   font-weight: 700;
   font-family: "Roboto Slab", serif;
@@ -224,6 +215,8 @@
   transition: ease-in-out 0.3s;
   width: 100%;
   transform: translateY(-102%);
+  top: 4.4rem;
+  z-index: 1;
 }
 
 .mens-items {
@@ -333,10 +326,12 @@
 .WOMENS, .ACCESSORIES, .DISCOVER {
   width: 35rem;
   left: 6.2rem;
+  top: 4.4rem;
   background: white;
   position: absolute;
   transition: ease-in-out 0.3s;
   transform: translateY(-102%);
+  z-index: 1;
 }
 
 .women-items, .ACCESSORIES .accessories-items {
@@ -395,10 +390,11 @@
 .GBP {
   position: absolute;
   background-color: white;
-  top: 103px;
+  top: 4.4rem;
   right: 10%;
   transition: ease-in-out 0.3s;
   transform: translateY(-102%);
+  z-index: 1;
 }
 
 .GBP h3 {
@@ -454,9 +450,11 @@
 .LOG {
   position: absolute;
   right: 19%;
+  top: 4.4rem;
   font-size: 0.8rem;
   transition: ease-in-out 0.3s;
   transform: translateY(-103%);
+  z-index: 1;
 }
 
 .LOG h3 {
@@ -480,6 +478,14 @@
 }
 
 .LOG .user-info .log-btn {
+  display: block;
+  height: 2rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 0;
+  border: none;
+  transition: ease-in-out 0.3s;
+  padding: 0 20px;
   margin: 28px 0;
   width: 100%;
   background-color: #ddd8d8;
@@ -497,6 +503,14 @@
 }
 
 .LOG .user-info button:nth-child(3) {
+  display: block;
+  height: 2rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 0;
+  border: none;
+  transition: ease-in-out 0.3s;
+  padding: 0 20px;
   width: 100%;
   background-color: #000000;
   color: #ddd8d8;
@@ -505,6 +519,302 @@
 .LOG .user-info button:nth-child(3):hover {
   background-color: #ddd8d8;
   color: #000000;
+}
+
+/*=============================*/
+/* slider styles */
+/*=============================*/
+.slider-goods {
+  position: absolute;
+  background-color: white;
+  height: 100%;
+  width: 40%;
+  right: 0;
+  transition: ease-in-out 0.3s;
+  padding: 13px 14px;
+  font-size: 1rem;
+  border-top: 3px solid #ddd8d8;
+  top: 4.4rem;
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+.slider-goods .cart-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-goods .cart-status span {
+  font-size: 1.4rem;
+}
+
+.slider-goods .cart-status span i:hover {
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+  color: #d9534f;
+}
+
+.slider-goods .empty-card {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*=============================*/
+/* landing-page styles */
+/*=============================*/
+.landing-page {
+  background: url("/img/WinterSale_HomepageBanner_v3.webp") center/cover no-repeat;
+  height: 90vh;
+  position: relative;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.landing-page .buy-now {
+  background-color: #000000;
+  color: #ddd8d8;
+  text-align: center;
+  font-weight: 600;
+  padding: 13px 0;
+  font-size: 0.4rem;
+}
+
+.landing-page .buy-now a {
+  color: white;
+  text-decoration: underline;
+}
+
+/*=============================*/
+/* shop btns styles styles */
+/*=============================*/
+.shop-btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10rem;
+}
+
+.shop-btn button {
+  background-color: white;
+  color: #000000;
+  display: block;
+  height: 2.8rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  transition: ease-in-out 0.3s;
+  padding: 0 20px;
+}
+
+.shop-btn button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+/*=============================*/
+/*mens && womens items */
+/*=============================*/
+.mens-womens {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(2, 8rem 25rem);
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  line-height: 2;
+}
+
+.mens-womens p,
+.mens-womens button {
+  font-family: "Roboto Slab", serif;
+}
+
+.mens-womens img {
+  height: 18rem;
+  border-radius: 2px;
+  box-shadow: 7px 1px 8px #ddd8d8;
+}
+
+.mens-womens .men-pic,
+.mens-womens .women-pic {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mens-womens .model {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  width: 22vw;
+  width: 21vw;
+  cursor: pointer;
+}
+
+.mens-womens .model img:hover {
+  transition: ease-in-out .2s;
+  border: 2px solid black;
+}
+
+.mens-womens .model .des {
+  line-height: 2;
+}
+
+.mens-womens .model .des .prix {
+  display: block;
+  color: #ff8600;
+  font-weight: bold;
+}
+
+.mens-womens .title-two button {
+  background-color: white;
+  color: #000000;
+  display: block;
+  height: 2.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 2px;
+  border: 1px solid #000000;
+  transition: ease-in-out 0.3s;
+  padding: 0 20px;
+}
+
+.mens-womens .title-two button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+/*=============================*/
+/*mens && womens items */
+/*=============================*/
+.quote {
+  padding: 3rem 4rem;
+  line-height: 2;
+  text-align: center;
+}
+
+.quote q {
+  font-weight: lighter;
+  font-style: italic;
+  color: #787878;
+}
+
+.quote strong {
+  display: block;
+  font-family: "Roboto Slab", serif;
+}
+
+/*=============================*/
+/* Agile sezction */
+/*=============================*/
+.agile {
+  background-image: url(https://cdn11.bigcommerce.com/s-iyqvgyco/images/stencil/1920x1920/h/mens-tanks-cat-header__16092.original.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  color: white;
+  padding: 5rem 5rem;
+  line-height: 2.5;
+  display: flex;
+  align-items: center;
+}
+
+.agile .agil-content {
+  padding-left: 10%;
+  width: 50%;
+}
+
+.agile .agil-content p {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.agile .agil-content button {
+  margin-top: 5px;
+  background-color: transparent;
+  color: white;
+  display: block;
+  height: 2.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 2px;
+  border: 2px solid white;
+  transition: ease-in-out 0.3s;
+  padding: 0 20px;
+}
+
+.agile .agil-content button:hover {
+  background-color: white;
+  color: #000000;
+}
+
+.sales {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 6rem 0;
+  line-height: 2;
+  font-family: "Roboto Slab", serif;
+}
+
+.sales img {
+  transition: ease-in-out 0.3s;
+  height: 27rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.sales img:hover {
+  filter: drop-shadow(23px 14px 16px #606363);
+  padding: 10px 0;
+}
+
+.sales .mens-sales,
+.sales .womens-sales {
+  text-align: center;
+}
+
+.sales .mens-sales a,
+.sales .womens-sales a {
+  display: block;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.sales .mens-sales a::after,
+.sales .womens-sales a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: -3px;
+  transition: ease-in 0.2s;
+}
+
+.sales .mens-sales a:hover,
+.sales .womens-sales a:hover {
+  transition: 0.8s;
+}
+
+.sales .mens-sales a:hover::after,
+.sales .womens-sales a:hover::after {
+  background-color: #000000;
+  width: 100%;
 }
 
 /*=========================================*/
@@ -520,6 +830,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  height: 6000px;
+  overflow-x: hidden;
 }
 
 ul {
@@ -539,13 +851,4 @@ h4 {
     max-width: 1400px;
     margin: auto;
 }*/
-.landing-page {
-  background: url("/img/WinterSale_HomepageBanner_v3.webp") center/cover no-repeat;
-  height: 90vh;
-  position: absolute;
-  left: 0;
-  top: 104px;
-  width: 100%;
-  z-index: -15;
-}
 /*# sourceMappingURL=style.css.map */

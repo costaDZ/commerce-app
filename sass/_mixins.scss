@@ -45,6 +45,7 @@
     border: $border;
     transition: ease-in-out 0.3s;
     padding: 0 20px;
+    letter-spacing: 1.5px;
 }
 
 //========================//
@@ -58,7 +59,7 @@
     } @else if ($color == transparent) {
         @return $white;
     } @else {
-        @return $gray;
+        @return $back-light;
     }
 }
 
@@ -80,4 +81,15 @@
             }
         }
     }
+}
+
+//========================//
+// hover background btn
+//========================//
+
+@mixin border($top: 2px, $right: 2px, $bottom: 2px, $left: 2px, $color: $black) {
+    border-top: solid $top $color;
+    border-right: solid $right $color;
+    border-bottom: solid $bottom $color;
+    border-left: solid $left $color;
 }

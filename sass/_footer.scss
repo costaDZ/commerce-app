@@ -1,0 +1,76 @@
+footer {
+    display: grid;
+    grid-template-areas:
+        "social about help page sign"
+        "physiq .sponsors sponsors sponsors";
+    grid-gap: 4rem 2rem;
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
+    line-height: 2;
+    width: 95%;
+    margin: auto;
+    font-size: 0.6rem;
+    justify-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+
+    .social-icons {
+        grid-area: social;
+        font-size: 2rem;
+        text-align: center;
+        img {
+            height: 2rem;
+        }
+    }
+
+    .about-us {
+        grid-area: about;
+        width: 8rem;
+    }
+
+    .help {
+        grid-area: help;
+    }
+
+    .page {
+        grid-area: page;
+    }
+    .sign-up {
+        grid-area: sign;
+        font-weight: 700;
+        width: 20rem;
+
+        .my-form {
+            margin: 2rem 0;
+            position: relative;
+            width: 100%;
+        }
+
+        input {
+            @extend .input;
+            @include border(1px, 1px, 1px, 1px, rgb(163, 163, 163));
+        }
+
+        button {
+            @include btn(1.5rem);
+            @include setBack($black, hover);
+        }
+    }
+
+    .physic {
+        grid-area: physiq;
+        font-weight: bold;
+    }
+    .sponsors {
+        grid-area: sponsors;
+        /* align-self: end; */
+        display: flex;
+        justify-content: space-between;
+        /* align-items: center; */
+        width: 80%;
+
+        img {
+            height: 1rem;
+        }
+    }
+}

@@ -3,7 +3,7 @@
 /*=============================*/
 .landing-page {
     background: url("/img/WinterSale_HomepageBanner_v3.webp") center / cover no-repeat;
-    height: 90vh;
+    height: 100vh;
     position: relative;
     left: 0;
     width: 100%;
@@ -80,7 +80,7 @@
         cursor: pointer;
 
         img:hover {
-            transition: ease-in-out .2s;
+            transition: ease-in-out 0.2s;
             border: 2px solid black;
         }
 
@@ -114,7 +114,7 @@
     q {
         font-weight: lighter;
         font-style: italic;
-        color: #787878;
+        color: $text-light;
     }
 
     strong {
@@ -188,5 +188,88 @@
             width: fit-content;
             margin: auto;
         }
+    }
+}
+
+/*=============================*/
+/* Features section */
+/*=============================*/
+.features {
+    @include flex(space-between);
+    width: 90%;
+    margin: auto;
+
+    .feature {
+        @include flex(space-evenly);
+        flex-direction: column;
+        height: 13rem;
+        width: 20%;
+        text-align: center;
+
+        h3 {
+            font-family: "Roboto Slab", serif;
+            text-transform: capitalize;
+            &::before {
+                content: "";
+                display: block;
+                height: 2px;
+                width: 3rem;
+                background-color: #ddd8d869;
+                position: relative;
+                bottom: 21px;
+                margin: auto;
+                border-radius: 3px;
+            }
+        }
+
+        p {
+            color: $text-light;
+            font-size: 0.7rem;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+    }
+
+    img {
+        height: 3rem;
+        text-align: center;
+        width: 100%;
+        padding-left: 43%;
+    }
+}
+
+/*=============================*/
+/* sign up section */
+/*=============================*/
+.sign {
+    height: 14rem;
+    background: $back-light;
+    @include flex(space-around);
+
+    .sign-title {
+        font-size: 1.5rem;
+        line-height: 2;
+        strong {
+            font-weight: bolder;
+            text-shadow: 2px 1px 6px #3d0000;
+            font-size: 2.5rem;
+        }
+        p {
+            font-style: italic;
+        }
+    }
+    .my-form {
+        position: relative;
+        width: 38%;
+    }
+
+    input {
+        @extend .input;
+        @include border(0, 0, 1px, 0, black);
+    }
+
+    button {
+        @include btn();
+        @include setBack($black, hover);
     }
 }

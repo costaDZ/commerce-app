@@ -4,6 +4,7 @@
 
 @import "navbar";
 @import "content";
+@import "footer";
 
 /*=========================================*/
 /* main styles */
@@ -19,7 +20,6 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    height: 6000px;
     overflow-x: hidden;
 }
 

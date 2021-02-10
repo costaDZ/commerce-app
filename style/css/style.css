@@ -69,6 +69,80 @@
   width: 100%;
 }
 
+.input, .LOG .user-info input, .sign input, footer .sign-up input {
+  height: 2rem;
+  font-weight: 600;
+  outline: none;
+  border-radius: 0;
+  padding-left: 2rem;
+  font-style: italic;
+  width: 100%;
+  letter-spacing: 1px;
+  height: 2rem;
+}
+
+.form-anim ~ .focus-border:before,
+.form-anim ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.form-anim ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  right: auto;
+  left: 0;
+  transition-delay: 0.6s;
+}
+
+.form-anim ~ .focus-border i:before,
+.form-anim ~ .focus-border i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: #000000;
+  transition: 0.2s;
+}
+
+.form-anim ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  transition-delay: 0.4s;
+}
+
+.form-anim:focus ~ .focus-border:before,
+.form-anim:focus ~ .focus-border:after {
+  width: 100%;
+  transition: 0.2s;
+  transition-delay: 0.6s;
+}
+
+.form-anim:focus ~ .focus-border:after {
+  transition-delay: 0.2s;
+}
+
+.form-anim:focus ~ .focus-border i:before,
+.form-anim:focus ~ .focus-border i:after {
+  height: 100%;
+  transition: 0.2s;
+}
+
+.form-anim:focus ~ .focus-border i:after {
+  transition-delay: 0.4s;
+}
+
 /*=============================*/
 /* navbar styles */
 /*=============================*/
@@ -84,6 +158,10 @@
   background: white;
   position: relative;
   z-index: 5;
+  border-top: solid 0 #ddd8d8;
+  border-right: solid 0 #ddd8d8;
+  border-bottom: solid 2px #ddd8d8;
+  border-left: solid 0 #ddd8d8;
 }
 
 .navbar .logo {
@@ -217,6 +295,10 @@
   transform: translateY(-102%);
   top: 4.4rem;
   z-index: 1;
+  border-top: solid 0 #ddd8d8;
+  border-right: solid 0 #ddd8d8;
+  border-bottom: solid 2px #ddd8d8;
+  border-left: solid 0 #ddd8d8;
 }
 
 .mens-items {
@@ -301,6 +383,7 @@
   color: #00a7a7ce;
   position: relative;
   top: 10px;
+  padding: 2rem 0;
 }
 
 .changer span {
@@ -332,6 +415,10 @@
   transition: ease-in-out 0.3s;
   transform: translateY(-102%);
   z-index: 1;
+  border-top: solid 0 #ddd8d8;
+  border-right: solid 1px #ddd8d8;
+  border-bottom: solid 1px #ddd8d8;
+  border-left: solid 1px #ddd8d8;
 }
 
 .women-items, .ACCESSORIES .accessories-items {
@@ -395,6 +482,10 @@
   transition: ease-in-out 0.3s;
   transform: translateY(-102%);
   z-index: 1;
+  border-top: solid 0 #ddd8d8;
+  border-right: solid 1px #ddd8d8;
+  border-bottom: solid 1px #ddd8d8;
+  border-left: solid 1px #ddd8d8;
 }
 
 .GBP h3 {
@@ -455,6 +546,10 @@
   transition: ease-in-out 0.3s;
   transform: translateY(-103%);
   z-index: 1;
+  border-top: solid 0 #ddd8d8;
+  border-right: solid 1px #ddd8d8;
+  border-bottom: solid 1px #ddd8d8;
+  border-left: solid 1px #ddd8d8;
 }
 
 .LOG h3 {
@@ -469,14 +564,6 @@
   line-height: 2.2;
 }
 
-.LOG .user-info input {
-  height: 2rem;
-  text-align: center;
-  font-weight: 600;
-  outline: none;
-  border-radius: 0;
-}
-
 .LOG .user-info .log-btn {
   display: block;
   height: 2rem;
@@ -486,6 +573,7 @@
   border: none;
   transition: ease-in-out 0.3s;
   padding: 0 20px;
+  letter-spacing: 1.5px;
   margin: 28px 0;
   width: 100%;
   background-color: #ddd8d8;
@@ -511,13 +599,14 @@
   border: none;
   transition: ease-in-out 0.3s;
   padding: 0 20px;
+  letter-spacing: 1.5px;
   width: 100%;
   background-color: #000000;
-  color: #ddd8d8;
+  color: #f4f4f4;
 }
 
 .LOG .user-info button:nth-child(3):hover {
-  background-color: #ddd8d8;
+  background-color: #f4f4f4;
   color: #000000;
 }
 
@@ -533,10 +622,13 @@
   transition: ease-in-out 0.3s;
   padding: 13px 14px;
   font-size: 1rem;
-  border-top: 3px solid #ddd8d8;
   top: 4.4rem;
   transform: translateX(100%);
   z-index: 1;
+  border-top: solid 2px #ddd8d8;
+  border-right: solid 0 #ddd8d8;
+  border-bottom: solid 2px #ddd8d8;
+  border-left: solid 2px #ddd8d8;
 }
 
 .slider-goods .cart-status {
@@ -567,7 +659,7 @@
 /*=============================*/
 .landing-page {
   background: url("/img/WinterSale_HomepageBanner_v3.webp") center/cover no-repeat;
-  height: 90vh;
+  height: 100vh;
   position: relative;
   left: 0;
   width: 100%;
@@ -577,7 +669,7 @@
 
 .landing-page .buy-now {
   background-color: #000000;
-  color: #ddd8d8;
+  color: #f4f4f4;
   text-align: center;
   font-weight: 600;
   padding: 13px 0;
@@ -610,6 +702,7 @@
   border: 1px solid #000000;
   transition: ease-in-out 0.3s;
   padding: 0 20px;
+  letter-spacing: 1.5px;
 }
 
 .shop-btn button:hover {
@@ -660,7 +753,7 @@
 }
 
 .mens-womens .model img:hover {
-  transition: ease-in-out .2s;
+  transition: ease-in-out 0.2s;
   border: 2px solid black;
 }
 
@@ -685,6 +778,7 @@
   border: 1px solid #000000;
   transition: ease-in-out 0.3s;
   padding: 0 20px;
+  letter-spacing: 1.5px;
 }
 
 .mens-womens .title-two button:hover {
@@ -750,6 +844,7 @@
   border: 2px solid white;
   transition: ease-in-out 0.3s;
   padding: 0 20px;
+  letter-spacing: 1.5px;
 }
 
 .agile .agil-content button:hover {
@@ -817,6 +912,209 @@
   width: 100%;
 }
 
+/*=============================*/
+/* Features section */
+/*=============================*/
+.features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.features .feature {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 13rem;
+  width: 20%;
+  text-align: center;
+}
+
+.features .feature h3 {
+  font-family: "Roboto Slab", serif;
+  text-transform: capitalize;
+}
+
+.features .feature h3::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 3rem;
+  background-color: #ddd8d869;
+  position: relative;
+  bottom: 21px;
+  margin: auto;
+  border-radius: 3px;
+}
+
+.features .feature p {
+  color: #787878;
+  font-size: 0.7rem;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.features img {
+  height: 3rem;
+  text-align: center;
+  width: 100%;
+  padding-left: 43%;
+}
+
+/*=============================*/
+/* sign up section */
+/*=============================*/
+.sign {
+  height: 14rem;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sign .sign-title {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
+.sign .sign-title strong {
+  font-weight: bolder;
+  text-shadow: 2px 1px 6px #3d0000;
+  font-size: 2.5rem;
+}
+
+.sign .sign-title p {
+  font-style: italic;
+}
+
+.sign .my-form {
+  position: relative;
+  width: 38%;
+}
+
+.sign input {
+  border-top: solid 0 black;
+  border-right: solid 0 black;
+  border-bottom: solid 1px black;
+  border-left: solid 0 black;
+}
+
+.sign button {
+  display: block;
+  height: 2.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 2px;
+  border: 1px solid #000000;
+  transition: ease-in-out 0.3s;
+  padding: 0 20px;
+  letter-spacing: 1.5px;
+  background-color: #000000;
+  color: #f4f4f4;
+}
+
+.sign button:hover {
+  background-color: #f4f4f4;
+  color: #000000;
+}
+
+footer {
+  display: grid;
+  grid-template-areas: "social about help page sign" "physiq .sponsors sponsors sponsors";
+  grid-gap: 4rem 2rem;
+  padding-top: 3rem;
+  padding-bottom: 0.5rem;
+  line-height: 2;
+  width: 95%;
+  margin: auto;
+  font-size: 0.6rem;
+  justify-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+footer .social-icons {
+  grid-area: social;
+  font-size: 2rem;
+  text-align: center;
+}
+
+footer .social-icons img {
+  height: 2rem;
+}
+
+footer .about-us {
+  grid-area: about;
+  width: 8rem;
+}
+
+footer .help {
+  grid-area: help;
+}
+
+footer .page {
+  grid-area: page;
+}
+
+footer .sign-up {
+  grid-area: sign;
+  font-weight: 700;
+  width: 20rem;
+}
+
+footer .sign-up .my-form {
+  margin: 2rem 0;
+  position: relative;
+  width: 100%;
+}
+
+footer .sign-up input {
+  border-top: solid 1px #a3a3a3;
+  border-right: solid 1px #a3a3a3;
+  border-bottom: solid 1px #a3a3a3;
+  border-left: solid 1px #a3a3a3;
+}
+
+footer .sign-up button {
+  display: block;
+  height: 1.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 2px;
+  border: 1px solid #000000;
+  transition: ease-in-out 0.3s;
+  padding: 0 20px;
+  letter-spacing: 1.5px;
+  background-color: #000000;
+  color: #f4f4f4;
+}
+
+footer .sign-up button:hover {
+  background-color: #f4f4f4;
+  color: #000000;
+}
+
+footer .physic {
+  grid-area: physiq;
+  font-weight: bold;
+}
+
+footer .sponsors {
+  grid-area: sponsors;
+  /* align-self: end; */
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 80%;
+}
+
+footer .sponsors img {
+  height: 1rem;
+}
+
 /*=========================================*/
 /* main styles */
 /*=========================================*/
@@ -830,7 +1128,6 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  height: 6000px;
   overflow-x: hidden;
 }
 

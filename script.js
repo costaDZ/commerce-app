@@ -14,7 +14,7 @@ const bagLogo = document.querySelector(".bag-logo");
 //======= show and hide slider slider ========// 
 bagLogo.addEventListener("click", () => {
     showHide("show");
-    landing.style.filter =  "brightness(0.5)";
+    landing.style.filter = "brightness(0.5)";
 
 });
 
@@ -31,7 +31,7 @@ document.addEventListener("click", (e) => {
 
 function showHide(order) {
     order === "show" ? slider.style.transform = "translateX(0%)"
-    : slider.style.transform = "translateX(100%)" 
+        : slider.style.transform = "translateX(100%)"
     landing.style.filter = "";
 }
 
@@ -40,8 +40,8 @@ function ckeckArea(element) {
     while (element &&
         (element = element.parentElement)
         && element !== document) {
-        if (element.classList.contains("slider-goods") 
-        || element.classList.contains("bag-logo")) {
+        if (element.classList.contains("slider-goods")
+            || element.classList.contains("bag-logo")) {
             return true;
         }
     }
@@ -90,6 +90,7 @@ document.addEventListener("scroll", () => {
         fixeNavbar(navbar, "fixed");
     } else {
         fixeNavbar(navbar, "absolute");
+        navbar.style.position = `${"relative"}`;
     }
 });
 
@@ -120,10 +121,10 @@ document.querySelector("body").addEventListener("mouseover", (e) => {
 
 ///helper function to check the aria of the target [text + content and the classes of parent element]
 function checkElement(target, section) {
-    while(target !== document && (target = target.parentElement)) {
-        for(sec of (section)) {
-            if (target.classList.contains(sec) 
-            || target.textContent === sec){
+    while (target !== document && (target = target.parentElement)) {
+        for (sec of (section)) {
+            if (target.classList.contains(sec)
+                || target.textContent === sec) {
                 return sec;
             }
         }

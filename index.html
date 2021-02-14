@@ -7,8 +7,12 @@
     <title>E-commerce Product</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="style/css/normalize.css">
+    <link rel="stylesheet" href="style/css/navbar.css">
     <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" href="style/css/footer.css">
+
     <script src="script.js" defer></script>
 </head>
 
@@ -17,6 +21,15 @@
     <header class="container">
         <nav class="navbar ">
             <!--------------------first navbar section--------------->
+            <div class="query-icons">
+                <div class="humberg">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
             <ul class="category" role="navigation" aria-label="main menu">
                 <li><a href="mens.html">MENS</a></li>
                 <li><a href="womens.html">WOMENS</a></li>
@@ -31,8 +44,8 @@
             </div>
 
             <!--------------second navbar section----------------->
-            <ul class="activities">
-                <li id="log"><a href="">LOG IN</a></li>
+            <ul class="activities" role="navigation" aria-label="main menu">
+                <li><a id="log" href="">LOG IN</a></li>
                 <li><a href="search.html">SEARCH</a></li>
                 <li><a href="">SIGN IN</a></li>
 
@@ -41,13 +54,22 @@
                     <img src="img/flags/en-flag.jpg" alt="english">GBP<i class="fas fa-angle-down"></i>
                 </li>
                 <!--end contries section-->
+            </ul>
 
-                <!--section for buying conter-->
+
+
+
+            <!--section for buying conter-->
+            <div class="query-icons">
+                <div class="user-icon">
+                    <i class="fas fa-user"></i>
+                </div>
                 <div class="bag-logo">
                     <i class="fas fa-shopping-bag"></i><span id="items-number">0</span>
                 </div>
-                <!--end section for buying conter-->
-            </ul>
+            </div>
+            <!--end section for buying conter-->
+
             <!--------------end second navbar section----------------->
         </nav>
         <!------------------------------------------------start sections----------------------------------------------->
@@ -314,6 +336,9 @@
                 <h3>THERMATEC 2.0</h3>
                 <p>Redefining premium activewear. Fit, comfort and quality out of this world.</p>
             </div>
+            <span class="arrow-right">
+                <i class="fas fa-chevron-right"></i>
+            </span>
             <div class="men-pic">
                 <div class="model"><img src="img/men/men1.jpg" alt=""><span class="des"><strong>ThermaTec Hoodie
                         </strong>- Graphite <span class="prix">£42.50</span></span></div>
@@ -324,11 +349,17 @@
                 <div class="model"><img src="img/men/men4.jpg" alt=""><span class="des"><strong>ThermaTec Hoodie
                         </strong>- Graphite <span class="prix">£42.50</span></span></div>
             </div>
+            <span class="arrow-left">
+                <i class="fas fa-chevron-left"></i>
+            </span>
             <div class="title-two">
                 <h3>COSMIC TIE DYE</h3>
                 <p>Your new favourite set</p>
                 <button>DISCOVER NOW</button>
             </div>
+            <span class="arrow-right">
+                <i class="fas fa-chevron-right"></i>
+            </span>
             <div class="women-pic">
                 <div class="model"><img src="img/men/men5.jpg" alt=""><span class="des"><strong>ThermaTec Hoodie
                         </strong>- Graphite <span class="prix">£42.50</span></span></div>
@@ -339,6 +370,9 @@
                 <div class="model"><img src="img/men/men3.jpg" alt=""><span class="des"><strong>ThermaTec Hoodie
                         </strong>- Graphite <span class="prix">£42.50</span></span></div>
             </div>
+            <span class="arrow-left">
+                <i class="fas fa-chevron-left"></i>
+            </span>
         </section>
         <!--------------end mens-womens----------------->
 
@@ -418,11 +452,13 @@
                     <i></i>
                 </span>
             </div>
+
             <button>Subscribe</button>
+
         </section>
     </main>
 
-    <!-----------------------------------------------------content----------------------------------------------->
+    <!-----------------------------------------------------footer----------------------------------------------->
     <footer>
         <div class="social-icons">
             <div class="log-title"><img src="img/icons/physiq-text-website.webp" alt="logo"></div>
@@ -484,13 +520,19 @@
             <img src="img/sponsores/363_Visa_Credit_Card_logo-512.png" alt="">
             <img src="img/sponsores/amazon.png" alt="">
             <img src="img/sponsores/google.png" alt="">
-            <img src="img/sponsores/kisspng-logo-brand-product-design-font-toys-fix-it-e-store-5bf2417ee73cf8.3255189515426031349472.jpg"alt="">
+            <img src="img/sponsores/kisspng-logo-brand-product-design-font-toys-fix-it-e-store-5bf2417ee73cf8.3255189515426031349472.jpg"
+                alt="">
             <img src="img/sponsores/paypal.png" alt="">
             <img src="img/sponsores/wordpress.png" alt="">
         </div>
     </footer>
-
+    <!-----------------------------------------------------footer----------------------------------------------->
 </body>
 
-
 </html>
+
+
+
+<!-- <i class="fas fa-bars"></i>
+<i class="fas fa-search"></i>
+<i class="fas fa-user"></i> -->

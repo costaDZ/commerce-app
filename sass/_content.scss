@@ -32,6 +32,14 @@
     @include flex(space-around);
     height: 10rem;
 
+    @include small {
+        @include flex(space-around);
+        flex-direction: column;
+    }
+
+    @include mobile {
+    }
+
     button {
         @include setBack($white, hover);
         @include btn(2.8rem, 4px);
@@ -45,13 +53,18 @@
 .mens-womens {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: repeat(2, 8rem 25rem);
-    width: 90%;
+    grid-template-rows: repeat(2);
     margin: auto;
     text-align: center;
     justify-items: center;
     align-items: center;
     line-height: 2;
+    position: relative;
+    grid-row-gap: 4rem;
+
+    @include medium {
+        grid-row-gap: 0;
+    }
 
     p,
     button {
@@ -59,24 +72,47 @@
     }
 
     img {
-        height: 18rem;
+        height: 25vw;
         border-radius: 2px;
         box-shadow: 7px 1px 8px $gray;
+
+        @include medium {
+            width: 43vw;
+            height: 21rem;
+            margin: 0 1rem;
+        }
+
+        @include small {
+            width: 80vw;
+            height: 21rem;
+        }
+
+        @include mobile {
+            height: 12rem;
+        }
     }
 
     .men-pic,
     .women-pic {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+
+        @include medium {
+            transform: translateX(-1.5%);
+            overflow: hidden;
+        }
+
+        @include small {
+            transform: translateX(-14.5%);
+            overflow: hidden;
+        }
     }
 
     .model {
         display: flex;
         flex-direction: column;
         font-size: 0.7rem;
-        width: 22vw;
-        width: 21vw;
+        width: 22%;
         cursor: pointer;
 
         img:hover {
@@ -101,15 +137,61 @@
             @include btn();
         }
     }
+
+    .arrow-right {
+        position: relative;
+        left: 46%;
+        top: 13rem;
+        font-size: 3rem;
+        z-index: 1;
+        display: none;
+        cursor: pointer;
+
+        @include mobile {
+            font-size: 2rem;
+            top: 8rem;
+        }
+    }
+
+    .arrow-left {
+        position: relative;
+        right: 46%;
+        bottom: 16.8rem;
+        font-size: 3rem;
+        z-index: 1;
+        display: none;
+        cursor: pointer;
+
+        @include mobile {
+            font-size: 2rem;
+            bottom: 10.8rem;
+        }
+    }
+
+    /*=================media queries=============*/
+    @include medium {
+        .arrow-right,
+        .arrow-left {
+            display: inline-block;
+        }
+    }
 }
 
 /*=============================*/
-/*mens && womens items */
+/*quote */
 /*=============================*/
 .quote {
     padding: 3rem 4rem;
     line-height: 2;
     text-align: center;
+
+    @include small {
+        padding: 0rem 0.8rem 4rem;
+    }
+
+    //     @include mobile {
+    //        padding: 0rem 0.8rem 4rem;
+    //     }
 
     q {
         font-weight: lighter;
@@ -121,6 +203,12 @@
         display: block;
         font-family: "Roboto Slab", serif;
     }
+
+    /*=================media queries=============*/
+
+    //     @include mobile {
+    //        padding: 0rem 0.8rem 4rem;
+    //     }
 }
 
 /*=============================*/
@@ -139,9 +227,24 @@
     display: flex;
     align-items: center;
 
+    @include small {
+        padding: 5rem 0;
+        text-align: center;
+    }
+
+    @include mobile {
+        font-size: 0.8rem;
+        padding: 2rem 0;
+    }
+
     .agil-content {
         padding-left: 10%;
         width: 50%;
+
+        @include medium {
+            padding-left: 0;
+            width: 100%;
+        }
 
         p {
             font-size: 0.8rem;
@@ -152,21 +255,43 @@
             margin-top: 5px;
             @include setBack(transparent, hover);
             @include btn(2.5rem, 2px, 2px solid $white);
+
+            @include small {
+                margin: auto;
+            }
         }
     }
+
+    /*=================media queries=============*/
 }
+
+/*=============================*/
+/* sales sezction */
+/*=============================*/
 
 .sales {
     @include flex(space-around);
-    margin: 6rem 0;
+    margin: 6rem 0 4rem 0;
     line-height: 2;
     font-family: "Roboto Slab", serif;
 
+    @include small {
+        display: block;
+    }
+
+    @include mobile {
+        font-size: 0.8rem;
+    }
+
     img {
         transition: ease-in-out 0.3s;
-        height: 27rem;
+        height: 43vw;
         border-radius: 2px;
         cursor: pointer;
+
+        @include small {
+            height: 80vw;
+        }
     }
     img:hover {
         @extend .darken;
@@ -198,6 +323,7 @@
     @include flex(space-between);
     width: 90%;
     margin: auto;
+    flex-wrap: wrap;
 
     .feature {
         @include flex(space-evenly);
@@ -227,6 +353,11 @@
             font-size: 0.7rem;
             font-style: italic;
             letter-spacing: 1px;
+
+            @include medium {
+                width: 80%;
+                margin-bottom: 1rem;
+            }
         }
     }
 
@@ -236,15 +367,46 @@
         width: 100%;
         padding-left: 43%;
     }
+
+    /*=================media queries=============*/
+    @include medium {
+        .feature {
+            width: 40%;
+        }
+
+        .feature:nth-child(3n - 2) {
+            background-color: #f1f1f1;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @include small {
+        .feature {
+            width: 80%;
+            margin: auto;
+        }
+    }
+
+    @include mobile {
+        .feature {
+            width: 100%;
+        }
+    }
 }
 
 /*=============================*/
 /* sign up section */
 /*=============================*/
 .sign {
-    height: 14rem;
+    padding: 2rem 0;
     background: $back-light;
     @include flex(space-around);
+
+    @include medium {
+        display: block;
+        text-align: center;
+    }
 
     .sign-title {
         font-size: 1.5rem;
@@ -261,15 +423,31 @@
     .my-form {
         position: relative;
         width: 38%;
-    }
 
-    input {
-        @extend .input;
-        @include border(0, 0, 1px, 0, black);
+        @include medium {
+            margin: 2rem auto;
+            width: 52%;
+        }
+
+        @include medium {
+            width: 80%;
+        }
+
+        input {
+            @extend .input;
+            @include border(0, 0, 1px, 0, black);
+        }
     }
 
     button {
         @include btn();
         @include setBack($black, hover);
+
+        @include medium {
+            margin: auto;
+        }
     }
+
+    /*=================media queries=============*/
+
 }

@@ -13,9 +13,41 @@
     z-index: 5;
     @include border(0, 0, 2px, 0, $gray);
 
+    .humberg {
+        font-size: 1.5rem;
+        display: none;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+
+    .search-icon {
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
+
+    .query-icons {
+        display: flex;
+    }
+
+    .user-icon {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        display: none;
+        cursor: pointer;
+    }
+
     .logo {
         background-color: $gray;
+
+        img {
+            @include mobile {
+                height: 1.4rem;
+            }
+        }
     }
+
+    
     a:not([href="index.html"]) {
         @include lineEffect(4px);
     }
@@ -29,10 +61,6 @@
         li {
             @include flex();
         }
-
-        /* a {
-            @include lineEffect(4px);
-        }*/
 
         & #new {
             background: $cyan;
@@ -58,19 +86,19 @@
         }
     }
     // nabvar second section ========== 02
-    & .activities {
+    .activities {
         @include flex(space-between);
         width: 16rem;
 
-        #log {
-            height: 100px;
-            display: flex;
-        }
+        // #log {
+        //     height: 100px;
+        //     display: flex;
+        // }
 
-        a:first-of-type {
-            @include flex();
-            flex-direction: column;
-        }
+        // a:first-of-type {
+        //     @include flex();
+        //     flex-direction: column;
+        // }
 
         .languges {
             @include flex();
@@ -82,25 +110,52 @@
             }
         }
 
-        .bag-logo {
-            @include flex();
-            font-size: 1.5rem;
-            cursor: pointer;
+    }
 
-            #items-number {
-                background: #f04747f0;
-                color: white;
-                font-size: 1rem;
-                border-radius: 50px;
-                padding: 0px 5px;
-                align-items: center;
-                position: relative;
-                bottom: 10px;
-                right: 4px;
-                font-weight: 700;
-            }
+    .bag-logo {
+        @include flex();
+        font-size: 1.5rem;
+        cursor: pointer;
+
+        #items-number {
+            background: $danger;
+            color: white;
+            font-size: 1rem;
+            border-radius: 50px;
+            padding: 0px 5px;
+            align-items: center;
+            position: relative;
+            bottom: 10px;
+            right: 4px;
+            font-weight: 700;
         }
     }
+
+    /*=================media queries=============*/
+    @include medium {
+        background-color: $white;
+        .humberg,
+        .search-icon {
+            display: block;
+        }
+
+        .category,
+        .activities {
+            display: none;
+        }
+
+        .query-icons {
+            display: flex;
+        }
+
+        .user-icon {
+            display: inline-block;
+        }
+    }
+
+    // @include mobile {
+    //     background-color: rgb(250, 203, 13);
+    // }
 }
 
 /*=============================*/
@@ -109,12 +164,12 @@
 
 .MENS {
     background: white;
-    position: absolute;
+    position: fixed;
     transition: ease-in-out 0.3s;
     width: 100%;
     transform: translateY(-102%);
     top: $navHeight;
-    z-index: 1;
+    // z-index: 1;
     @include border(0, 0, 2px, 0, $gray);
 }
 
@@ -213,10 +268,10 @@
     left: 6.2rem;
     top: $navHeight;
     background: white;
-    position: absolute;
+    position: fixed;
     transition: ease-in-out 0.3s;
     transform: translateY(-102%);
-    z-index: 1;
+    // z-index: 1;
     @include border(0, 1px, 1px, 1px, $gray);
 }
 
@@ -282,13 +337,13 @@
 /* LANG Section */
 /*=============================*/
 .GBP {
-    position: absolute;
+    position: fixed;
     background-color: white;
     top: $navHeight;
     right: 10%;
     transition: ease-in-out 0.3s;
     transform: translateY(-102%);
-    z-index: 1;
+    // z-index: 1;
     @include border(0, 1px, 1px, 1px, $gray);
 
     h3 {
@@ -322,13 +377,13 @@
 /* log in Section */
 /*=============================*/
 .LOG {
-    position: absolute;
+    position: fixed;
     right: 19%;
     top: $navHeight;
     font-size: 0.8rem;
     transition: ease-in-out 0.3s;
     transform: translateY(-103%);
-    z-index: 1;
+    // z-index: 1;
     @include border(0, 1px, 1px, 1px, $gray);
 
     h3 {
@@ -373,7 +428,7 @@
     position: absolute;
     background-color: $white;
     height: 100%;
-    width: 40%;
+    width: 50%;
     right: 0;
     transition: ease-in-out 0.3s;
     padding: 13px 14px;

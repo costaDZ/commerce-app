@@ -1,31 +1,65 @@
 footer {
     display: grid;
     grid-template-areas:
-        "social about help page sign"
-        "physiq .sponsors sponsors sponsors";
+        "social about help page sign  "
+        "physiq .  . sponsors sponsors  ";
     grid-gap: 4rem 2rem;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
     padding-bottom: 0.5rem;
     line-height: 2;
-    width: 95%;
+    width: 85vw;
     margin: auto;
-    font-size: 0.6rem;
-    justify-items: center;
-    justify-content: center;
+    font-size: 0.1rem;
+    justify-content: space-between;
     font-family: "Roboto", sans-serif;
+
+    @include small {
+        grid-gap: 2rem 2rem;
+    }
+
+    @include medium {
+        grid-template-areas:
+            "social about  help"
+            "page sign  sign  "
+            "physiq  sponsors sponsors";
+    }
+
+    @include small {
+        grid-template-areas:
+            "social  social"
+            "about  about"
+            "page  help"
+            "sign  sign"
+            "sponsors  sponsors"
+            "physiq physiq";
+    }
 
     .social-icons {
         grid-area: social;
-        font-size: 2rem;
+        font-size: 1.2rem;
         text-align: center;
+        //   width: 16vw;
         img {
-            height: 2rem;
+            width: 100%;
+
+            @include small {
+                width: 60%;
+            }
+        }
+
+        i:hover {
+            transition: ease-in-out 0.3s;
+            cursor: pointer;
+            color: $danger;
+        }
+
+        @include medium {
+            font-size: 1.8rem;
         }
     }
 
     .about-us {
         grid-area: about;
-        width: 8rem;
     }
 
     .help {
@@ -38,7 +72,13 @@ footer {
     .sign-up {
         grid-area: sign;
         font-weight: 700;
-        width: 20rem;
+        background: $back-light;
+        padding: 1rem;
+        border-radius: 2px;
+
+        @include large {
+            width: 23vw;
+        }
 
         .my-form {
             margin: 2rem 0;
@@ -54,23 +94,31 @@ footer {
         button {
             @include btn(1.5rem);
             @include setBack($black, hover);
+
+            @include small {
+                margin: auto;
+            }
         }
     }
 
     .physic {
         grid-area: physiq;
         font-weight: bold;
+
+        @include medium {
+            width: 100%;
+            text-align: center;
+        }
     }
     .sponsors {
         grid-area: sponsors;
-        /* align-self: end; */
-        display: flex;
-        justify-content: space-between;
-        /* align-items: center; */
-        width: 80%;
+        text-align: center;
 
         img {
-            height: 1rem;
+            height: 0.8rem;
+            margin-right: 0.5rem;
         }
     }
+
+    /*=================media queries=============*/
 }

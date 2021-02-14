@@ -1,0 +1,295 @@
+/*=========================*/
+/* media queries */
+/*=========================*/
+.hover-img {
+  position: relative;
+}
+
+.hover-img::before, .hover-img::after {
+  content: "";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.25em;
+  left: 1.25em;
+  right: 1.25em;
+}
+
+.hover-img::before {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: scale(0, 1);
+  transition: transform ease-out 250ms;
+  width: 60%;
+  margin: auto;
+}
+
+.hover-img:hover::before {
+  cursor: pointer;
+  transform: scale(1, 1);
+}
+
+.hover-img::after {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  transform: scale(1, 0);
+  transition: transform ease-out 250ms;
+  height: 60%;
+  margin: auto;
+}
+
+.hover-img:hover::after {
+  cursor: pointer;
+  transform: scale(1, 1);
+}
+
+.darken {
+  filter: brightness(0.9);
+}
+
+.lis {
+  line-height: 1.8;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+}
+
+.lis::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 0px;
+  transition: ease-in 0.2s;
+}
+
+.lis:hover {
+  transition: 0.8s;
+}
+
+.lis:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
+.input, footer .sign-up input {
+  height: 2rem;
+  font-weight: 600;
+  outline: none;
+  border-radius: 0;
+  padding-left: 2rem;
+  font-style: italic;
+  width: 100%;
+  letter-spacing: 1px;
+  height: 2rem;
+}
+
+.form-anim ~ .focus-border:before,
+.form-anim ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.form-anim ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  right: auto;
+  left: 0;
+  transition-delay: 0.6s;
+}
+
+.form-anim ~ .focus-border i:before,
+.form-anim ~ .focus-border i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: #000000;
+  transition: 0.2s;
+}
+
+.form-anim ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  transition-delay: 0.4s;
+}
+
+.form-anim:focus ~ .focus-border:before,
+.form-anim:focus ~ .focus-border:after {
+  width: 100%;
+  transition: 0.2s;
+  transition-delay: 0.6s;
+}
+
+.form-anim:focus ~ .focus-border:after {
+  transition-delay: 0.2s;
+}
+
+.form-anim:focus ~ .focus-border i:before,
+.form-anim:focus ~ .focus-border i:after {
+  height: 100%;
+  transition: 0.2s;
+}
+
+.form-anim:focus ~ .focus-border i:after {
+  transition-delay: 0.4s;
+}
+
+footer {
+  display: grid;
+  grid-template-areas: "social about help page sign  " "physiq .  . sponsors sponsors  ";
+  grid-gap: 4rem 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 2;
+  width: 85vw;
+  margin: auto;
+  font-size: 0.1rem;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  /*=================media queries=============*/
+}
+
+@media (max-width: 800px) {
+  footer {
+    grid-gap: 2rem 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  footer {
+    grid-template-areas: "social about  help" "page sign  sign  " "physiq  sponsors sponsors";
+  }
+}
+
+@media (max-width: 800px) {
+  footer {
+    grid-template-areas: "social  social" "about  about" "page  help" "sign  sign" "sponsors  sponsors" "physiq physiq";
+  }
+}
+
+footer .social-icons {
+  grid-area: social;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+footer .social-icons img {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  footer .social-icons img {
+    width: 60%;
+  }
+}
+
+footer .social-icons i:hover {
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+  color: #d9534f;
+}
+
+@media (max-width: 1200px) {
+  footer .social-icons {
+    font-size: 1.8rem;
+  }
+}
+
+footer .about-us {
+  grid-area: about;
+}
+
+footer .help {
+  grid-area: help;
+}
+
+footer .page {
+  grid-area: page;
+}
+
+footer .sign-up {
+  grid-area: sign;
+  font-weight: 700;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 2px;
+}
+
+@media (min-width: 1199px) {
+  footer .sign-up {
+    width: 23vw;
+  }
+}
+
+footer .sign-up .my-form {
+  margin: 2rem 0;
+  position: relative;
+  width: 100%;
+}
+
+footer .sign-up input {
+  border-top: solid 1px #a3a3a3;
+  border-right: solid 1px #a3a3a3;
+  border-bottom: solid 1px #a3a3a3;
+  border-left: solid 1px #a3a3a3;
+}
+
+footer .sign-up button {
+  display: block;
+  height: 1.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 2px;
+  border: 1px solid #000000;
+  transition: ease-in-out 0.3s;
+  padding: 0 20px;
+  letter-spacing: 1.5px;
+  background-color: #000000;
+  color: #f4f4f4;
+}
+
+footer .sign-up button:hover {
+  background-color: #f4f4f4;
+  color: #000000;
+}
+
+@media (max-width: 800px) {
+  footer .sign-up button {
+    margin: auto;
+  }
+}
+
+footer .physic {
+  grid-area: physiq;
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  footer .physic {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+footer .sponsors {
+  grid-area: sponsors;
+  text-align: center;
+}
+
+footer .sponsors img {
+  height: 0.8rem;
+  margin-right: 0.5rem;
+}
+/*# sourceMappingURL=footer.css.map */

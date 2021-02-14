@@ -93,3 +93,34 @@
     border-bottom: solid $bottom $color;
     border-left: solid $left $color;
 }
+
+
+/*=========================*/
+   /* media queries */
+/*=========================*/
+@mixin mobile {
+    @media (max-width: 440px) {
+        @content;
+    }
+}
+@mixin small {
+    @media (max-width: 800px) {
+        @content;
+    }
+}
+@mixin medium {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+@mixin large {
+    @media (min-width: 1199px) {
+        @content;
+    }
+}
+
+// @media (max-width: 992px) {}
+
+//     @media (max-width: 768px) {}
+
+//     @media (max-width: 376px) {}

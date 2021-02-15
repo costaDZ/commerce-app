@@ -61,6 +61,7 @@
     line-height: 2;
     position: relative;
     grid-row-gap: 4rem;
+    overflow: hidden;
 
     @include medium {
         grid-row-gap: 0;

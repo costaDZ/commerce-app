@@ -332,6 +332,7 @@
   transition: ease-in-out 0.3s;
   width: 100%;
   transform: translateY(-102%);
+  z-index: 1;
   top: 4.4rem;
   border-top: solid 0 #ddd8d8;
   border-right: solid 0 #ddd8d8;
@@ -445,6 +446,7 @@
 /* WOMEN Section */
 /*=============================*/
 .WOMENS, .ACCESSORIES, .DISCOVER {
+  z-index: 1;
   width: 35rem;
   left: 6.2rem;
   top: 4.4rem;
@@ -493,7 +495,7 @@
 }
 
 .DISCOVER .discover-items img {
-  height: 16rem;
+  height: 10rem;
   width: 100%;
 }
 
@@ -512,6 +514,7 @@
 /* LANG Section */
 /*=============================*/
 .GBP {
+  z-index: 1;
   position: fixed;
   background-color: white;
   top: 4.4rem;
@@ -575,6 +578,7 @@
 /* log in Section */
 /*=============================*/
 .LOG {
+  z-index: 2;
   position: fixed;
   right: 19%;
   top: 4.4rem;
@@ -587,6 +591,13 @@
   border-left: solid 1px #ddd8d8;
 }
 
+@media (max-width: 1200px) {
+  .LOG {
+    width: 100%;
+    right: 0;
+  }
+}
+
 .LOG h3 {
   background: #ddd8d8;
   text-align: center;
@@ -597,6 +608,13 @@
   padding: 16px 20px;
   background: white;
   line-height: 2.2;
+}
+
+@media (max-width: 1200px) {
+  .LOG .user-info form {
+    width: 80%;
+    margin: auto;
+  }
 }
 
 .LOG .user-info .log-btn {
@@ -645,47 +663,7 @@
   color: #000000;
 }
 
-/*=============================*/
-/* slider styles */
-/*=============================*/
-.slider-goods {
-  position: absolute;
-  background-color: white;
-  height: 100%;
-  width: 50%;
-  right: 0;
-  transition: ease-in-out 0.3s;
-  padding: 13px 14px;
-  font-size: 1rem;
-  top: 4.4rem;
-  transform: translateX(100%);
-  z-index: 1;
-  border-top: solid 2px #ddd8d8;
-  border-right: solid 0 #ddd8d8;
-  border-bottom: solid 2px #ddd8d8;
-  border-left: solid 2px #ddd8d8;
-}
-
-.slider-goods .cart-status {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.slider-goods .cart-status span {
-  font-size: 1.4rem;
-}
-
-.slider-goods .cart-status span i:hover {
-  transition: ease-in-out 0.3s;
-  cursor: pointer;
-  color: #d9534f;
-}
-
-.slider-goods .empty-card {
-  height: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.show-log {
+  transform: translateY(0);
 }
 /*# sourceMappingURL=navbar.css.map */

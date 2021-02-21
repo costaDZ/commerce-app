@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="style/css/normalize.css">
-    <link rel="stylesheet" href="style/css/navbar.css">
-    <link rel="stylesheet" href="style/css/style.css">
-    <link rel="stylesheet" href="style/css/footer.css">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/footer.css">
 
     <script src="script.js" defer></script>
 </head>
@@ -44,14 +44,14 @@
             </div>
 
             <!--------------second navbar section----------------->
-            <ul class="activities" role="navigation" aria-label="main menu">
-                <li><a id="log" href="">LOG IN</a></li>
+            <ul class="activities" role="navigation" aria-label="main menu" data-kind="LOG">
+                <li><a id="log"  href="">LOG IN</a></li>
                 <li><a href="search.html">SEARCH</a></li>
                 <li><a href="">SIGN IN</a></li>
 
                 <!--contries section-->
                 <li class="languges">
-                    <img src="img/flags/en-flag.jpg" alt="english">GBP<i class="fas fa-angle-down"></i>
+                    <img src="img/flags/en-flag.jpg" alt="english">GBP <i class="fas fa-angle-down"></i>
                 </li>
                 <!--end contries section-->
             </ul>
@@ -61,7 +61,7 @@
 
             <!--section for buying conter-->
             <div class="query-icons">
-                <div class="user-icon">
+                <div class="user-icon" data-kind="LOG">
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="bag-logo">
@@ -101,7 +101,7 @@
         <!--------------end contries----------------->
 
         <!--------------strat log in----------------->
-        <section class="LOG">
+        <section class="LOG"  data-kind="LOG">
             <h3>My account</h3>
             <div class="user-info">
                 <form action="">
@@ -293,34 +293,73 @@
             </div>
         </section>
         <!--------------end descover----------------->
-
-        <!--------------start slider----------------->
-        <section class="slider-goods">
-            <div class="cart-status">
-                <p>Review Your Cart</p>
-                <p>0 item</p>
-                <span><i class="fas fa-times"></i></span>
-            </div>
-            <div class="empty-card">
-                <p>Your cart is empty</p>
-            </div>
-
-            <div class="show-sells">
-
-            </div>
-
-        </section>
-        <!--------------end slider----------------->
     </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-----------------------------------------------------content----------------------------------------------->
     <!--------------landing-page----------------->
     <section class="landing-page">
+        <!--------------start slider----------------->
+        <section class="slider-goods">
+            <div class="item-section">
+                <div class="cart-status">
+                    <p>Review Your Cart</p>
+                    <p>0 item</p>
+                    <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
+                </div>
+                <div class="empty-card">
+                    <p>Your cart is empty</p>
+                </div>
+                <div class="show-sells">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="menu-list">
+            <div class="menu-section">
+                <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
+                <ul>
+                    <li><a href="mens.html">* MENS</a></li>
+                    <li><a href="womens.html">* WOMENS</a></li>
+                    <li><a href="accessories.html">* ACCESORIES</a><span class="new">New</span></li>
+                    <li><a href="discover.html">* DISCOVER</a></li>
+                    <li><img src="img/flags/en-flag.jpg" alt="english">GBP <i class="fas fa-angle-down"></i></li>
+                    <li><i class="fas fa-user"></i> LOG IN <i class="fas fa-angle-down"></i></li>
+                </ul>
+            </div>
+        </section>
+
+        <!--------------end slider----------------->
         <div class="buy-now">
             <p>Buy now, pay later with Klarna <a href="#">Learn more</a></p>
         </div>
     </section>
     <!--------------end landing-page----------------->
+
+
+
+
+
+
+
 
     <!--------------btns----------------->
     <main>

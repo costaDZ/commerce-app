@@ -6,70 +6,162 @@ const navTitles = document.querySelectorAll(".category li");
 const header = document.querySelector("header");
 const landing = document.querySelector(".landing-page");
 const gbp = document.querySelector(".languges");
+
 const log = document.querySelector("#log");
+const logIcon = document.querySelector(".user-icon");
+const logSection = document.querySelector(".LOG")
 
 const slider = document.querySelector(".slider-goods");
 const bagLogo = document.querySelector(".bag-logo");
 
-//======= show and hide slider slider ========// 
+const menuList = document.querySelector(".menu-list");
+const humberger = document.querySelector(".humberg");
+
+//======= show and hide sliders  ========// 
+let elements = [];
 bagLogo.addEventListener("click", () => {
-    showHide("show");
-    landing.style.filter = "brightness(0.5)";
-
-
+    if (menuList.classList.contains("show")) {
+        showHide(elements[0], elements[1]);
+    }
+    elements[0] = slider;
+    elements[1] = "100%";
+    showHide(slider, "100%");
 });
 
-document.querySelector(".fa-times").addEventListener("click", () => {
-    showHide("hide");
+humberger.addEventListener("click", () => {
+    if (slider.classList.contains("show")) {
+        showHide(elements[0], elements[1]);
+    }
+    elements[0] = menuList;
+    elements[1] = "-100%";
+    showHide(menuList, "-100%");
 });
+
+document.querySelectorAll(".slider-cls").forEach(fa => {
+    fa.addEventListener("click", () => {
+        showHide(elements[0], elements[1]);
+    })
+})
+
+
+
+
+function showHide(target, show, hide = "0") {
+    if (target.classList.contains("show")) {
+        target.style.transform = `translateX(${show})`;
+        target.classList.remove("show");
+    } else {
+        target.style.transform = `translateX(${hide})`;
+        target.classList.add("show");
+    }
+}
+
+
 
 document.addEventListener("click", (e) => {
     let element = e.target;
-    if (!ckeckArea(element)) {
-        showHide("hide");
+
+    if (elements.length > 0) {
+        if (!ckeckArea(element) && (elements[0].classList.contains("show"))) {
+            showHide(elements[0], elements[1]);
+        }
     }
+
+
+
+    // if (element !== log) {
+    //     if (!ckeckArea(element) && logSection.classList.contains("show-log")) {
+    //         logSection.classList.remove("show-log");
+    //     }
+    // }
+
+    // if (!element.classList.contains("fa-user")) {
+    //     if (!ckeckArea(element) && logSection.classList.contains("show-log")) {
+    //         logSection.classList.remove("show-log");
+    //     }
+    // }
+
+
+
+    console.log(ckeckArea(element));
+    console.log(element.dataset.kind);
+
+
+    if ((!ckeckArea(element))) {
+        logSection.classList.remove("show-log");
+    }
+
+
+
+
+
+
+
 });
 
-function showHide(order) {
-    order === "show" ? slider.style.transform = "translateX(0%)"
-        : slider.style.transform = "translateX(100%)"
-    landing.style.filter = "";
-}
 
-/// helper function to check the position of the mouse click
+
+
+
+
+
+// helper function to check the position of the mouse click
 function ckeckArea(element) {
     while (element &&
         (element = element.parentElement)
         && element !== document) {
         if (element.classList.contains("slider-goods")
-            || element.classList.contains("bag-logo")) {
+            || element.classList.contains("humberg")
+            || element.classList.contains("menu-list")
+            || element.classList.contains("bag-logo")
+            || element.dataset.kind == "LOG") {
             return true;
         }
     }
 }
 //======= show and hide slider  ========// 
 
+
 //======= show and hide log in && contries ========// 
 // add evenet to log in btn
 log.addEventListener("click", (e) => {
     e.preventDefault();
-    showTarget(log, ".LOG");
-    log.style.padding = `50px 0`;
+    logSection.classList.toggle("show-log");
+});
 
+logIcon.addEventListener("click", (e) => {
+    logSection.classList.toggle("show-log");
 });
 
 // add event to contries btn
 gbp.addEventListener("click", () => {
     showTarget(gbp, ".GBP");
     gbp.style.height = `100px`;
-
 });
 
 ///callback function
 function showTarget(target, cla) {
-    document.querySelector(`${cla}`).style.cssText = "transform:translateY(0); z-index:1;";
+    document.querySelector(`${cla}`).style.cssText = "transform:translateY(0);";
 }
+
+
+
+
 //======= show and hide log in && contries ========// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //=================== hover lists ========================// 
 // set the section of the nav to an objects
@@ -79,9 +171,9 @@ let section = {
     "ACCESSORIES": document.querySelector(".ACCESSORIES"),
     "DISCOVER": document.querySelector(".DISCOVER"),
     "GBP": document.querySelector(".GBP"),
-    "LOG": document.querySelector(".LOG"),
-};
+    // "LOG": document.querySelector(".LOG"),
 
+};
 
 //======= fixe navbar ========// 
 // fixe vabar and all the elements
@@ -94,6 +186,8 @@ document.addEventListener("scroll", () => {
     } else {
         fixeNavbar(navbar, "absolute");
         navbar.style.position = `${"relative"}`;
+        slider.style.cssText = `top: 0; position:absolute;`
+        menuList.style.cssText = `top: 0; position:absolute;`
     }
 });
 
@@ -103,7 +197,8 @@ function fixeNavbar(navbar, position) {
     //     section[s].style.cssText = `z-index : -1;`;
     // }
     navbar.style.position = `${position}`;
-    slider.style.position = `${position}`;
+    slider.style.cssText = `Top: 4.4rem; position:${position};`
+    menuList.style.cssText = `Top: 4.4rem; position:${position};`
 }
 //======= fixe navbar ========// 
 
@@ -136,9 +231,9 @@ function checkElement(target, section) {
 }
 
 /// helper function to trgger the targe section
-function showSection(test) {
-    if (test) {
-        test.style.cssText = "transform:translateY(0); z-index:1;";
+function showSection(elements) {
+    if (elements) {
+        elements.style.cssText = "transform:translateY(0);";
 
         landing.classList.add("darken");
     }
@@ -147,7 +242,7 @@ function showSection(test) {
 /// helper functio hide all sections 
 function hideSection(section) {
     for (let i in section) {
-        section[i].style.cssText = "z-index:-1; transform:translateY(-103%);";
+        section[i].style.cssText = "transform:translateY(-103%);";
         gbp.style.height = `0`;
         log.style.height = `0`;
     }
@@ -419,9 +514,9 @@ function checkPosition(pos) {
 // }
 
 // /// helper function to trgger the targe section
-// function showSection(test) {
-//     if (test) {
-//         test.style.cssText = "transform:translateY(0); z-index:1;";
+// function showSection(elements) {
+//     if (elements) {
+//         elements.style.cssText = "transform:translateY(0); z-index:1;";
 
 //         landing.classList.add("darken");
 //     }

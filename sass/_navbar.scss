@@ -47,7 +47,6 @@
         }
     }
 
-    
     a:not([href="index.html"]) {
         @include lineEffect(4px);
     }
@@ -109,7 +108,6 @@
                 margin-right: 5px;
             }
         }
-
     }
 
     .bag-logo {
@@ -168,6 +166,7 @@
     transition: ease-in-out 0.3s;
     width: 100%;
     transform: translateY(-102%);
+    z-index: 1;
     top: $navHeight;
     // z-index: 1;
     @include border(0, 0, 2px, 0, $gray);
@@ -264,6 +263,7 @@
 /* WOMEN Section */
 /*=============================*/
 .WOMENS {
+    z-index: 1;
     width: 35rem;
     left: 6.2rem;
     top: $navHeight;
@@ -316,7 +316,7 @@
         }
 
         img {
-            height: 16rem;
+            height: 10rem;
             width: 100%;
         }
     }
@@ -337,6 +337,7 @@
 /* LANG Section */
 /*=============================*/
 .GBP {
+    z-index: 1;
     position: fixed;
     background-color: white;
     top: $navHeight;
@@ -377,6 +378,7 @@
 /* log in Section */
 /*=============================*/
 .LOG {
+    z-index: 2;
     position: fixed;
     right: 19%;
     top: $navHeight;
@@ -385,6 +387,11 @@
     transform: translateY(-103%);
     // z-index: 1;
     @include border(0, 1px, 1px, 1px, $gray);
+
+    @include medium {
+        width: 100%;
+        right: 0;
+    }
 
     h3 {
         background: $gray;
@@ -396,6 +403,13 @@
         padding: 16px 20px;
         background: $white;
         line-height: 2.2;
+
+        form {
+            @include medium {
+                width: 80%;
+                margin: auto;
+            }
+        }
 
         input {
             @extend .input;
@@ -421,37 +435,6 @@
     }
 }
 
-/*=============================*/
-/* slider styles */
-/*=============================*/
-.slider-goods {
-    position: absolute;
-    background-color: $white;
-    height: 100%;
-    width: 50%;
-    right: 0;
-    transition: ease-in-out 0.3s;
-    padding: 13px 14px;
-    font-size: 1rem;
-    top: $navHeight;
-    transform: translateX(100%);
-    z-index: 1;
-    @include border(2px, 0, 2px, 2px, $gray);
-
-    .cart-status {
-        @include flex(space-between);
-        span {
-            font-size: 1.4rem;
-
-            i:hover {
-                transition: ease-in-out 0.3s;
-                cursor: pointer;
-                color: $danger;
-            }
-        }
-    }
-    .empty-card {
-        height: 80%;
-        @include flex();
-    }
+.show-log {
+    transform: translateY(0);
 }

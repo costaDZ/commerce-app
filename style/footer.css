@@ -1,11 +1,74 @@
 /*=========================*/
 /* media queries */
 /*=========================*/
-.hover-img {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+h4 {
+  margin-bottom: 1rem;
+}
+
+.current-page {
+  font-family: "Roboto Slab", serif;
+  width: 100%;
+  background-color: #ddd8d8;
+  color: #000000;
+  text-align: center;
+  font-size: .8rem;
+  position: fixed;
+  top: 4.2rem;
+}
+
+.current-page a {
+  padding: 3px 0;
+  display: inline-block;
+  cursor: pointer;
   position: relative;
 }
 
-.hover-img::before, .hover-img::after {
+.current-page a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 2px;
+  transition: ease-in 0.2s;
+}
+
+.current-page a:hover {
+  transition: 0.8s;
+}
+
+.current-page a:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
+.hover-img, .image {
+  position: relative;
+}
+
+.hover-img::before, .image::before, .hover-img::after, .image::after {
   content: "";
   position: absolute;
   top: 1.25em;
@@ -14,7 +77,7 @@
   right: 1.25em;
 }
 
-.hover-img::before {
+.hover-img::before, .image::before {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   transform: scale(0, 1);
@@ -23,12 +86,12 @@
   margin: auto;
 }
 
-.hover-img:hover::before {
+.hover-img:hover::before, .image:hover::before {
   cursor: pointer;
   transform: scale(1, 1);
 }
 
-.hover-img::after {
+.hover-img::after, .image::after {
   border-left: 2px solid white;
   border-right: 2px solid white;
   transform: scale(1, 0);
@@ -37,7 +100,7 @@
   margin: auto;
 }
 
-.hover-img:hover::after {
+.hover-img:hover::after, .image:hover::after {
   cursor: pointer;
   transform: scale(1, 1);
 }
@@ -77,11 +140,11 @@
   font-weight: 600;
   outline: none;
   border-radius: 0;
-  padding-left: 2rem;
   font-style: italic;
   width: 100%;
   letter-spacing: 1px;
   height: 2rem;
+  text-align: center;
 }
 
 .form-anim ~ .focus-border:before,

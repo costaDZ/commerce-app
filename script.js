@@ -11,6 +11,8 @@ const log = document.querySelector("#log");
 const logIcon = document.querySelector(".user-icon");
 const logSection = document.querySelector(".LOG")
 
+const langSection = document.querySelector(".GBP")
+
 const slider = document.querySelector(".slider-goods");
 const bagLogo = document.querySelector(".bag-logo");
 
@@ -44,8 +46,6 @@ document.querySelectorAll(".slider-cls").forEach(fa => {
 })
 
 
-
-
 function showHide(target, show, hide = "0") {
     if (target.classList.contains("show")) {
         target.style.transform = `translateX(${show})`;
@@ -56,8 +56,40 @@ function showHide(target, show, hide = "0") {
     }
 }
 
+//======= show and hide log in && contries ========// 
+// add evenet to log in btn
+log.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggelClass(logSection);
+});
+
+logIcon.addEventListener("click", () => {
+    toggelClass(logSection);
+});
+
+// add event to contries btn
+gbp.addEventListener("click", () => {
+    toggelClass(langSection);
+});
+
+/*========lang in menu bar======*/
+const menuGbp = document.querySelector("#gbp");
+console.log(menuGbp);
+menuGbp.addEventListener("click", () => {
+    const contries = document.querySelector(".menu-contries")
+    contries.classList.toggle("show-lang")
+    let direction = contries.classList.contains("show-lang") ? "up" : "down";
+    menuGbp.lastElementChild.setAttribute("class", `fas fa-angle-${direction}`);
+})
 
 
+//======= helper functions ========// 
+// toggle classes
+function toggelClass(item) {
+    item.classList.toggle("show-log");
+}
+
+// check the click area in the document
 document.addEventListener("click", (e) => {
     let element = e.target;
 
@@ -67,43 +99,11 @@ document.addEventListener("click", (e) => {
         }
     }
 
-
-
-    // if (element !== log) {
-    //     if (!ckeckArea(element) && logSection.classList.contains("show-log")) {
-    //         logSection.classList.remove("show-log");
-    //     }
-    // }
-
-    // if (!element.classList.contains("fa-user")) {
-    //     if (!ckeckArea(element) && logSection.classList.contains("show-log")) {
-    //         logSection.classList.remove("show-log");
-    //     }
-    // }
-
-
-
-    console.log(ckeckArea(element));
-    console.log(element.dataset.kind);
-
-
-    if ((!ckeckArea(element))) {
+    if ((!checksection(element))) {
         logSection.classList.remove("show-log");
+        langSection.classList.remove("show-log");
     }
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
 
 // helper function to check the position of the mouse click
 function ckeckArea(element) {
@@ -113,54 +113,23 @@ function ckeckArea(element) {
         if (element.classList.contains("slider-goods")
             || element.classList.contains("humberg")
             || element.classList.contains("menu-list")
-            || element.classList.contains("bag-logo")
-            || element.dataset.kind == "LOG") {
+            || element.classList.contains("bag-logo")) {
             return true;
         }
     }
 }
-//======= show and hide slider  ========// 
-
-
-//======= show and hide log in && contries ========// 
-// add evenet to log in btn
-log.addEventListener("click", (e) => {
-    e.preventDefault();
-    logSection.classList.toggle("show-log");
-});
-
-logIcon.addEventListener("click", (e) => {
-    logSection.classList.toggle("show-log");
-});
-
-// add event to contries btn
-gbp.addEventListener("click", () => {
-    showTarget(gbp, ".GBP");
-    gbp.style.height = `100px`;
-});
-
-///callback function
-function showTarget(target, cla) {
-    document.querySelector(`${cla}`).style.cssText = "transform:translateY(0);";
+// helper function to check the position of the mouse click
+function checksection(element) {
+    while (element
+        && (element = element.parentElement)
+        && element !== document
+    ) {
+        if (element.dataset.kind == "GBP"
+            || element.dataset.kind == "LOG") {
+            return true
+        }
+    }
 }
-
-
-
-
-//======= show and hide log in && contries ========// 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //=================== hover lists ========================// 
@@ -169,10 +138,7 @@ let section = {
     "MENS": document.querySelector(".MENS"),
     "WOMENS": document.querySelector(".WOMENS"),
     "ACCESSORIES": document.querySelector(".ACCESSORIES"),
-    "DISCOVER": document.querySelector(".DISCOVER"),
-    "GBP": document.querySelector(".GBP"),
-    // "LOG": document.querySelector(".LOG"),
-
+    "DISCOVER": document.querySelector(".DISCOVER")
 };
 
 //======= fixe navbar ========// 
@@ -180,6 +146,13 @@ let section = {
 document.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar");
     let navHeight = navbar.offsetHeight;
+
+
+    // if (window.pageYOffset > 0 && navHeight + 100 > window.pageYOffset) {
+    //     landing.style.cssText = `z-index : 5;`
+    // } else {
+    //     landing.style.cssText = `z-index : 1;`
+    // }
 
     if (navHeight < window.pageYOffset) {
         fixeNavbar(navbar, "fixed");
@@ -193,9 +166,6 @@ document.addEventListener("scroll", () => {
 
 /// call back function to set the position of navbar
 function fixeNavbar(navbar, position) {
-    // for (s in section) {
-    //     section[s].style.cssText = `z-index : -1;`;
-    // }
     navbar.style.position = `${position}`;
     slider.style.cssText = `Top: 4.4rem; position:${position};`
     menuList.style.cssText = `Top: 4.4rem; position:${position};`
@@ -242,14 +212,10 @@ function showSection(elements) {
 /// helper functio hide all sections 
 function hideSection(section) {
     for (let i in section) {
-        section[i].style.cssText = "transform:translateY(-103%);";
-        gbp.style.height = `0`;
-        log.style.height = `0`;
+        section[i].style.cssText = "transform:translateY(-140%);";
     }
     landing.classList.remove("darken");
 }
-
-
 
 /// helper function to chnge the width of target <li>
 function changeHeight(height) {
@@ -262,35 +228,12 @@ function changeHeight(height) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //======= slider image ========//
 const arrows = document.querySelectorAll(".arrow");
 const imageItems = document.querySelectorAll(".item");
 const bullets = document.querySelectorAll(".bullet");
 
 let getBullet = 1;
-
 // add gay color to an arrow when loading the document
 if (getBullet === 0) arrows[1].style.color = "gray";
 
@@ -364,6 +307,75 @@ function checkPosition(pos) {
         arrows[1].removeAttribute("style");
     }
 }
+
+/*============================================*/
+// body slider image
+/*============================================*/
+
+// errow elements
+const firstArrow_left = document.querySelector(".first-left-arrow");
+const firstArrow_right = document.querySelector(".first-right-arrow");
+const secondArrow_left = document.querySelector(".second-left-arrow");
+const secondArrow_right = document.querySelector(".second-right-arrow");
+// sections
+const firstSection = document.querySelector(".first-pic");
+const secondSection = document.querySelector(".second-pic");
+// current position
+let currentPos = 0;
+
+firstArrow_left.addEventListener("click", (e) => {
+    changeDirection(e.currentTarget)
+})
+
+firstArrow_right.addEventListener("click", (e) => {
+    changeDirection(e.currentTarget)
+})
+
+secondArrow_left.addEventListener("click", (e) => {
+    changeDirection(e.currentTarget)
+})
+
+secondArrow_right.addEventListener("click", (e) => {
+    changeDirection(e.currentTarget)
+})
+
+
+// helper function to change the directios
+function changeDirection(target) {
+    let container_width = firstSection.getBoundingClientRect().width;
+    let distance = container_width / 4;
+
+    if (currentPos === 1 || currentPos === -1) {
+        distance -= distance;
+    } else {
+        currentPos = 0;
+    }
+
+    if (target.classList.contains("first-left-arrow")) {
+        firstSection.style.transform = `translateX(${distance}px)`;
+        currentPos++;
+    } else if (target.classList.contains("first-right-arrow")) {
+        firstSection.style.transform = `translateX(-${distance}px)`;
+        currentPos--;
+    }
+
+    if (target.classList.contains("second-left-arrow")) {
+        secondSection.style.transform = `translateX(${distance}px)`;
+        currentPos++;
+    } else if (target.classList.contains("second-right-arrow")) {
+        secondSection.style.transform = `translateX(-${distance}px)`;
+        currentPos--;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 

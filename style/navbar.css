@@ -77,11 +77,11 @@
   font-weight: 600;
   outline: none;
   border-radius: 0;
-  padding-left: 2rem;
   font-style: italic;
   width: 100%;
   letter-spacing: 1px;
   height: 2rem;
+  text-align: center;
 }
 
 .form-anim ~ .focus-border:before,
@@ -160,7 +160,7 @@
   font-family: "Roboto Slab", serif;
   background: white;
   position: relative;
-  z-index: 5;
+  z-index: 10;
   border-top: solid 0 #ddd8d8;
   border-right: solid 0 #ddd8d8;
   border-bottom: solid 2px #ddd8d8;
@@ -173,6 +173,12 @@
   display: none;
   cursor: pointer;
   margin-right: 1rem;
+}
+
+@media (max-width: 440px) {
+  .navbar .humberg {
+    margin: 0 0.3rem;
+  }
 }
 
 .navbar .search-icon {
@@ -192,8 +198,18 @@
   cursor: pointer;
 }
 
+@media (max-width: 440px) {
+  .navbar .user-icon {
+    margin: 0 0.3rem;
+  }
+}
+
 .navbar .logo {
   background-color: #ddd8d8;
+}
+
+.navbar .logo img {
+  height: 3rem;
 }
 
 @media (max-width: 440px) {
@@ -331,8 +347,8 @@
   position: fixed;
   transition: ease-in-out 0.3s;
   width: 100%;
-  transform: translateY(-102%);
-  z-index: 1;
+  transform: translateY(-135%);
+  z-index: 2;
   top: 4.4rem;
   border-top: solid 0 #ddd8d8;
   border-right: solid 0 #ddd8d8;
@@ -446,14 +462,14 @@
 /* WOMEN Section */
 /*=============================*/
 .WOMENS, .ACCESSORIES, .DISCOVER {
-  z-index: 1;
+  z-index: 2;
   width: 35rem;
   left: 6.2rem;
   top: 4.4rem;
   background: white;
   position: fixed;
   transition: ease-in-out 0.3s;
-  transform: translateY(-102%);
+  transform: translateY(-130%);
   border-top: solid 0 #ddd8d8;
   border-right: solid 1px #ddd8d8;
   border-bottom: solid 1px #ddd8d8;
@@ -520,7 +536,7 @@
   top: 4.4rem;
   right: 10%;
   transition: ease-in-out 0.3s;
-  transform: translateY(-102%);
+  transform: translateY(-130%);
   border-top: solid 0 #ddd8d8;
   border-right: solid 1px #ddd8d8;
   border-bottom: solid 1px #ddd8d8;
@@ -578,13 +594,13 @@
 /* log in Section */
 /*=============================*/
 .LOG {
-  z-index: 2;
   position: fixed;
-  right: 19%;
+  right: 28%;
   top: 4.4rem;
   font-size: 0.8rem;
   transition: ease-in-out 0.3s;
-  transform: translateY(-103%);
+  transform: translateY(-130%);
+  z-index: 1;
   border-top: solid 0 #ddd8d8;
   border-right: solid 1px #ddd8d8;
   border-bottom: solid 1px #ddd8d8;
@@ -608,6 +624,7 @@
   padding: 16px 20px;
   background: white;
   line-height: 2.2;
+  border-bottom: 2px solid #787878;
 }
 
 @media (max-width: 1200px) {

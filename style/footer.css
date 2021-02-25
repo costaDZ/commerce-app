@@ -77,11 +77,11 @@
   font-weight: 600;
   outline: none;
   border-radius: 0;
-  padding-left: 2rem;
   font-style: italic;
   width: 100%;
   letter-spacing: 1px;
   height: 2rem;
+  text-align: center;
 }
 
 .form-anim ~ .focus-border:before,

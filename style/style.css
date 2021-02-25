@@ -77,11 +77,11 @@
   font-weight: 600;
   outline: none;
   border-radius: 0;
-  padding-left: 2rem;
   font-style: italic;
   width: 100%;
   letter-spacing: 1px;
   height: 2rem;
+  text-align: center;
 }
 
 .form-anim ~ .focus-border:before,
@@ -177,14 +177,14 @@
 .slider-goods .empty-card {
   height: 100%;
   text-align: center;
-  line-height: 40rem;
+  line-height: 30rem;
 }
 
 .slider-goods .item-section {
   background-color: white;
   padding: 0 1rem;
   height: 100%;
-  width: 80%;
+  width: 50%;
   margin-left: auto;
 }
 
@@ -260,6 +260,22 @@
 .menu-list .menu-section ul li img {
   height: 25px;
   margin-right: 7px;
+}
+
+.menu-list .menu-contries {
+  overflow: hidden;
+  height: 0rem;
+  transition: 0.3s;
+  background-color: #f4f4f4;
+}
+
+.menu-list .menu-contries li {
+  font-weight: bold;
+}
+
+.menu-list .show-lang {
+  height: 15rem;
+  padding-left: 3rem;
 }
 
 .menu-list .new {
@@ -340,6 +356,12 @@
   }
 }
 
+@media (max-width: 440px) {
+  .shop-btn {
+    font-size: 0.6rem;
+  }
+}
+
 .shop-btn button {
   background-color: white;
   color: #000000;
@@ -396,22 +418,9 @@
 
 @media (max-width: 1200px) {
   .mens-womens img {
-    width: 43vw;
-    height: 21rem;
+    width: 45vw;
+    height: 50vw;
     margin: 0 1rem;
-  }
-}
-
-@media (max-width: 800px) {
-  .mens-womens img {
-    width: 80vw;
-    height: 21rem;
-  }
-}
-
-@media (max-width: 440px) {
-  .mens-womens img {
-    height: 12rem;
   }
 }
 
@@ -419,21 +428,22 @@
 .mens-womens .women-pic {
   display: flex;
   justify-content: space-between;
+  transition: ease-in-out 0.3s;
+  position: relative;
 }
 
 @media (max-width: 1200px) {
   .mens-womens .men-pic,
   .mens-womens .women-pic {
-    transform: translateX(-1.5%);
+    transform: translateX(-0.5%);
     overflow: hidden;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 440px) {
   .mens-womens .men-pic,
   .mens-womens .women-pic {
-    transform: translateX(-14.5%);
-    overflow: hidden;
+    transform: translateX(-0.5%);
   }
 }
 
@@ -441,8 +451,23 @@
   display: flex;
   flex-direction: column;
   font-size: 0.7rem;
-  width: 22%;
   cursor: pointer;
+}
+
+@media (max-width: 440px) {
+  .mens-womens .model {
+    font-size: 0.1rem;
+  }
+}
+
+.mens-womens .model img {
+  margin: 0 .6rem;
+}
+
+@media (max-width: 440px) {
+  .mens-womens .model img {
+    margin: 0 6px;
+  }
 }
 
 .mens-womens .model img:hover {
@@ -458,6 +483,12 @@
   display: block;
   color: #ff8600;
   font-weight: bold;
+}
+
+.mens-womens .title-one,
+.mens-womens .title-two {
+  padding: 2rem 0;
+  line-height: 3;
 }
 
 .mens-womens .title-two button {
@@ -480,36 +511,60 @@
 }
 
 .mens-womens .arrow-right {
-  position: relative;
-  left: 46%;
-  top: 13rem;
+  position: absolute;
+  left: 92%;
+  top: 25%;
   font-size: 3rem;
   z-index: 1;
   display: none;
   cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .mens-womens .arrow-right {
+    font-size: 1.5rem;
+    top: 30%;
+  }
 }
 
 @media (max-width: 440px) {
   .mens-womens .arrow-right {
-    font-size: 2rem;
-    top: 8rem;
+    top: 35%;
   }
 }
 
 .mens-womens .arrow-left {
-  position: relative;
-  right: 46%;
-  bottom: 16.8rem;
+  position: absolute;
+  right: 92%;
+  top: 25%;
   font-size: 3rem;
   z-index: 1;
   display: none;
   cursor: pointer;
 }
 
+@media (max-width: 800px) {
+  .mens-womens .arrow-left {
+    font-size: 1.5rem;
+    top: 30%;
+  }
+}
+
 @media (max-width: 440px) {
   .mens-womens .arrow-left {
-    font-size: 2rem;
-    bottom: 10.8rem;
+    top: 35%;
+  }
+}
+
+.mens-womens .second-left-arrow,
+.mens-womens .second-right-arrow {
+  top: 78%;
+}
+
+@media (max-width: 800px) {
+  .mens-womens .second-left-arrow,
+  .mens-womens .second-right-arrow {
+    top: 82%;
   }
 }
 
@@ -555,7 +610,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
   color: white;
   padding: 5rem 5rem;
   line-height: 2.5;

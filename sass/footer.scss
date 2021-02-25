@@ -1,6 +1,6 @@
-@import "variables";
-@import "mixins";
-@import "global-style";
+@import "./helpers/variables";
+@import "./helpers/mixins";
+@import "./helpers/global-style";
 
 
-@import "footer";
+@import "./component/footer";

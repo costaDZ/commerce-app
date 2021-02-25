@@ -10,10 +10,13 @@
 
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/navbar.css">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/mainPage.css">
     <link rel="stylesheet" href="style/footer.css">
 
-    <script src="script.js" defer></script>
+    <script src="/script/global.js" defer></script>
+    <script src="/script/navbar.js" defer></script>
+    <script src="/script/mainPage.js" defer></script>
+
 </head>
 
 <body>
@@ -26,28 +29,30 @@
                     <i class="fas fa-bars"></i>
                 </div>
                 <div class="search-icon">
-                    <i class="fas fa-search"></i>
+                    <a href="search.html"><i class="fas fa-search"></i></a>
                 </div>
             </div>
 
             <ul class="category" role="navigation" aria-label="main menu">
-                <li><a href="mens.html">MENS</a></li>
+                <li><a href="mens.html">MENS</a></li></a>
                 <li><a href="womens.html">WOMENS</a></li>
-                <li><a href="acccessories.html">ACCESSORIES</a></li>
+                <li><a href="accessories.html">ACCESSORIES</a></li>
                 <li><a href="discover.html">DISCOVER</a></li>
                 <span id="new">New</span>
             </ul>
             <!--------------------end first navbar section--------------->
 
             <div class="logo">
-                <a href="index.html"><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/images/stencil/150x150/download_1_1570204033__07351.original.jpg" alt="logo"></a>
+                <a href="main.html"><img
+                        src="https://cdn11.bigcommerce.com/s-iyqvgyco/images/stencil/150x150/download_1_1570204033__07351.original.jpg"
+                        alt="logo"></a>
             </div>
 
             <!--------------second navbar section----------------->
             <ul class="activities" role="navigation" aria-label="main menu" data-kind="LOG">
                 <li><a id="log" href="">LOG IN</a></li>
                 <li><a href="search.html">SEARCH</a></li>
-                <li><a href="">SIGN IN</a></li>
+                <li><a href="log.html">SIGN IN</a></li>
 
                 <!--contries section-->
                 <li class="languges" data-kind="GBP">
@@ -295,7 +300,63 @@
         <!--------------end descover----------------->
     </header>
 
+    <!--------------start slider----------------->
+    <section class="slider-goods">
+        <div class="item-section">
+            <div class="cart-status">
+                <p>Review Your Cart</p>
+                <p>0 item</p>
+                <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
+            </div>
+            <div class="empty-card">
+                <p>Your cart is empty</p>
+            </div>
+            <div class="show-sells">
+            </div>
+        </div>
+    </section>
 
+
+    <section class="menu-list">
+        <div class="menu-section">
+            <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
+            <ul>
+                <a href="mens.html"><li>* MENS</li></a>
+                <a href="womens.html"><li>* WOMENS</li></a>
+                <a href="accessories.html"><li>* ACCESSORIES<span class="new">New</span></li></a>
+                <a href="discover.html"><li>* DISCOVER</li></a>
+                <a href="log.html"><li><i class="fas fa-user"></i> LOG IN </i></li></a>
+                <li id="gbp">
+                    <img src="img/flags/en-flag.jpg" alt="english">
+                    GBP
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <ul class="menu-contries">
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/dk.gif" alt="canada">
+                        <span>DAN</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/regions/eu.gif"
+                            alt="europe"><span>&nbsp;&nbsp;EUP</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/se.gif" alt="swetland">
+                        <span>SWD</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/jp.gif" alt="japan">
+                        <span>JAP</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/br.gif" alt="brazil">
+                        <span>BRA</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/jp.gif" alt="japan">
+                        <span>JAP</span>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <!--------------end slider----------------->
 
 
 
@@ -303,75 +364,11 @@
     <!-----------------------------------------------------content----------------------------------------------->
     <!--------------landing-page----------------->
     <section class="landing-page">
-        <!--------------start slider----------------->
-        <section class="slider-goods">
-            <div class="item-section">
-                <div class="cart-status">
-                    <p>Review Your Cart</p>
-                    <p>0 item</p>
-                    <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
-                </div>
-                <div class="empty-card">
-                    <p>Your cart is empty</p>
-                </div>
-                <div class="show-sells">
-                </div>
-            </div>
-        </section>
-
-
-        <section class="menu-list">
-            <div class="menu-section">
-                <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
-                <ul>
-                    <li><a href="mens.html">* MENS</a></li>
-                    <li><a href="womens.html">* WOMENS</a></li>
-                    <li><a href="accessories.html">* ACCESORIES</a><span class="new">New</span></li>
-                    <li><a href="discover.html">* DISCOVER</a></li>
-                    <li><i class="fas fa-user"></i> LOG IN </i></li>
-                    <li id="gbp">
-                        <img src="img/flags/en-flag.jpg" alt="english">
-                        GBP
-                        <i class="fas fa-angle-down"></i>
-                    </li>
-
-                    <ul class="menu-contries">
-                        <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/dk.gif" alt="canada">
-                            <span>DAN</span>
-                        </li>
-                        <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/regions/eu.gif"
-                                alt="europe"><span>&nbsp;&nbsp;EUP</span>
-                        </li>
-                        <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/se.gif" alt="swetland">
-                            <span>SWD</span>
-                        </li>
-                        <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/jp.gif" alt="japan">
-                            <span>JAP</span>
-                        </li>
-                        <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/br.gif" alt="brazil">
-                            <span>BRA</span>
-                        </li>
-                        <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/jp.gif" alt="japan">
-                            <span>JAP</span>
-                        </li>
-                    </ul>
-                </ul>
-            </div>
-        </section>
-
-        <!--------------end slider----------------->
         <div class="buy-now">
             <p>Buy now, pay later with Klarna <a href="#">Learn more</a></p>
         </div>
     </section>
     <!--------------end landing-page----------------->
-
-
-
-
-
-
-
 
     <!--------------btns----------------->
     <main>
@@ -579,11 +576,5 @@
     </footer>
     <!-----------------------------------------------------footer----------------------------------------------->
 </body>
-
 </html>
 
-
-
-<!-- <i class="fas fa-bars"></i>
-<i class="fas fa-search"></i>
-<i class="fas fa-user"></i> -->

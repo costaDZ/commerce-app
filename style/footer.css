@@ -23,6 +23,10 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  font-family: "Roboto Slab", serif;
+}
+
 h4 {
   margin-bottom: 1rem;
 }
@@ -32,10 +36,13 @@ h4 {
   width: 100%;
   background-color: #ddd8d8;
   color: #000000;
-  text-align: center;
-  font-size: .8rem;
+  text-align: left;
+  font-size: 0.8rem;
   position: fixed;
+  font-weight: bold;
+  padding-left: 12vw;
   top: 4.2rem;
+  z-index: 1;
 }
 
 .current-page a {

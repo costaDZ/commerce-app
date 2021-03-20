@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: $contentFont;
     overflow-x: hidden;
 }
 
@@ -19,6 +19,9 @@ a {
     color: $black;
     text-decoration: none;
 }
+h2 {
+    font-family: $fancy;
+}
 
 h4 {
     margin-bottom: 1rem;
@@ -29,20 +32,21 @@ h4 {
 }
 
 .current-page {
-    font-family:  "Roboto Slab", serif;
+    font-family: $fancy;
     width: 100%;
     @include setBack($gray);
-    text-align: center;
-    font-size: .8rem;
+    text-align: left;
+    font-size: 0.8rem;
     position: fixed;
+    font-weight: bold;
+    padding-left: 12vw;
     top: 4.2rem;
-
+    z-index: 1;
 
     a {
-            padding: 3px 0;
+        padding: 3px 0;
         display: inline-block;
-        @include lineEffect(2px)
-    
+        @include lineEffect(2px);
     }
 }
 

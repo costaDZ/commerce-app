@@ -1,21 +1,18 @@
 
-//let prevpageUrl = document.referrer;
-let currentPage = window.location.pathname;
+// //let prevpageUrl = document.referrer;
+// let currentPage = window.location.pathname;
 
-
-let currentPageIndex = currentPage.lastIndexOf(".")
-let currentPageName = currentPage.slice(1, currentPageIndex);
-
+// let currentPageIndex = currentPage.lastIndexOf(".")
+// let currentPageName = currentPage.slice(1, currentPageIndex);
 
 
 
-// set the location of the current page
-let locationTitle = document.querySelector(".current-page");
+// // set the location of the current page
+// let locationTitle = document.querySelector(".current-page");
 
-console.log(locationTitle);
+// console.log(currentPageName);
 
-locationTitle.innerHTML = (`<P><a href="main.html">Main Page</a> >> "${currentPageName.toUpperCase()}"</P>`)
-
+// locationTitle.innerHTML = (`<P><a href="main.html">Main Page</a> >> "${currentPageName.toUpperCase()}"</P>`)
 
 
 
@@ -23,10 +20,25 @@ locationTitle.innerHTML = (`<P><a href="main.html">Main Page</a> >> "${currentPa
 
 
 
+// let images = document.querySelector(".image");
 
 
+// document.addEventListener("DOMContentLoaded", () => {
+
+//     if (images) {
+//         console.log(images.firstElementChild);
+//         images.firstElementChild.src = "../img/loading.gif";
+//     }
+// })
 
 
+// window.addEventListener("load", () => {
+//     if (images) {
+//         console.log(images.firstElementChild);
+
+//         images.firstElementChild.src = "https://cdn11.bigcommerce.com/s-iyqvgyco/product_images/uploaded_images/mens-cat-img.jpg"
+//     }
+// })
 
 
 

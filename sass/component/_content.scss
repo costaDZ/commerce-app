@@ -1,4 +1,3 @@
-
 /*=============================*/
 /* landing-page styles */
 /*=============================*/
@@ -128,7 +127,7 @@
         }
 
         img {
-            margin: 0 .6rem;
+            margin: 0 0.6rem;
             @include mobile {
                 margin: 0 6px;
             }
@@ -136,7 +135,7 @@
 
         img:hover {
             transition: ease-in-out 0.2s;
-            border: 2px solid black;
+            padding: 0.4rem;
         }
 
         .des {

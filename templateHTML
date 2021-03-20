@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="style/normalize.css">
-    <link rel="stylesheet" href="style/navbar.css">
-    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="../style/normalize.css">
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/mainPage.css">
+    <link rel="stylesheet" href="../style/footer.css">
 
-    <script src="/script/navbar.js" defer></script>
+    <script src="../script/global.js" defer></script>
+    <script src="../script/navbar.js" defer></script>
+    <script src="../script/mainPage.js" defer></script>
+
 </head>
 
 <body>
@@ -25,21 +29,21 @@
                     <i class="fas fa-bars"></i>
                 </div>
                 <div class="search-icon">
-                    <i class="fas fa-search"></i>
+                    <a href="/cite-pages/search.html"><i class="fas fa-search"></i></a>
                 </div>
             </div>
 
             <ul class="category" role="navigation" aria-label="main menu">
-                <li><a href="mens.html">MENS</a></li>
+                <li><a href="mens.html">MENS</a></li></a>
                 <li><a href="womens.html">WOMENS</a></li>
-                <li><a href="acccessories.html">ACCESSORIES</a></li>
+                <li><a href="accessories.html">ACCESSORIES</a></li>
                 <li><a href="discover.html">DISCOVER</a></li>
                 <span id="new">New</span>
             </ul>
             <!--------------------end first navbar section--------------->
 
             <div class="logo">
-                <a href="index.html"><img
+                <a href="main.html"><img
                         src="https://cdn11.bigcommerce.com/s-iyqvgyco/images/stencil/150x150/download_1_1570204033__07351.original.jpg"
                         alt="logo"></a>
             </div>
@@ -52,7 +56,7 @@
 
                 <!--contries section-->
                 <li class="languges" data-kind="GBP">
-                    <img src="img/flags/en-flag.jpg" alt="english">GBP <i class="fas fa-angle-down"></i>
+                    <img src="../img/flags/en-flag.jpg" alt="english">GBP <i class="fas fa-angle-down"></i>
                 </li>
                 <!--end contries section-->
             </ul>
@@ -153,7 +157,7 @@
                         <div class="style-one item">
                             <!--first style-->
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men1.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men1.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -162,7 +166,7 @@
                         </div>
                         <div class="style-three item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men5.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men5.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -173,7 +177,7 @@
 
                         <div class="style-foor item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men2.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men2.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -183,7 +187,7 @@
 
                         <div class="style-foor item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men3.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men3.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -194,7 +198,7 @@
 
                         <div class="style-five item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men4.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men4.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -317,11 +321,11 @@
         <div class="menu-section">
             <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
             <ul>
-                <li><a href="mens.html">* MENS</a></li>
-                <li><a href="womens.html">* WOMENS</a></li>
-                <li><a href="accessories.html">* ACCESORIES</a><span class="new">New</span></li>
-                <li><a href="discover.html">* DISCOVER</a></li>
-                <li><i class="fas fa-user"></i> LOG IN </i></li>
+                <a href="mens.html"><li>* MENS</li></a>
+                <a href="womens.html"><li>* WOMENS</li></a>
+                <a href="accessories.html"><li>* ACCESSORIES<span class="new">New</span></li></a>
+                <a href="discover.html"><li>* DISCOVER</li></a>
+                <a href="log.html"><li><i class="fas fa-user"></i> LOG IN </i></li></a>
                 <li id="gbp">
                     <img src="img/flags/en-flag.jpg" alt="english">
                     GBP
@@ -353,9 +357,11 @@
     </section>
 
     <!--------------end slider----------------->
-<section style="height: 50rem;">
+    <section style="height: 50rem;">
+        <div class="current-page">
+        </div>
 
-</section>
+    </section>
 
 
 
@@ -370,14 +376,14 @@
                 <i class="fab fa-instagram"></i>
             </div>
         </div>
-    
+
         <div class="about-us">
             <h3>ABOUT US</h3>
             <p>Established in 2013, Physiq Apparel is a leading provider of high quality sportswear.</p>
             <br>
             <p>Established in 2013, Physiq Apparel is a leading provider of high quality sportswear.</p>
         </div>
-    
+
         <div class="help">
             <h3>HELP</h3>
             <ul>
@@ -388,7 +394,7 @@
                 <li>Contact Us</li>
             </ul>
         </div>
-    
+
         <div class="page">
             <h3>PAGE</h3>
             <ul>
@@ -399,21 +405,21 @@
                 <li>Terms & conditions</li>
             </ul>
         </div>
-    
+
         <div class="sign-up">
-    
+
             <p>FOR OUR NEWSLETTER</p>
-    
+
             <div class="my-form">
                 <input class="form-anim input" type="email" placeholder="Email">
                 <span class="focus-border">
                     <i></i>
                 </span>
             </div>
-    
+
             <button>Subscribe</button>
         </div>
-    
+
         <div class="physic">
             <p>© 2021 Physiq Apparel.</p>
         </div>

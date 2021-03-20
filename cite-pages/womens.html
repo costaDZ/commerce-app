@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/style/normalize.css">
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/footer.css">
+
+    <script src="/script/global.js" defer></script>
+    <script src="/script/navbar.js" defer></script>
+</head>
+
+<body>
+    <!-----------------------------------------------------navbar----------------------------------------------->
+    <header class="container">
+        <nav class="navbar ">
+            <!--------------------first navbar section--------------->
+            <div class="query-icons">
+                <div class="humberg">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <ul class="category" role="navigation" aria-label="main menu">
+                <li><a href="/cite-pages/mens.html">MENS</a></li>
+                <li><a href="/cite-pages/womens.html">WOMENS</a></li>
+                <li><a href="/cite-pages/accessories.html">ACCESSORIES</a></li>
+                <li><a href="/cite-pages/discover.html">DISCOVER</a></li>
+                <span id="new">New</span>
+            </ul>
+            <!--------------------end first navbar section--------------->
+
+            <div class="logo">
+                <a href="/main.html"><img
+                        src="https://cdn11.bigcommerce.com/s-iyqvgyco/images/stencil/150x150/download_1_1570204033__07351.original.jpg"
+                        alt="logo"></a>
+            </div>
+
+            <!--------------second navbar section----------------->
+            <ul class="activities" role="navigation" aria-label="main menu" data-kind="LOG">
+                <li><a id="log" href="">LOG IN</a></li>
+                <li><a href="/cite-pages/search.html">SEARCH</a></li>
+                <li><a href="/cite-pages/log.html">SIGN IN</a></li>
+
+                <!--contries section-->
+                <li class="languges" data-kind="GBP">
+                    <img src="/img/flags/en-flag.jpg" alt="english">GBP <i class="fas fa-angle-down"></i>
+                </li>
+                <!--end contries section-->
+            </ul>
+
+
+
+
+            <!--section for buying conter-->
+            <div class="query-icons">
+                <div class="user-icon" data-kind="LOG">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="bag-logo">
+                    <i class="fas fa-shopping-bag"></i><span id="items-number">0</span>
+                </div>
+            </div>
+            <!--end section for buying conter-->
+
+            <!--------------end second navbar section----------------->
+        </nav>
+        <!------------------------------------------------start sections----------------------------------------------->
+
+        <!--------------start contries----------------->
+        <section class="GBP" data-kind="GBP">
+            <h3>Select Contrie</h3>
+            <ul class="contries">
+                <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/dk.gif" alt="canada">
+                    <span>DAN</span>
+                </li>
+                <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/regions/eu.gif"
+                        alt="europe"><span>&nbsp;&nbsp;EUP</span>
+                </li>
+                <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/se.gif" alt="swetland">
+                    <span>SWD</span>
+                </li>
+                <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/jp.gif" alt="japan">
+                    <span>JAP</span>
+                </li>
+                <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/br.gif" alt="brazil">
+                    <span>BRA</span>
+                </li>
+                <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/jp.gif" alt="japan">
+                    <span>JAP</span>
+                </li>
+            </ul>
+        </section>
+        <!--------------end contries----------------->
+
+        <!--------------strat log in----------------->
+        <section class="LOG" data-kind="LOG">
+            <h3>My account</h3>
+            <div class="user-info">
+                <form action="">
+                    <p>Email Address *</p>
+
+                    <input type="email" placeholder=" Email">
+
+                    <p>password *</p>
+                    <input type="password" placeholder="  password">
+                    <button type="submit" class="log-btn">Login</button>
+                </form>
+
+                <p>Forgot your password?</p>
+                <button>Creat a new account</button>
+            </div>
+        </section>
+        <!--------------end log in----------------->
+
+        <!--------------strat mens----------------->
+        <section class="MENS">
+            <div class="mens-items">
+                <ul class="list-one">
+                    <h4>Shop</h4>
+                    <li>T-shirt</li>
+                    <li>Tank-Tops</li>
+                    <li>Strings</li>
+                    <li>Hooclies</li>
+                    <li>Jackets</li>
+                    <li>Shoets</li>
+                </ul>
+
+                <ul class="list-two">
+                    <h4>Collection</h4>
+                    <li>T-shirt</li>
+                    <li>Tank-Tops</li>
+                    <li>Strings</li>
+                    <li>Hooclies</li>
+                    <li>Jackets</li>
+                    <li>Shoets</li>
+                    <li>Hooclies</li>
+                    <li>Jackets</li>
+                    <li>Shoets</li>
+                </ul>
+
+
+                <div class="slider-img">
+                    <div class="discover">
+                        <div class="style-one item">
+                            <!--first style-->
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men1.jpg" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts - Graphic</p>
+                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+                        <div class="style-three item">
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men5.jpg" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts - Graphic</p>
+                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+                        <!--second style-->
+
+                        <div class="style-foor item">
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men2.jpg" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts - Graphic</p>
+                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+
+                        <div class="style-foor item">
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men3.jpg" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts - Graphic</p>
+                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+                        <!--therd style-->
+
+                        <div class="style-five item">
+                            <h4>Editor's Picks</h4>
+                            <img src="img/men/men4.jpg" height="150px" alt="athelete">
+                            <div class="description">
+                                <p>Breathlite Sport Sorts - Graphic</p>
+                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <stong class="details">+ Details</stong>
+                            </div>
+                        </div>
+                        <!--fourth style-->
+                    </div>
+
+                    <div class="changer">
+                        <i class="fas fa-long-arrow-alt-left arrow"></i>
+                        <span class="bullet"></span>
+                        <span class="bullet active"></span>
+                        <span class="bullet"></span>
+                        <span class="bullet"></span>
+                        <i class="fas fa-long-arrow-alt-right arrow"></i>
+                    </div>
+                </div>
+
+                <!--image changer-->
+                <div class="image">
+                    <img src="https://cdn11.bigcommerce.com/s-iyqvgyco/product_images/uploaded_images/mens-cat-img.jpg"
+                        alt="">
+                </div>
+            </div>
+            <!--arrows for change images-->
+        </section>
+        <!--------------end mens----------------->
+
+        <!--------------start women----------------->
+        <section class="WOMENS">
+            <div class="women-items">
+                <ul class="list-one">
+                    <h4>Shop</h4>
+                    <li>T-shirt</li>
+                    <li>Tank-Tops</li>
+                    <li>Strings</li>
+                    <li>Hooclies</li>
+                    <li>Jackets</li>
+                    <li>Shoets</li>
+                </ul>
+
+                <ul class="list-two">
+                    <h4>Collection</h4>
+                    <li>T-shirt</li>
+                    <li>Tank-Tops</li>
+                    <li>Strings</li>
+                    <li>Hooclies</li>
+                    <li>Jackets</li>
+                    <li>Shoets</li>
+                    <li>Hooclies</li>
+                    <li>Jackets</li>
+                    <li>Shoets</li>
+                </ul>
+                <div class="image">
+                    <img src="https://cdn11.bigcommerce.com/s-iyqvgyco/product_images/uploaded_images/womens-cat-img.jpg"
+                        alt="women section">
+                </div>
+            </div>
+        </section>
+        <!--------------end women----------------->
+
+        <!--------------start accessories----------------->
+        <section class="ACCESSORIES">
+            <div class="accessories-items">
+                <ul class="list-one">
+                    <h4>Shop</h4>
+                    <li>T-shirt</li>
+                    <li>Tank-Tops</li>
+                </ul>
+                <div class="image">
+                    <img src="https://cdn11.bigcommerce.com/s-iyqvgyco/product_images/uploaded_images/accessories-cat.jpg"
+                        alt="accesserories section">
+                </div>
+            </div>
+        </section>
+        <!--------------start accessories----------------->
+
+        <!--------------start descover----------------->
+        <section class="DISCOVER">
+            <div class="discover-items">
+                <div class="image"> <img
+                        src="https://cdn11.bigcommerce.com/s-iyqvgyco/product_images/uploaded_images/enlighten-menu.jpg"
+                        alt="athlete"></div>
+                <div class="image"> <img
+                        src="https://cdn11.bigcommerce.com/s-iyqvgyco/product_images/uploaded_images/breathelite-menu.jpg"
+                        alt="athlete"></div>
+                <div class="image"> <img
+                        src="https://cdn11.bigcommerce.com/s-iyqvgyco/product_images/uploaded_images/avid-menu.jpg"
+                        alt="athlete"></div>
+                <div class="image"> <img
+                        src="https://cdn11.bigcommerce.com/s-iyqvgyco/product_images/uploaded_images/mens-cat-img.jpg"
+                        alt="athlete"></div>
+            </div>
+            <div class="more-collection">
+                <a href="#">More Collection</a>
+            </div>
+        </section>
+        <!--------------end descover----------------->
+    </header>
+
+    <!--------------start slider----------------->
+    <section class="slider-goods">
+        <div class="item-section">
+            <div class="cart-status">
+                <p>Review Your Cart</p>
+                <p>0 item</p>
+                <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
+            </div>
+            <div class="empty-card">
+                <p>Your cart is empty</p>
+            </div>
+            <div class="show-sells">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="menu-list">
+        <div class="menu-section">
+            <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
+            <ul>
+                <a href="/cite-pages/mens.html">
+                    <li>* MENS</li>
+                </a>
+                <a href="/cite-pages/womens.html">
+                    <li>* WOMENS</li>
+                </a>
+                <a href="/cite-pages/accessories.html">
+                    <li>* ACCESSORIES<span class="new">New</span></li>
+                </a>
+                <a href="/cite-pages/discover.html">
+                    <li>* DISCOVER</li>
+                </a>
+                <a href="/cite-pages/log.html">
+                    <li><i class="fas fa-user"></i> LOG IN </i></li>
+                </a>
+
+                <li id="gbp">
+                    <img src="img/flags/en-flag.jpg" alt="english">
+                    GBP
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <ul class="menu-contries">
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/dk.gif" alt="canada">
+                        <span>DAN</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/regions/eu.gif"
+                            alt="europe"><span>&nbsp;&nbsp;EUP</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/se.gif" alt="swetland">
+                        <span>SWD</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/jp.gif" alt="japan">
+                        <span>JAP</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/br.gif" alt="brazil">
+                        <span>BRA</span>
+                    </li>
+                    <li><img src="https://cdn11.bigcommerce.com/s-iyqvgyco/lib/flags/jp.gif" alt="japan">
+                        <span>JAP</span>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <!--------------end slider----------------->
+    <section style="height: 50rem;">
+        <div class="current-page">
+        </div>
+
+    </section>
+
+
+
+    <!-----------------------------------------------------footer----------------------------------------------->
+    <footer>
+        <div class="social-icons">
+            <div class="log-title"><img src="img/icons/physiq-text-website.webp" alt="logo"></div>
+            <div class="socials">
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+
+        <div class="about-us">
+            <h3>ABOUT US</h3>
+            <p>Established in 2013, Physiq Apparel is a leading provider of high quality sportswear.</p>
+            <br>
+            <p>Established in 2013, Physiq Apparel is a leading provider of high quality sportswear.</p>
+        </div>
+
+        <div class="help">
+            <h3>HELP</h3>
+            <ul>
+                <li>FAQ</li>
+                <li>Delivery Information</li>
+                <li>Returns Policy</li>
+                <li>Make a Return</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+
+        <div class="page">
+            <h3>PAGE</h3>
+            <ul>
+                <li>Blog</li>
+                <li>Become an ambassador</li>
+                <li>Gift certificates</li>
+                <li>Privacy policy</li>
+                <li>Terms & conditions</li>
+            </ul>
+        </div>
+
+        <div class="sign-up">
+
+            <p>FOR OUR NEWSLETTER</p>
+
+            <div class="my-form">
+                <input class="form-anim input" type="email" placeholder="Email">
+                <span class="focus-border">
+                    <i></i>
+                </span>
+            </div>
+
+            <button>Subscribe</button>
+        </div>
+
+        <div class="physic">
+            <p>© 2021 Physiq Apparel.</p>
+        </div>
+        <div class="sponsors">
+            <img src="img/sponsores/363_Visa_Credit_Card_logo-512.png" alt="">
+            <img src="img/sponsores/amazon.png" alt="">
+            <img src="img/sponsores/google.png" alt="">
+            <img src="img/sponsores/kisspng-logo-brand-product-design-font-toys-fix-it-e-store-5bf2417ee73cf8.3255189515426031349472.jpg"
+                alt="">
+            <img src="img/sponsores/paypal.png" alt="">
+            <img src="img/sponsores/wordpress.png" alt="">
+        </div>
+    </footer>
+    <!-----------------------------------------------------footer----------------------------------------------->
+
+</body>

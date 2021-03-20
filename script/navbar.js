@@ -74,7 +74,6 @@ gbp.addEventListener("click", () => {
 
 /*========lang in menu bar======*/
 const menuGbp = document.querySelector("#gbp");
-console.log(menuGbp);
 menuGbp.addEventListener("click", () => {
     const contries = document.querySelector(".menu-contries")
     contries.classList.toggle("show-lang")
@@ -143,33 +142,33 @@ let section = {
 
 //======= fixe navbar ========// 
 // fixe vabar and all the elements
-document.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
-    let navHeight = navbar.offsetHeight;
+// document.addEventListener("scroll", () => {
+//     const navbar = document.querySelector(".navbar");
+//     let navHeight = navbar.offsetHeight;
 
 
-    // if (window.pageYOffset > 0 && navHeight + 100 > window.pageYOffset) {
-    //     landing.style.cssText = `z-index : 5;`
-    // } else {
-    //     landing.style.cssText = `z-index : 1;`
-    // }
+//     // if (window.pageYOffset > 0 && navHeight + 100 > window.pageYOffset) {
+//     //     landing.style.cssText = `z-index : 5;`
+//     // } else {
+//     //     landing.style.cssText = `z-index : 1;`
+//     // }
 
-    if (navHeight < window.pageYOffset) {
-        fixeNavbar(navbar, "fixed");
-    } else {
-        fixeNavbar(navbar, "absolute");
-        navbar.style.position = `${"relative"}`;
-        slider.style.cssText = `top: 0; position:absolute;`
-        menuList.style.cssText = `top: 0; position:absolute;`
-    }
-});
+//     if (navHeight < window.pageYOffset) {
+//         fixeNavbar(navbar, "fixed");
+//     } else {
+//         fixeNavbar(navbar, "absolute");
+//         navbar.style.position = `${"relative"}`;
+//         slider.style.cssText = `top: 0; position:absolute;`
+//         menuList.style.cssText = `top: 0; position:absolute;`
+//     }
+// });
 
 /// call back function to set the position of navbar
-function fixeNavbar(navbar, position) {
-    navbar.style.position = `${position}`;
-    slider.style.cssText = `Top: 4.4rem; position:${position};`
-    menuList.style.cssText = `Top: 4.4rem; position:${position};`
-}
+// function fixeNavbar(navbar, position) {
+//     navbar.style.position = `${position}`;
+//     slider.style.cssText = `Top: 4.4rem; position:${position};`
+//     menuList.style.cssText = `Top: 4.4rem; position:${position};`
+// }
 //======= fixe navbar ========// 
 
 //======= show lists ========// 
@@ -275,7 +274,7 @@ function changeItem(position) {
         position === 0 ? getBullet -= 1 : getBullet += 1;
     }
     imageItems.forEach(img => {
-        img.style.transform = `translateX(${getBullet * (-200)}%)`;
+        img.style.transform = `translateX(${getBullet * (-180)}%)`;
     });
     clearBullets(getBullet);
     checkPosition(getBullet);

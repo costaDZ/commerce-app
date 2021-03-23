@@ -50,6 +50,12 @@ h4 {
     }
 }
 
+footer a {
+    width: fit-content;
+    display: inline-block;
+    @include lineEffect(.2px);
+}
+
 //========================//
 // image hover style
 //========================//

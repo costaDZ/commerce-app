@@ -71,6 +71,32 @@ h4 {
   width: 100%;
 }
 
+footer a {
+  width: fit-content;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+footer a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 0.2px;
+  transition: ease-in 0.2s;
+}
+
+footer a:hover {
+  transition: 0.8s;
+}
+
+footer a:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
 .hover-img, .image {
   position: relative;
 }

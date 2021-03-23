@@ -4,6 +4,9 @@
 
 .men-items {
     padding: 3rem;
+    position: relative;
+    top: 3em;
+    margin-bottom: 3em;
 
     .section-title {
         @include flex(space-around);
@@ -14,9 +17,10 @@
         }
 
         fieldset {
-            border-radius: 4px;
             font-size: 0.8rem;
-
+            border-top: transparent;
+            border-left: transparent;
+            border-right: transparent;
             select {
                 transition: ease-in-out 0.3s;
                 border-radius: 4px;

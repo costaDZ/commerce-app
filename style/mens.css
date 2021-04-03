@@ -5,7 +5,7 @@
 /* content */
 /*=============================*/
 .men-items {
-  padding: 3rem;
+  padding: 3em 1em;
   position: relative;
   top: 3em;
   margin-bottom: 3em;
@@ -22,11 +22,31 @@
   font-size: 0.8rem;
 }
 
+@media (max-width: 800px) {
+  .men-items .section-title .description {
+    width: 100vw;
+  }
+}
+
 .men-items .section-title fieldset {
   font-size: 0.8rem;
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
+}
+
+@media (max-width: 1200px) {
+  .men-items .section-title fieldset {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .men-items .section-title fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
 }
 
 .men-items .section-title fieldset select {
@@ -45,6 +65,14 @@
   color: #000000;
 }
 
+@media (max-width: 1200px) {
+  .men-items .section-title {
+    text-align: center;
+    flex-direction: column;
+    height: 15em;
+  }
+}
+
 .men-items .items-tabel {
   display: grid;
   grid-gap: 2rem;
@@ -54,8 +82,30 @@
   margin: 4rem 0;
 }
 
-.men-items .items-tabel .single-item {
-  font-size: 0.7rem;
+@media (max-width: 1200px) {
+  .men-items .items-tabel {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: 800px) {
+  .men-items .items-tabel {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 440px) {
+  .men-items .items-tabel {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+@media (max-width: 440px) {
+  .men-items .items-tabel .single-item {
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+  }
 }
 
 .men-items .items-tabel .single-item .img {
@@ -89,11 +139,23 @@
   margin: auto;
 }
 
+@media (max-width: 1200px) {
+  .men-items .items-tabel .single-item .item-info {
+    text-align: center;
+  }
+}
+
 .men-items .items-tabel .single-item .item-info .item-desc {
   font-style: italic;
   background: #f4f4f4;
   padding-left: 0.5em;
   border-radius: 2px;
+}
+
+@media (max-width: 1200px) {
+  .men-items .items-tabel .single-item .item-info .item-desc {
+    font-size: 0.6rem;
+  }
 }
 
 .men-items .items-tabel .single-item .prix {
@@ -116,12 +178,41 @@
   font-size: 1.2rem;
 }
 
+@media (max-width: 1200px) {
+  .men-items .items-tabel .single-item .img:hover .overlay-msg {
+    font-size: 0.8rem;
+  }
+}
+
 .list {
   display: flex;
   justify-content: space-between;
-  font-size: 0.6rem;
   align-items: center;
-  width: 80vw;
+}
+
+@media (max-width: 800px) {
+  .list .img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 440px) {
+  .list .img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 800px) {
+  .list {
+    flex-direction: column;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .list {
+    padding: 1em 0;
+  }
 }
 
 /*=============================*/

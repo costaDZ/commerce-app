@@ -796,12 +796,6 @@ footer a:hover::after {
   font-size: 1rem;
 }
 
-@media (max-width: 800px) {
-  .slider-goods {
-    font-size: 0.6rem;
-  }
-}
-
 .slider-goods .cart-status {
   display: flex;
   justify-content: space-between;
@@ -934,17 +928,20 @@ footer a:hover::after {
 
 @media (max-width: 1200px) {
   .slider-goods .item-section {
-    width: 50%;
+    width: 65%;
   }
 }
 
 @media (max-width: 800px) {
   .slider-goods .item-section {
-    width: 80%;
+    width: 90%;
   }
 }
 
 @media (max-width: 440px) {
+  .slider-goods {
+    font-size: 0.8em;
+  }
   .slider-goods .item-section {
     width: 100%;
   }

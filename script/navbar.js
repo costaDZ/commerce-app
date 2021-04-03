@@ -304,3 +304,101 @@ function checkPosition(pos) {
         arrows[1].removeAttribute("style");
     }
 }
+
+
+
+
+
+
+
+
+// // set the inner Html of chart 
+// function AddChartContent(id, img, title, price) {
+//     chart().innerHTML += `
+//     <section class="chart-items-container" id="${id}">
+//     <section class="chart-item">
+//     <span class="cls-btn cls-item-btn"><i class="fas fa-times slider-cls"></i></span>
+//     <img src=${img} class="chart-item-img" alt="item">
+//     <div class="chart-item-info">
+//     <h5 class="item-title">${title}</h5>
+//     <form class="quantity-form">
+//                 <label for="quantity">Quantity :</label>
+//                 <input type="number" value="1" class="amount-input" min="1" max="20"/>
+//     </form>
+//     <p class="item-price">Item ${price}</p>
+//     <p class="total-price">Total ${price} </p>
+//     </div>
+//     </section>
+//     <div class="btns-section">
+//     <button class="buy-item">Buy Now</button>
+//     <button class="remove-item">Remove</button>
+//     </div>
+//     </section> `
+// }
+
+
+
+
+//let chartAmount = document.querySelector("#items-number");
+// let cartStatus = document.querySelector(".cart-status").children[1];
+
+
+//console.log(chartAmount);
+
+
+// // // helper function get the current items container after every change
+// const chart = () => {
+//     return document.querySelector(".empty-card");
+// }
+
+// // console.log(chartContent());
+
+// // local storage
+// /*============================================*/
+// function addLocalStorage(amount, items) {
+//     let amountInfo = amount;
+//     let chartContent = getCurrentStorage();
+//     chartContent.push(items);
+//     let storageItem = JSON.stringify(chartContent);
+//     localStorage.setItem("content", storageItem);
+//     localStorage.setItem("amount", JSON.stringify(amountInfo));
+// }
+
+// ///// helper function to get the current storage
+// function getCurrentStorage() {
+//     if (localStorage.getItem("content")) {
+//         return JSON.parse(localStorage.getItem("content"));
+//     } else {
+//         return [];
+//     }
+// }
+
+// //delete an item from local storage 
+// function deleteStorageItem(id) {
+//     let amount = JSON.parse(localStorage.getItem("amount"));
+//     let content = JSON.parse(localStorage.getItem("content"));
+//     let newAmount = content.filter(am => {
+//         if (am.id !== id) { return am }
+//     })
+//     localStorage.setItem("content", JSON.stringify(newAmount));
+//     localStorage.setItem("amount", JSON.stringify(amount - 1));
+// }
+
+// /*============================================*/
+// // load local storage 
+// if (localStorage.length) {
+//     let amount = JSON.parse(localStorage.getItem("amount"));
+//     let content = JSON.parse(localStorage.getItem("content"));
+//     if (amount) {
+//         amountNumber = amount;
+//         chartAmount.innerHTML = `${amount}`
+//         chartAmount.style.backgroundColor = "#00a7a7ce"
+//         cartStatus.innerHTML = `${amount} Items`
+//         cartStatus.style.backgroundColor = "#00a7a7ce";
+
+//         for (i of content) {
+//             AddChartContent(i.id, i.img, i.title, i.price);
+//         }
+//     }
+// }
+

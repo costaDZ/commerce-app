@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="../style/mens.css">
     <link rel="stylesheet" href="../style/footer.css">
 
-    <script src="../script/navbar.js" defer></script>
-    <script src="../script/men.js" defer></script>
+    <script src="../script/menData.js" defer></script>
     <script src="../script/global.js" defer></script>
+    <script src="../script/localStorage.js" defer></script>
+    <script src="../script/navbar.js" defer></script>
+    <!-- <script src="../script/global.js" defer></script> -->
 
 </head>
 
@@ -308,8 +310,8 @@
                 <p>0 item</p>
                 <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
             </div>
-            <section class="chart-content">
-            </section>
+            <div class="empty-card">
+            </div>
             <div class="show-sells">
             </div>
         </div>
@@ -404,12 +406,13 @@
         </div>
 
         <div class="pagination">
-            <button class="pagination-left black-focus"><<</button>
-            <div class="numbers">
+            <button class="pagination-left black-focus">
+                << </button>
+                    <div class="numbers">
 
-            </div>
+                    </div>
 
-            <button class="pagination-right">>></button>
+                    <button class="pagination-right">>></button>
 
         </div>
 

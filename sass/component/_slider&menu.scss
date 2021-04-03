@@ -13,9 +13,9 @@
     transition: ease-in-out 0.3s;
     font-size: 1rem;
 
-    @include small {
-        font-size: 0.6rem;
-    }
+    // @include small {
+    //     font-size: 0.6rem;
+    // }
 
     .cart-status {
         @include flex(space-between);
@@ -122,17 +122,18 @@
 
     @include medium {
         .item-section {
-            width: 50%;
+            width: 65%;
         }
     }
 
     @include small {
         .item-section {
-            width: 80%;
+            width: 90%;
         }
     }
 
     @include mobile {
+        font-size: 0.8em;
         .item-section {
             width: 100%;
         }

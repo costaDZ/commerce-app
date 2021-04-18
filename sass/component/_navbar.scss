@@ -77,43 +77,21 @@
         }
 
         & #new {
-            background: $cyan;
+            background: #00a7a7ce;
             color: white;
             padding: 3px 8px;
             font-weight: 700;
             position: relative;
             bottom: 25px;
-            right: 47px;
+            right: 60px;
+            border-radius: 4px;
             letter-spacing: 0.1rem;
-
-            &::after {
-                content: "";
-                border-style: solid;
-                border-width: 8px;
-                border-color: $cyan transparent transparent transparent;
-                height: 0;
-                width: 0;
-                position: absolute;
-                top: 25px;
-                right: 20px;
-            }
         }
     }
     // nabvar second section ========== 02
     .activities {
         @include flex(space-between);
         width: 16rem;
-
-        // #log {
-        //     height: 100px;
-        //     display: flex;
-        // }
-
-        // a:first-of-type {
-        //     @include flex();
-        //     flex-direction: column;
-        // }
-
         .languges {
             @include flex();
             cursor: pointer;

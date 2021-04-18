@@ -99,6 +99,7 @@ footer a:hover::after {
 
 .hover-img, .image {
   position: relative;
+  height: 100%;
 }
 
 .hover-img::before, .image::before, .hover-img::after, .image::after {
@@ -143,6 +144,7 @@ footer a:hover::after {
 }
 
 .lis, .mens-items li, .women-items li, .ACCESSORIES .accessories-items li {
+  font-size: 0.7em;
   line-height: 1.8;
   cursor: pointer;
   position: relative;

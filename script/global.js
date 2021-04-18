@@ -38,20 +38,20 @@ if (sort) {
     function sortList(direction) {
         switch (direction) {
             case "price++":
-                menItems.sort((a, b) => a.price - b.price);
-                loadPages(0, menItems);
+                contenItems.sort((a, b) => a.price - b.price);
+                loadPages(0, contenItems);
                 break;
             case "price--":
-                menItems.sort((a, b) => b.price - a.price);
-                loadPages(0, menItems);
+                contenItems.sort((a, b) => b.price - a.price);
+                loadPages(0, contenItems);
                 break;
             case "alph++":
                 sortingLetter("plus");
-                loadPages(0, menItems);
+                loadPages(0, contenItems);
                 break;
             case "alph--":
                 sortingLetter("mines");
-                loadPages(0, menItems);
+                loadPages(0, contenItems);
                 break;
             default:
                 break;
@@ -59,7 +59,7 @@ if (sort) {
     }
     // helper function for sorting letters A-Z Z-A
     function sortingLetter(direc) {
-        menItems.sort((a, b) => {
+        contenItems.sort((a, b) => {
             if (a.title.toLowerCase() < b.title.toLowerCase() && direc === "plus") {
                 return -1;
             } else if (a.title.toLowerCase() < b.title.toLowerCase() && direc === "mines") {
@@ -109,7 +109,7 @@ function setMainContent(category, item) {
         itemsContainer.innerHTML = "";
         for (let i = category; (i < category + 20 && i < item.length); i++) {
             itemsContainer.innerHTML += `
-    <section class="single-item" id=${item[i].id}>
+    <section class="single-item" id=${item[i].id} data-kind=${item[i].kind}>
     <div class="img">
     <img src="${item[i].img}" alt=${item[i].title} />
     <div class="overlay-msg">Add to chart <i class="fas fa-shopping-cart"></i></div>
@@ -128,20 +128,21 @@ function setMainContent(category, item) {
 
 
 // set the inner Html of chart 
-function AddChartContent(id, img, title, price) {
+function AddChartContent(id, img, title, price, amount, kind) {
+    let color = checkForColor(kind);
     chartContent().innerHTML += `
-    <section class="chart-items-container" id="${id}">
+    <section class="chart-items-container" id="${id}" style=background-color:${color} >
     <section class="chart-item">
-    <span class="cls-btn cls-item-btn"><i class="fas fa-times slider-cls"></i></span>
-    <img src=${img} class="chart-item-img" alt="item">
+    <button class="cls-btn cls-item-btn"><i class="fas fa-times"></i></button>
+    <img src=${img} class="chart-item-img" alt="item"/>
     <div class="chart-item-info">
     <h5 class="item-title">${title}</h5>
     <form class="quantity-form">
                 <label for="quantity">Quantity :</label>
-                <input type="number" value="1" class="amount-input" min="1" max="20"/>
+                <input type="number" value=${amount || 1} class="amount-input" min="1" max="20"/>
     </form>
-    <p class="item-price">Item ${price}</p>
-    <p class="total-price">Total ${price} </p>
+    <p class="item-price">Item Price : ${price} £</p>
+    <p class="total-price">Total Price : ${(Number(price) * (Number(amount) || 1)) || price} £</p>
     </div>
     </section>
     <div class="btns-section">
@@ -151,16 +152,31 @@ function AddChartContent(id, img, title, price) {
     </section> `
 }
 
+// set the color of the item in the chart
+const checkForColor = (targetKind) => {
+    if (targetKind === "men") {
+        return "#e6fcff"
+    } else if (targetKind === "women") {
+        return "#ffd2e9"
+    } else if (targetKind === "accessories") {
+        return "#bfffdf"
+    } else if (targetKind === "discover") {
+        return "#fff6b6"
+    }
+}
 
 
 // function for remove item from chart 
 function getTheItemToRemove(e, Targetbtn) {
+    // e.stopPropagation()
+
     if (Targetbtn.classList.contains("remove-item")) {
         let id = e.target.parentElement.parentElement.id;
         removeItem(e, e.target.parentElement.parentElement, id);
-    } else if (Targetbtn.classList.contains("cls-btn")) {
-        let id = e.target.parentElement.parentElement.parentElement.id;
-        removeItem(e, e.target.parentElement.parentElement.parentElement, id)
+    } else if (Targetbtn.classList.contains("cls-item-btn")) {
+        let id = e.currentTarget.parentElement.parentElement.id;
+        //console.log(e.currentTarget.parentElement.parentElement);
+        removeItem(e, e.currentTarget.parentElement.parentElement, id)
     }
 }
 
@@ -197,7 +213,9 @@ function subAmount() {
 //// function for incraese Btns
 function increaseItems(btn) {
     let originalPriceItem = btn.parentElement.nextElementSibling.textContent;
-    let originalPrice = Number(originalPriceItem.match(/\d+/g).join(""));
+    let originalPrice = Number(originalPriceItem.match(/\d+/g));
+
+    //let originalPrice = Number(originalPriceItem.match(/\d+/g).join(""));
     btn.parentElement.nextElementSibling.nextElementSibling.textContent =
         `Total Price : ${originalPrice * btn.value} £`
 }
@@ -209,10 +227,27 @@ function increaseItems(btn) {
 //const chart = document.querySelector(".chart-content");
 let amountNumber = 0;
 function addToChart(item) {
+
+    // let getAmountFromStorage = JSON.parse(localStorage.getItem("content"));
+
+    // let targetItemAmout = getAmountFromStorage.filter(target => {
+    //     if (target.id === item.id) {
+    //         return target.amount
+    //     }
+    // });
+
+    // console.log(targetItemAmout);
+
+    //if (handelAmounts()) console.log(handelAmounts())
+
     let image = item.firstElementChild.firstElementChild;
     let title = item.children[1].firstElementChild;
-    let price = item.children[1].lastElementChild;
-    AddChartContent(item.id, image.src, title.textContent, price.textContent);
+    let price = item.children[1].lastElementChild.textContent.match(/\d+/g);
+    let amount = 1;
+    let kind = item.dataset.kind;
+
+
+    AddChartContent(item.id, image.src, title.textContent, price, amount, kind);
     addAmount();
     // Add to locale storage
     addLocalStorage(
@@ -221,7 +256,8 @@ function addToChart(item) {
             id: item.id,
             img: image.src,
             title: title.textContent,
-            price: price.textContent
+            price: price[0],
+            kind: kind
         }
     );
 }
@@ -274,12 +310,25 @@ const paginationRight = document.querySelector(".pagination-right");
 let getpage = 0;
 
 // set the bagination numbers of the pages
-
-for (let i = 1; i <= Math.ceil(menItems.length / 20); i++) {
-    if (paginationNum) paginationNum.innerHTML += `<span class="page-number">${i}</span>`
+function setPaginationAndItemsAmount() {
+    let showingItems = 20;
+    for (let i = 1; i <= Math.ceil(contenItems.length / showingItems); i++) {
+        if (paginationNum && (contenItems.length / showingItems > 1)) {
+            if (i === 1) {
+                paginationNum.innerHTML += `<span class="page-number black-focus">${i}</span>`;
+            } else {
+                paginationNum.innerHTML += `<span class="page-number">${i}</span>`;
+            }
+        } else {
+            if (document.querySelector(".pagination")) document.querySelector(".pagination").innerHTML = `<div class="items-status-info"></div>`;
+        }
+    }
+    let status_info = document.querySelector(".items-status-info");
+    if (status_info) status_info.innerHTML =
+        `<small><i><strong>${showingItems}</strong> of <strong>${contenItems.length}</strong> total<i/></small>`
 }
 
-
+setPaginationAndItemsAmount();
 
 if (paginationRight) paginationRight.addEventListener("click", nextPage);
 // next page function
@@ -287,7 +336,7 @@ function nextPage() {
     if (getpage < pagiArray.length - 1) {
         getpage++;
         itemsContainer.innerHTML = "";
-        loadPages(getpage * 20, menItems)
+        loadPages(getpage * 20, contenItems)
     }
     if (getpage === pagiArray.length - 2) {
         paginationRight.classList.add("black-focus");
@@ -304,7 +353,7 @@ function prevPage() {
     if (getpage > 0) {
         getpage--;
         itemsContainer.innerHTML = "";
-        loadPages(getpage * 20, menItems)
+        loadPages(getpage * 20, contenItems)
     }
     checkFocus(paginationLeft);
     checkFocus(paginationRight);
@@ -312,19 +361,27 @@ function prevPage() {
     view === "list" ? styleList("l") : styleList("g");
 }
 
+if (paginationLeft) {
+    if (getpage === 0) {
+        paginationLeft.classList.remove("black-focus");
+        paginationRight.classList.add("black-focus");
+    }
+}
+
 // focus cursores
 function checkFocus(target) {
-    if (target.textContent === "<<") {
+    if (target.classList.contains("pagination-left")) {
+        console.log(true);
         if (getpage === 0) {
-            paginationLeft.classList.add("black-focus");
-        } else {
             paginationLeft.classList.remove("black-focus");
-        }
-    } else if (target.textContent === ">>") {
-        if (getpage === pagiArray.length - 1) {
-            paginationRight.classList.add("black-focus");
         } else {
+            paginationLeft.classList.add("black-focus");
+        }
+    } else {
+        if (getpage === pagiArray.length - 1) {
             paginationRight.classList.remove("black-focus");
+        } else {
+            paginationRight.classList.add("black-focus");
         }
     }
     focusNumbers();
@@ -362,7 +419,7 @@ if (pagiArray) {
             getpage = Number(pagiArray.indexOf(e.currentTarget));
             let itemsNum = 20 * getpage;
             itemsContainer.innerHTML = "";
-            loadPages(itemsNum, menItems);
+            loadPages(itemsNum, contenItems);
             checkFocus(paginationLeft);
             checkFocus(paginationRight);
             getCurrentList()

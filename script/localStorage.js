@@ -1,9 +1,40 @@
-
 // load the current functionality
 window.addEventListener("DOMContentLoaded", () => {
-    loadPages(0, menItems);
+    loadPages(0, contenItems);
     itemsActions(chartContent());
-})
+
+    amountInput();
+    amountInput().forEach(input => {
+        input.addEventListener("click", (input) => {
+            handelAmounts(input.target)
+        });
+    });
+
+
+});
+
+function amountInput() {
+    console.log(Array.prototype.slice.call(document.querySelectorAll(".amount-input")));
+    return Array.prototype.slice.call(document.querySelectorAll(".amount-input"));
+}
+
+amountInput().map(input => {
+    input.addEventListener("click", (input) => {
+        handelAmounts(input)
+    });
+});
+
+
+function handelAmounts(input) {
+    let itemValue = input.value
+    let itemId = input.parentElement.parentElement.parentElement.parentElement.id;
+    editLocalStorage(itemValue, itemId);
+
+    //  return itemValue;
+}
+
+
+
 
 // helper function fo hold item functinality
 function itemsActions(content) {
@@ -13,6 +44,7 @@ function itemsActions(content) {
 
     closeBtns.forEach(btn => {
         btn.addEventListener("click", e => {
+            e.stopPropagation();
             chartContent();
             getTheItemToRemove(e, e.currentTarget);
         })
@@ -44,12 +76,33 @@ function addLocalStorage(amount, items) {
 
 ///// helper function to get the current storage
 function getCurrentStorage() {
+    amountInput();
+
     if (localStorage.getItem("content")) {
         return JSON.parse(localStorage.getItem("content"));
     } else {
         return [];
     }
 }
+
+
+//edit local storage
+function editLocalStorage(value, id) {
+    let currentStorage = getCurrentStorage();
+
+
+    if (currentStorage) {
+        currentStorage = currentStorage.map(item => {
+            if (item.id === id) {
+                item.amount = value;
+            }
+            return item;
+        });
+    }
+    localStorage.setItem("content", JSON.stringify(currentStorage));
+}
+
+
 
 //delete an item from local storage 
 function deleteStorageItem(id) {
@@ -75,7 +128,7 @@ if (localStorage.length) {
         cartStatus.style.backgroundColor = "#00a7a7ce";
 
         for (i of content) {
-            AddChartContent(i.id, i.img, i.title, i.price);
+            AddChartContent(i.id, i.img, i.title, i.price, i.amount, i.kind);
         }
     }
 }

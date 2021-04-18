@@ -626,7 +626,7 @@ footer a:hover::after {
 /* LANG Section */
 /*=============================*/
 .GBP {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   background-color: white;
   top: 4.4rem;
@@ -696,7 +696,7 @@ footer a:hover::after {
   font-size: 0.8rem;
   transition: ease-in-out 0.3s;
   transform: translateY(-130%);
-  z-index: 1;
+  z-index: 2;
   border-top: solid 0 #ddd8d8;
   border-right: solid 1px #ddd8d8;
   border-bottom: solid 1px #ddd8d8;
@@ -825,6 +825,7 @@ footer a:hover::after {
 .slider-goods .item-section .chart-items-container {
   border: 1px solid black;
   margin: 0.2em 0;
+  position: relative;
 }
 
 .slider-goods .item-section .chart-items-container .btns-section {
@@ -874,9 +875,10 @@ footer a:hover::after {
 }
 
 .slider-goods .item-section .cls-item-btn {
-  position: relative;
-  bottom: 10px;
-  left: 91%;
+  position: absolute;
+  padding: 0 0.3em;
+  top: 0px;
+  right: 0.5em;
   font-size: 1.2em;
 }
 
@@ -887,10 +889,12 @@ footer a:hover::after {
 }
 
 .slider-goods .item-section .chart-item .chart-item-info {
+  font-family: "Roboto Slab", serif;
   display: flex;
   flex-direction: column;
   flex: 1;
   justify-content: space-between;
+  padding: 0 0.5em 0;
 }
 
 .slider-goods .item-section .chart-item .chart-item-info .quantity-form {

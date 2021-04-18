@@ -43,6 +43,7 @@
         .chart-items-container {
             border: 1px solid black;
             margin: 0.2em 0;
+            position: relative;
             .btns-section {
                 text-align: center;
 
@@ -63,9 +64,10 @@
         }
 
         .cls-item-btn {
-            position: relative;
-            bottom: 10px;
-            left: 91%;
+            position: absolute;
+            padding: 0 0.3em;
+            top: 0px;
+            right: 0.5em;
             font-size: 1.2em;
         }
 
@@ -75,11 +77,12 @@
             padding: 1em 0;
 
             .chart-item-info {
+                font-family: "Roboto Slab", serif;
                 display: flex;
                 flex-direction: column;
                 flex: 1;
                 justify-content: space-between;
-
+                padding: 0 0.5em 0;
                 .quantity-form {
                     font-size: 0.9em;
                     font-weight: 700;

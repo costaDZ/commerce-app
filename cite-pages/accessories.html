@@ -4,16 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Product</title>
+    <title>E-commerce Men</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="../style/normalize.css">
     <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/globalContentStyle.css">
     <link rel="stylesheet" href="../style/footer.css">
 
-    <script src="/script/global.js" defer></script>
-    <script src="/script/navbar.js" defer></script>
+    <script src="../script/accessoriesData.js" defer></script>
+    <script src="../script/global.js" defer></script>
+    <script src="../script/localStorage.js" defer></script>
+    <script src="../script/navbar.js" defer></script>
+    <!-- <script src="../script/global.js" defer></script> -->
+
 </head>
 
 <body>
@@ -26,21 +31,21 @@
                     <i class="fas fa-bars"></i>
                 </div>
                 <div class="search-icon">
-                    <i class="fas fa-search"></i>
+                    <a href="/cite-pages/search.html"><i class="fas fa-search"></i></a>
                 </div>
             </div>
 
             <ul class="category" role="navigation" aria-label="main menu">
-                <li><a href="mens.html">MENS</a></li>
-                <li><a href="cite-pages/womens.html">WOMENS</a></li>
-                <li><a href="cite-pages/accessories.html">ACCESSORIES</a></li>
-                <li><a href="xwfcvsdw.html">DISCOVER</a></li>
+                <li><a href="mens.html">MENS</a></li></a>
+                <li><a href="womens.html">WOMENS</a></li>
+                <li><a href="accessories.html">ACCESSORIES</a></li>
+                <li><a href="discover.html">DISCOVER</a></li>
                 <span id="new">New</span>
             </ul>
             <!--------------------end first navbar section--------------->
 
             <div class="logo">
-                <a href="/main.html"><img
+                <a href="main.html"><img
                         src="https://cdn11.bigcommerce.com/s-iyqvgyco/images/stencil/150x150/download_1_1570204033__07351.original.jpg"
                         alt="logo"></a>
             </div>
@@ -48,12 +53,12 @@
             <!--------------second navbar section----------------->
             <ul class="activities" role="navigation" aria-label="main menu" data-kind="LOG">
                 <li><a id="log" href="">LOG IN</a></li>
-                <li><a href="/cite-pages/search.html">SEARCH</a></li>
-                <li><a href="/cite-pages/log.html">SIGN IN</a></li>
+                <li><a href="search.html">SEARCH</a></li>
+                <li><a href="log.html">SIGN IN</a></li>
 
                 <!--contries section-->
                 <li class="languges" data-kind="GBP">
-                    <img src="/img/flags/en-flag.jpg" alt="english">GBP <i class="fas fa-angle-down"></i>
+                    <img src="../img/flags/en-flag.jpg" alt="english">GBP <i class="fas fa-angle-down"></i>
                 </li>
                 <!--end contries section-->
             </ul>
@@ -154,7 +159,7 @@
                         <div class="style-one item">
                             <!--first style-->
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men1.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men1.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -163,7 +168,7 @@
                         </div>
                         <div class="style-three item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men5.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men5.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -174,7 +179,7 @@
 
                         <div class="style-foor item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men2.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men2.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -184,7 +189,7 @@
 
                         <div class="style-foor item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men3.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men3.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -195,7 +200,7 @@
 
                         <div class="style-five item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men4.jpg" height="150px" alt="athelete">
+                            <img src="../img/men/men4.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
                                 <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
@@ -306,7 +311,6 @@
                 <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
             </div>
             <div class="empty-card">
-                <p>Your cart is empty</p>
             </div>
             <div class="show-sells">
             </div>
@@ -318,24 +322,23 @@
         <div class="menu-section">
             <span class="cls-btn"><i class="fas fa-times slider-cls"></i></span>
             <ul>
-                <a href="/cite-pages/mens.html">
+                <a href="mens.html">
                     <li>* MENS</li>
                 </a>
-                <a href="/cite-pages/womens.html">
+                <a href="womens.html">
                     <li>* WOMENS</li>
                 </a>
-                <a href="/cite-pages/accessories.html">
+                <a href="accessories.html">
                     <li>* ACCESSORIES<span class="new">New</span></li>
                 </a>
-                <a href="/cite-pages/discover.html">
+                <a href="discover.html">
                     <li>* DISCOVER</li>
                 </a>
-                <a href="/cite-pages/log.html">
+                <a href="log.html">
                     <li><i class="fas fa-user"></i> LOG IN </i></li>
                 </a>
-
                 <li id="gbp">
-                    <img src="img/flags/en-flag.jpg" alt="english">
+                    <img src="../img/flags/en-flag.jpg" alt="english">
                     GBP
                     <i class="fas fa-angle-down"></i>
                 </li>
@@ -364,19 +367,91 @@
         </div>
     </section>
 
-    <!--------------end slider----------------->
-    <section style="height: 50rem;">
-        <div class="current-page">
+
+
+
+    <!-----------------------------------------------------content----------------------------------------------->
+
+    <div class="current-page">
+        <P><a href="main.html">Main Page</a> / ACCESSORIES</P>
+    </div>
+
+    <section class="items-container">
+        <div class="section-title">
+            <div class="description">
+                <h2>ACCESSORIES</h2>
+                <P>The original & best gym and lifestyle
+                    wear designed with a tapered fit.</P>
+            </div>
+            <fieldset>
+                <label for="view">View as:</label>
+                <select name="viewlist" id="view">
+                    <option value="grid">Grid</option>
+                    <option value="list">List</option>
+                </select>
+
+                <label for="sort">Sort by:</label>
+                <select name="viewlist" id="sort">
+                    <option value="rundom">Choose one :</option>
+                    <option value="alph++">Alphebet : A-Z</option>
+                    <option value="alph--">Alphebet : Z-A </option>
+                    <option value="price++">price: Ascending ++</option>
+                    <option value="price--">price: Descending --</option>
+                </select>
+            </fieldset>
+        </div>
+
+        <div class="items-tabel">
+
+        </div>
+
+        <div class="pagination">
+            <button class="pagination-left black-focus">
+                << </button>
+                    <div class="numbers">
+
+                    </div>
+
+                    <button class="pagination-right">>></button>
+                    <div class="items-status-info"></div>
+
         </div>
 
     </section>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-----------------------------------------------------footer----------------------------------------------->
     <footer>
         <div class="social-icons">
-            <div class="log-title"><img src="img/icons/physiq-text-website.webp" alt="logo"></div>
+            <div class="log-title"><img src="../img/icons/physiq-text-website.webp" alt="logo"></div>
             <div class="socials">
                 <i class="fab fa-youtube"></i>
                 <i class="fab fa-facebook"></i>
@@ -432,13 +507,13 @@
             <p>© 2021 Physiq Apparel.</p>
         </div>
         <div class="sponsors">
-            <img src="img/sponsores/363_Visa_Credit_Card_logo-512.png" alt="">
-            <img src="img/sponsores/amazon.png" alt="">
-            <img src="img/sponsores/google.png" alt="">
-            <img src="img/sponsores/kisspng-logo-brand-product-design-font-toys-fix-it-e-store-5bf2417ee73cf8.3255189515426031349472.jpg"
+            <img src="../img/sponsores/363_Visa_Credit_Card_logo-512.png" alt="">
+            <img src="../img/sponsores/amazon.png" alt="">
+            <img src="../img/sponsores/google.png" alt="">
+            <img src="../img/sponsores/kisspng-logo-brand-product-design-font-toys-fix-it-e-store-5bf2417ee73cf8.3255189515426031349472.jpg"
                 alt="">
-            <img src="img/sponsores/paypal.png" alt="">
-            <img src="img/sponsores/wordpress.png" alt="">
+            <img src="../img/sponsores/paypal.png" alt="">
+            <img src="../img/sponsores/wordpress.png" alt="">
         </div>
     </footer>
     <!-----------------------------------------------------footer----------------------------------------------->

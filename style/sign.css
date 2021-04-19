@@ -1,0 +1,327 @@
+/*=========================*/
+/* media queries */
+/*=========================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+}
+
+h4 {
+  margin-bottom: 1rem;
+}
+
+.current-page {
+  font-family: "Roboto Slab", serif;
+  width: 100%;
+  background-color: #ddd8d8;
+  color: #000000;
+  text-align: left;
+  font-size: 0.8rem;
+  position: fixed;
+  font-weight: bold;
+  padding-left: 12vw;
+  top: 4.2rem;
+  z-index: 1;
+}
+
+.current-page a {
+  padding: 3px 0;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.current-page a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 2px;
+  transition: ease-in 0.2s;
+}
+
+.current-page a:hover {
+  transition: 0.8s;
+}
+
+.current-page a:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
+footer a {
+  width: fit-content;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+footer a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 0.2px;
+  transition: ease-in 0.2s;
+}
+
+footer a:hover {
+  transition: 0.8s;
+}
+
+footer a:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
+.hover-img, .image {
+  position: relative;
+  height: 100%;
+}
+
+.hover-img::before, .image::before, .hover-img::after, .image::after {
+  content: "";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.25em;
+  left: 1.25em;
+  right: 1.25em;
+}
+
+.hover-img::before, .image::before {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: scale(0, 1);
+  transition: transform ease-out 250ms;
+  width: 60%;
+  margin: auto;
+}
+
+.hover-img:hover::before, .image:hover::before {
+  cursor: pointer;
+  transform: scale(1, 1);
+}
+
+.hover-img::after, .image::after {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  transform: scale(1, 0);
+  transition: transform ease-out 250ms;
+  height: 60%;
+  margin: auto;
+}
+
+.hover-img:hover::after, .image:hover::after {
+  cursor: pointer;
+  transform: scale(1, 1);
+}
+
+.darken {
+  filter: brightness(0.9);
+}
+
+.lis {
+  font-size: 0.7em;
+  line-height: 1.8;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+}
+
+.lis::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: relative;
+  top: 0px;
+  transition: ease-in 0.2s;
+}
+
+.lis:hover {
+  transition: 0.8s;
+}
+
+.lis:hover::after {
+  background-color: #000000;
+  width: 100%;
+}
+
+.input {
+  height: 2rem;
+  font-weight: 600;
+  outline: none;
+  border-radius: 0;
+  font-style: italic;
+  width: 100%;
+  letter-spacing: 1px;
+  height: 2rem;
+  text-align: center;
+}
+
+.form-anim ~ .focus-border:before,
+.form-anim ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.form-anim ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  right: auto;
+  left: 0;
+  transition-delay: 0.6s;
+}
+
+.form-anim ~ .focus-border i:before,
+.form-anim ~ .focus-border i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: #000000;
+  transition: 0.2s;
+}
+
+.form-anim ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  transition-delay: 0.4s;
+}
+
+.form-anim:focus ~ .focus-border:before,
+.form-anim:focus ~ .focus-border:after {
+  width: 100%;
+  transition: 0.2s;
+  transition-delay: 0.6s;
+}
+
+.form-anim:focus ~ .focus-border:after {
+  transition-delay: 0.2s;
+}
+
+.form-anim:focus ~ .focus-border i:before,
+.form-anim:focus ~ .focus-border i:after {
+  height: 100%;
+  transition: 0.2s;
+}
+
+.form-anim:focus ~ .focus-border i:after {
+  transition-delay: 0.4s;
+}
+
+.section-title {
+  line-height: 7em;
+}
+
+@media (max-width: 800px) {
+  .section-title {
+    text-align: center;
+  }
+}
+
+.form-container {
+  padding: 3em 4em;
+  position: relative;
+  top: 3em;
+  margin-bottom: 3em;
+}
+
+@media (max-width: 800px) {
+  .form-container {
+    padding: 3em 1em;
+  }
+}
+
+.form-container .user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+}
+
+@media (max-width: 800px) {
+  .form-container .user-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-container .user-info .user-single-info label {
+  margin-bottom: 0.4em;
+  display: block;
+  font-size: 0.4em;
+  font-weight: 700;
+}
+
+.form-container .user-info .user-single-info .anim-wrapper {
+  position: relative;
+  height: 2em;
+}
+
+.form-container .user-info .user-single-info .anim-wrapper .sign-input {
+  padding-left: 1em;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border-top: solid 1px #a3a3a3;
+  border-right: solid 1px #a3a3a3;
+  border-bottom: solid 1px #a3a3a3;
+  border-left: solid 1px #a3a3a3;
+  font-size: 0.5em;
+}
+
+.form-container .sign-btn {
+  display: block;
+  height: 2.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 2px;
+  border: 1px solid #000000;
+  transition: ease-in-out 0.3s;
+  padding: 0 20px;
+  letter-spacing: 1.5px;
+  font-family: "Roboto Slab", serif;
+  font-size: 0.8em;
+  width: fit-content;
+  background-color: black;
+  color: #f4f4f4;
+}
+
+.form-container .sign-btn:hover {
+  background-color: #f4f4f4;
+  color: black;
+}
+/*# sourceMappingURL=sign.css.map */

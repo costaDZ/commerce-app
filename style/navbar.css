@@ -280,13 +280,17 @@ footer a:hover::after {
 }
 
 .navbar .search-icon {
-  font-size: 1.5rem;
+  font-size: 2em;
   cursor: pointer;
   display: none;
 }
 
 .navbar .query-icons {
   display: flex;
+}
+
+.navbar .query-icons img {
+  height: 1.5em;
 }
 
 .navbar .user-icon {
@@ -308,12 +312,6 @@ footer a:hover::after {
 
 .navbar .logo img {
   height: 3rem;
-}
-
-@media (max-width: 440px) {
-  .navbar .logo img {
-    height: 1.4rem;
-  }
 }
 
 .navbar a:not([href="index.html"]) {

@@ -17,7 +17,7 @@ const chartContent = () => {
 //===============================//
 const displayInput = document.querySelector("#view");
 let windowWidth = window.innerWidth;
-if (windowWidth < 700) {
+if (windowWidth < 700 && displayInput === true) {
     displayInput.children[0].textContent = "hide Details";
     displayInput.children[1].textContent = "Show Details";
     displayInput.previousElementSibling.textContent = "Show / Hide details"

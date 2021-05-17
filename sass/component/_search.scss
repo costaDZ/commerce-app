@@ -1,0 +1,88 @@
+/*-----------input animation--------*/
+:focus {
+    outline: none;
+}
+.search-form {
+    float: left;
+    width: 50%;
+    margin: 40px 3%;
+    position: relative;
+
+    @include small {
+        width: 80%;
+    }
+}
+input[type="search"] {
+    color: #333;
+    width: 100%;
+    letter-spacing: 1px;
+    padding-left: 1em;
+}
+
+.effect-holder {
+    border: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+.effect-holder ~ .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $black;
+    transition: 0.4s;
+}
+.effect-holder:focus ~ .focus-border {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.search-form-container {
+    @include flex();
+    padding: 2em 0;
+}
+/**********************************/
+
+.search-btn {
+    @include btn($border: none);
+    background-color: transparent;
+    outline: none;
+    color: $text-light;
+    font-size: 1.5em;
+
+    &:hover {
+        color: $black;
+    }
+}
+
+.error-msg {
+    color: $danger;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 44px;
+    font-size: 16px;
+    font-weight: 700;
+    display: none;
+}
+
+.search-tabel {
+    @include flex(center);
+
+    h4 {
+        font-size: 2em;
+        color: $text-light;
+        min-height: 5em;
+    }
+}
+
+//.close-search-btn {
+//     @extend .search-btn;
+//     position: absolute;
+//     top: 4em;
+//     right: 3em;
+//     z-index: 9;
+// }

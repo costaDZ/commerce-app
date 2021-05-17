@@ -7,13 +7,16 @@
     <title>E-commerce Product</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../style/normalize.css">
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="../style/sign.css">
 
-    <link rel="stylesheet" href="/style/normalize.css">
-    <link rel="stylesheet" href="/style/navbar.css">
-    <link rel="stylesheet" href="/style/footer.css">
-
-    <script src="/script/global.js" defer></script>
-    <script src="/script/navbar.js" defer></script>
+    <script src="../script/data/menData.js" defer></script>
+    <script src="../script/global.js" defer></script>
+    <script src="../script/pagination.js" defer></script>
+    <script src="../script/localStorage.js" defer></script>
+    <script src="../script/navbar.js" defer></script>
 </head>
 
 <body>
@@ -23,17 +26,19 @@
             <!--------------------first navbar section--------------->
             <div class="query-icons">
                 <div class="humberg">
-                    <i class="fas fa-bars"></i>
+                    <img src="../img/icons/menu-64.png" alt="menu">
                 </div>
                 <div class="search-icon">
-                    <i class="fas fa-search"></i>
+                    <a href="search.html">
+                        <img src="../img/icons/loupe.png" alt="loupe">
+                    </a>
                 </div>
             </div>
 
             <ul class="category" role="navigation" aria-label="main menu">
-                <li><a href="/cite-pages/mens.html">MENS</a></li>
-                <li><a href="/cite-pages/womens.html">WOMENS</a></li>
-                <li><a href="/cite-pages/accessories.html">ACCESSORIES</a></li>
+                <li><a href="mens.html">MENS</a></li>
+                <li><a href="womens.html">WOMENS</a></li>
+                <li><a href="accessories.html">ACCESSORIES</a></li>
                 <li><a href="/cite-pages/discover.html">DISCOVER</a></li>
                 <span id="new">New</span>
             </ul>
@@ -48,26 +53,24 @@
             <!--------------second navbar section----------------->
             <ul class="activities" role="navigation" aria-label="main menu" data-kind="LOG">
                 <li><a id="log" href="">LOG IN</a></li>
-                <li><a href="/cite-pages/search.html">SEARCH</a></li>
-                <li><a href="/cite-pages/log.html">SIGN IN</a></li>
+                <li><a href="search.html">SEARCH</a></li>
+                <li><a href="log.html">SIGN IN</a></li>
 
                 <!--contries section-->
                 <li class="languges" data-kind="GBP">
-                    <img src="/img/flags/en-flag.jpg" alt="english">GBP <i class="fas fa-angle-down"></i>
+                    <img src="../img/flags/en-flag.jpg" alt="english">GBP <i class="fas fa-angle-down"></i>
                 </li>
                 <!--end contries section-->
             </ul>
 
-
-
-
             <!--section for buying conter-->
             <div class="query-icons">
                 <div class="user-icon" data-kind="LOG">
-                    <i class="fas fa-user"></i>
+                    <img src="../img/icons/user-64.png" alt="user">
                 </div>
                 <div class="bag-logo">
-                    <i class="fas fa-shopping-bag"></i><span id="items-number">0</span>
+                    <img src="../img/icons/cart-64.png" alt="user">
+                    <span id="items-number">0</span>
                 </div>
             </div>
             <!--end section for buying conter-->
@@ -154,19 +157,19 @@
                         <div class="style-one item">
                             <!--first style-->
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men1.jpg" height="150px" alt="athelete">
+                            <img src="/img/men/men1.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
                         <div class="style-three item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men5.jpg" height="150px" alt="athelete">
+                            <img src="/img/men/men5.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -174,20 +177,20 @@
 
                         <div class="style-foor item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men2.jpg" height="150px" alt="athelete">
+                            <img src="/img/men/men2.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
 
                         <div class="style-foor item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men3.jpg" height="150px" alt="athelete">
+                            <img src="/img/men/men3.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -195,10 +198,10 @@
 
                         <div class="style-five item">
                             <h4>Editor's Picks</h4>
-                            <img src="img/men/men4.jpg" height="150px" alt="athelete">
+                            <img src="/img/men/men4.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -335,7 +338,7 @@
                 </a>
 
                 <li id="gbp">
-                    <img src="img/flags/en-flag.jpg" alt="english">
+                    <img src="/img/flags/en-flag.jpg" alt="english">
                     GBP
                     <i class="fas fa-angle-down"></i>
                 </li>
@@ -363,20 +366,95 @@
             </ul>
         </div>
     </section>
-
     <!--------------end slider----------------->
-    <section style="height: 50rem;">
-        <div class="current-page">
+    <div class="current-page">
+        <P><a href="../index.html">Main Page</a> / Sign In</P>
+    </div>
+    <section class="form-container">
+        <div class="section-title">
+            <h2>NEW ACCOUNT</h2>
         </div>
+        <form class="user-info">
+            <div class="user-single-info">
+                <label for="name">Name: (required)*</label>
+                <div class="anim-wrapper">
+                    <input class="form-anim sign-input" name="name" type="text" placeholder="name">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+            </div>
+            <div class="user-single-info">
+                <label for="email">Email Address: (required)* </label>
+                <div class="anim-wrapper">
+                    <input class="form-anim sign-input" name="email" type="email" placeholder="Email Address">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+            </div>
+            <div class="user-single-info">
+                <label for="password">Password: (required)*</label>
+                <div class="anim-wrapper">
+                    <input class="form-anim sign-input" name="password" type="password" placeholder="PasswordRequired">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+            </div>
+            <div class="user-single-info">
+                <label for="Address">Address Line 1: </label>
+                <div class="anim-wrapper">
+                    <input class="form-anim sign-input" name="Address" type="address" placeholder="Address Line 1">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+            </div>
 
+            <div class="user-single-info">
+                <label for="name">Name: (required)*</label>
+                <div class="anim-wrapper">
+                    <input class="form-anim sign-input" name="name" type="text" placeholder="name">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+            </div>
+            <div class="user-single-info">
+                <label for="Address">State/Town: </label>
+                <div class="anim-wrapper">
+                    <input class="form-anim sign-input" name="Address" type="address" placeholder="state">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+            </div>
+            <div class="user-single-info">
+                <label for="zip">Zip/Postcode: </label>
+                <div class="anim-wrapper">
+                    <input class="form-anim sign-input" name="zip" type="number" placeholder="zip code">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+            </div>
+            <div class="user-single-info">
+                <label for="phone">Phone Number: (required)*</label>
+                <div class="anim-wrapper">
+                    <input class="form-anim sign-input" name="phone" type="tel" placeholder="phone">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+            </div>
+            <button class="sign-btn">Creat Account</button>
+        </form>
     </section>
-
-
-
     <!-----------------------------------------------------footer----------------------------------------------->
     <footer>
         <div class="social-icons">
-            <div class="log-title"><img src="img/icons/physiq-text-website.webp" alt="logo"></div>
+            <div class="log-title"><img src="../img/icons/physiq-text-website.webp" alt="logo"></div>
             <div class="socials">
                 <i class="fab fa-youtube"></i>
                 <i class="fab fa-facebook"></i>
@@ -432,15 +510,14 @@
             <p>© 2021 Physiq Apparel.</p>
         </div>
         <div class="sponsors">
-            <img src="img/sponsores/363_Visa_Credit_Card_logo-512.png" alt="">
-            <img src="img/sponsores/amazon.png" alt="">
-            <img src="img/sponsores/google.png" alt="">
-            <img src="img/sponsores/kisspng-logo-brand-product-design-font-toys-fix-it-e-store-5bf2417ee73cf8.3255189515426031349472.jpg"
+            <img src="/img/sponsores/363_Visa_Credit_Card_logo-512.png" alt="">
+            <img src="/img/sponsores/amazon.png" alt="">
+            <img src="/img/sponsores/google.png" alt="">
+            <img src="/img/sponsores/kisspng-logo-brand-product-design-font-toys-fix-it-e-store-5bf2417ee73cf8.3255189515426031349472.jpg"
                 alt="">
-            <img src="img/sponsores/paypal.png" alt="">
-            <img src="img/sponsores/wordpress.png" alt="">
+            <img src="/img/sponsores/paypal.png" alt="">
+            <img src="/img/sponsores/wordpress.png" alt="">
         </div>
     </footer>
     <!-----------------------------------------------------footer----------------------------------------------->
-
 </body>

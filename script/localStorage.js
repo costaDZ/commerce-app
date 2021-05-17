@@ -1,20 +1,6 @@
-// load the current functionality
-window.addEventListener("DOMContentLoaded", () => {
-    loadPages(0, contenItems);
-    itemsActions(chartContent());
 
-    amountInput();
-    amountInput().forEach(input => {
-        input.addEventListener("click", (input) => {
-            handelAmounts(input.target)
-        });
-    });
-
-
-});
 
 function amountInput() {
-    console.log(Array.prototype.slice.call(document.querySelectorAll(".amount-input")));
     return Array.prototype.slice.call(document.querySelectorAll(".amount-input"));
 }
 

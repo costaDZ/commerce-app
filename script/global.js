@@ -1,80 +1,39 @@
 
-
-
 let cartStatus = document.querySelector(".cart-status").children[1];
 let chartAmount = document.querySelector("#items-number");
 const itemsContainer = document.querySelector(".items-tabel");
 
 
+// load the current functionality
+window.addEventListener("DOMContentLoaded", () => {
+
+    let currentPagePath = window.location.pathname
+    let currentPageIndex = window.location.pathname.lastIndexOf("/");
+    let currentPageSecIndex = window.location.pathname.lastIndexOf(".");
+    let currentPage = currentPagePath.substring(currentPageIndex + 1, currentPageSecIndex);
+
+
+    if (currentPage !== 'search') {
+        loadPages(0, contenItems);
+        itemsActions(chartContent());
+        amountInput();
+        amountInput().forEach(input => {
+            input.addEventListener("click", (input) => {
+                handelAmounts(input.target)
+            });
+        });
+        setPaginationAndItemsAmount(contenItems);
+    } else {
+        setPaginationAndItemsAmount([]);
+    }
+
+
+});
+
 // helper function get the current items container after every change
 const chartContent = () => {
     return document.querySelector(".empty-card");
 }
-
-
-//===============================//
-/* change the view text content */
-//===============================//
-const displayInput = document.querySelector("#view");
-let windowWidth = window.innerWidth;
-if (windowWidth < 700) {
-    displayInput.children[0].textContent = "hide Details";
-    displayInput.children[1].textContent = "Show Details";
-    displayInput.previousElementSibling.textContent = "Show / Hide details"
-}
-
-
-/*============================================*/
-// filter items 
-/*============================================*/
-const sort = document.querySelector("#sort");
-if (sort) {
-    sort.addEventListener("change", () => {
-        let situation = sort.value;
-        sortList(situation);
-        view === "list" ? styleList("l") : styleList("g");
-    })
-    // function to sort the items
-    function sortList(direction) {
-        switch (direction) {
-            case "price++":
-                contenItems.sort((a, b) => a.price - b.price);
-                loadPages(0, contenItems);
-                break;
-            case "price--":
-                contenItems.sort((a, b) => b.price - a.price);
-                loadPages(0, contenItems);
-                break;
-            case "alph++":
-                sortingLetter("plus");
-                loadPages(0, contenItems);
-                break;
-            case "alph--":
-                sortingLetter("mines");
-                loadPages(0, contenItems);
-                break;
-            default:
-                break;
-        }
-    }
-    // helper function for sorting letters A-Z Z-A
-    function sortingLetter(direc) {
-        contenItems.sort((a, b) => {
-            if (a.title.toLowerCase() < b.title.toLowerCase() && direc === "plus") {
-                return -1;
-            } else if (a.title.toLowerCase() < b.title.toLowerCase() && direc === "mines") {
-                return 1;
-            } else if (a.title.toLowerCase() > b.title.toLowerCase() && direc === "plus") {
-                return 1;
-            } else if (a.title.toLowerCase() > b.title.toLowerCase() && direc === "mines") {
-                return -1;
-            }
-            return 0;
-        })
-    }
-}
-
-
 
 
 
@@ -122,8 +81,6 @@ function setMainContent(category, item) {
     </section>`
         }
     }
-
-
 }
 
 
@@ -168,14 +125,12 @@ const checkForColor = (targetKind) => {
 
 // function for remove item from chart 
 function getTheItemToRemove(e, Targetbtn) {
-    // e.stopPropagation()
 
     if (Targetbtn.classList.contains("remove-item")) {
         let id = e.target.parentElement.parentElement.id;
         removeItem(e, e.target.parentElement.parentElement, id);
     } else if (Targetbtn.classList.contains("cls-item-btn")) {
         let id = e.currentTarget.parentElement.parentElement.id;
-        //console.log(e.currentTarget.parentElement.parentElement);
         removeItem(e, e.currentTarget.parentElement.parentElement, id)
     }
 }
@@ -228,27 +183,15 @@ function increaseItems(btn) {
 let amountNumber = 0;
 function addToChart(item) {
 
-    // let getAmountFromStorage = JSON.parse(localStorage.getItem("content"));
-
-    // let targetItemAmout = getAmountFromStorage.filter(target => {
-    //     if (target.id === item.id) {
-    //         return target.amount
-    //     }
-    // });
-
-    // console.log(targetItemAmout);
-
-    //if (handelAmounts()) console.log(handelAmounts())
-
     let image = item.firstElementChild.firstElementChild;
     let title = item.children[1].firstElementChild;
     let price = item.children[1].lastElementChild.textContent.match(/\d+/g);
     let amount = 1;
     let kind = item.dataset.kind;
 
-
     AddChartContent(item.id, image.src, title.textContent, price, amount, kind);
     addAmount();
+
     // Add to locale storage
     addLocalStorage(
         amountNumber,
@@ -262,168 +205,5 @@ function addToChart(item) {
     );
 }
 
-/*============================================*/
-// display items system
-/*============================================*/
-let view;
-// set the event in the select field
-if (displayInput) {
-    displayInput.addEventListener("change", () => {
-        view = displayInput.value;
-        if (view === 'grid') {
-            itemsContainer.style.display = "grid";
-            styleList("g");
-        } else if (view === 'list') {
-            itemsContainer.style.display = "inline-table";
-            styleList("l");
-        }
-    })
-}
-
-// get the current displayed list
-let getCurrentList = () => {
-    return Array.prototype.slice.call(document.querySelectorAll(".single-item"));
-}
-// set the display style of the items
-let styleList = (order) => {
-    getCurrentList().forEach(item => {
-        if (order === "l") {
-            item.classList.add("list");
-            item.children[1].children[1].style.display = "block";
-        } else if (order === "g") {
-            item.classList.remove("list");
-            item.children[1].children[1].style.display = "none";
-        }
-    })
-
-}
-
-/*============================================*/
-// pagination
-/*============================================*/
-// elemeent DOM
-const paginationNum = document.querySelector(".numbers");
-const paginationLeft = document.querySelector(".pagination-left");
-const paginationRight = document.querySelector(".pagination-right");
-
-//let singleItem;
-let getpage = 0;
-
-// set the bagination numbers of the pages
-function setPaginationAndItemsAmount() {
-    let showingItems = 20;
-    for (let i = 1; i <= Math.ceil(contenItems.length / showingItems); i++) {
-        if (paginationNum && (contenItems.length / showingItems > 1)) {
-            if (i === 1) {
-                paginationNum.innerHTML += `<span class="page-number black-focus">${i}</span>`;
-            } else {
-                paginationNum.innerHTML += `<span class="page-number">${i}</span>`;
-            }
-        } else {
-            if (document.querySelector(".pagination")) document.querySelector(".pagination").innerHTML = `<div class="items-status-info"></div>`;
-        }
-    }
-    let status_info = document.querySelector(".items-status-info");
-    if (status_info) status_info.innerHTML =
-        `<small><i><strong>${showingItems}</strong> of <strong>${contenItems.length}</strong> total<i/></small>`
-}
-
-setPaginationAndItemsAmount();
-
-if (paginationRight) paginationRight.addEventListener("click", nextPage);
-// next page function
-function nextPage() {
-    if (getpage < pagiArray.length - 1) {
-        getpage++;
-        itemsContainer.innerHTML = "";
-        loadPages(getpage * 20, contenItems)
-    }
-    if (getpage === pagiArray.length - 2) {
-        paginationRight.classList.add("black-focus");
-    }
-    checkFocus(paginationLeft);
-    checkFocus(paginationRight);
-    getCurrentList();
-    view === "list" ? styleList("l") : styleList("g");
-}
-
-if (paginationLeft) paginationLeft.addEventListener("click", prevPage);
-// previous page function
-function prevPage() {
-    if (getpage > 0) {
-        getpage--;
-        itemsContainer.innerHTML = "";
-        loadPages(getpage * 20, contenItems)
-    }
-    checkFocus(paginationLeft);
-    checkFocus(paginationRight);
-    getCurrentList();
-    view === "list" ? styleList("l") : styleList("g");
-}
-
-if (paginationLeft) {
-    if (getpage === 0) {
-        paginationLeft.classList.remove("black-focus");
-        paginationRight.classList.add("black-focus");
-    }
-}
-
-// focus cursores
-function checkFocus(target) {
-    if (target.classList.contains("pagination-left")) {
-        console.log(true);
-        if (getpage === 0) {
-            paginationLeft.classList.remove("black-focus");
-        } else {
-            paginationLeft.classList.add("black-focus");
-        }
-    } else {
-        if (getpage === pagiArray.length - 1) {
-            paginationRight.classList.remove("black-focus");
-        } else {
-            paginationRight.classList.add("black-focus");
-        }
-    }
-    focusNumbers();
-}
-
-// hover numbers
-function focusNumbers() {
-    pagiArray.forEach(num => {
-        if (Number(num.textContent) === getpage + 1) {
-            num.classList.add("black-focus");
-        } else {
-            num.classList.remove("black-focus");
-        }
-    })
-}
 
 
-// helper function test if the items existe in the chart
-function testItem(id, arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].id === id) {
-            return true;
-        }
-    }
-}
-
-// add event to paginationNum numbers
-let pagiArray;
-if (paginationNum) {
-    pagiArray = Array.prototype.slice.call(paginationNum.children);
-}
-if (pagiArray) {
-    pagiArray.forEach(num => {
-        num.addEventListener("click", (e) => {
-            getpage = Number(pagiArray.indexOf(e.currentTarget));
-            let itemsNum = 20 * getpage;
-            itemsContainer.innerHTML = "";
-            loadPages(itemsNum, contenItems);
-            checkFocus(paginationLeft);
-            checkFocus(paginationRight);
-            getCurrentList()
-            view === "list" ? styleList("l") : styleList("g");
-        });
-    });
-}

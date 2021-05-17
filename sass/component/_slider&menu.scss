@@ -12,11 +12,6 @@
     z-index: 50;
     transition: ease-in-out 0.3s;
     font-size: 1rem;
-
-    // @include small {
-    //     font-size: 0.6rem;
-    // }
-
     .cart-status {
         @include flex(space-between);
 
@@ -97,23 +92,17 @@
                     text-align: center;
                     font-weight: 700;
                 }
-
-                // .item-title {
-                //     font-size: 0.5em;
-                // }
                 .item-price {
                     font-size: 0.9em;
                     align-self: flex-end;
                     color: $orange;
                     font-weight: 700;
-                    //text-decoration: underline;
                 }
                 .total-price {
                     font-size: 0.9em;
                     align-self: flex-end;
                     color: $cyan;
                     font-weight: 700;
-                    //text-decoration: underline;
                 }
             }
         }
@@ -193,9 +182,6 @@
 
                 a {
                     color: white;
-                    // height: 100%;
-                    // width: 100%;
-                    // display: inline-block;
                 }
             }
 

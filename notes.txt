@@ -1,0 +1,7 @@
+1) add loader to images + loading pages
+
+2) ajust javascript codes
+
+3) change content data
+
+3) add animation

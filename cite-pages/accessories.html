@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="../style/globalContentStyle.css">
     <link rel="stylesheet" href="../style/footer.css">
 
-    <script src="../script/accessoriesData.js" defer></script>
+    <script src="../script/data/accessoriesData.js" defer></script>
     <script src="../script/global.js" defer></script>
+    <script src="../script/filter.js" defer></script>
+    <script src="../script/pagination.js" defer></script>
     <script src="../script/localStorage.js" defer></script>
     <script src="../script/navbar.js" defer></script>
-    <!-- <script src="../script/global.js" defer></script> -->
-
 </head>
 
 <body>
@@ -28,10 +28,12 @@
             <!--------------------first navbar section--------------->
             <div class="query-icons">
                 <div class="humberg">
-                    <i class="fas fa-bars"></i>
+                    <img src="../img/icons/menu-64.png" alt="menu">
                 </div>
                 <div class="search-icon">
-                    <a href="/cite-pages/search.html"><i class="fas fa-search"></i></a>
+                    <a href="search.html">
+                        <img src="../img/icons/loupe.png" alt="loupe">
+                    </a>
                 </div>
             </div>
 
@@ -69,10 +71,11 @@
             <!--section for buying conter-->
             <div class="query-icons">
                 <div class="user-icon" data-kind="LOG">
-                    <i class="fas fa-user"></i>
+                    <img src="../img/icons/user-64.png" alt="user">
                 </div>
                 <div class="bag-logo">
-                    <i class="fas fa-shopping-bag"></i><span id="items-number">0</span>
+                    <img src="../img/icons/cart-64.png" alt="user">
+                    <span id="items-number">0</span>
                 </div>
             </div>
             <!--end section for buying conter-->
@@ -162,7 +165,7 @@
                             <img src="../img/men/men1.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -171,7 +174,7 @@
                             <img src="../img/men/men5.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -182,7 +185,7 @@
                             <img src="../img/men/men2.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -192,7 +195,7 @@
                             <img src="../img/men/men3.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -203,7 +206,7 @@
                             <img src="../img/men/men4.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -366,10 +369,6 @@
             </ul>
         </div>
     </section>
-
-
-
-
     <!-----------------------------------------------------content----------------------------------------------->
 
     <div class="current-page">
@@ -400,54 +399,23 @@
                 </select>
             </fieldset>
         </div>
-
         <div class="items-tabel">
-
         </div>
-
         <div class="pagination">
-            <button class="pagination-left black-focus">
-                << </button>
-                    <div class="numbers">
+            <div class="pag-wrapper">
+                <button class="pagination-left black-focus">
+                    << </button>
+                        <div class="numbers">
 
-                    </div>
+                        </div>
 
-                    <button class="pagination-right">>></button>
-                    <div class="items-status-info"></div>
+                        <button class="pagination-right">>></button>
+            </div>
+            <div class="items-status-info"></div>
 
         </div>
 
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-----------------------------------------------------footer----------------------------------------------->
     <footer>
         <div class="social-icons">
@@ -517,5 +485,4 @@
         </div>
     </footer>
     <!-----------------------------------------------------footer----------------------------------------------->
-
 </body>

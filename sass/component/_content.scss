@@ -27,7 +27,6 @@
 /*=============================*/
 /* shop btns styles styles */
 /*=============================*/
-
 .shop-btn {
     @include flex(space-around);
     height: 10rem;
@@ -36,7 +35,6 @@
         @include flex(space-around);
         flex-direction: column;
     }
-
     @include mobile {
         font-size: 0.6rem;
     }
@@ -46,11 +44,9 @@
         @include btn(2.8rem, 4px);
     }
 }
-
 /*=============================*/
 /*mens && womens items */
 /*=============================*/
-
 .mens-womens {
     display: grid;
     grid-template-columns: auto;
@@ -83,15 +79,6 @@
             height: 50vw;
             margin: 0 1rem;
         }
-
-        // @include small {
-        //     width: 80vw;
-        //     height: 21rem;
-        // }
-
-        // @include mobile {
-        //     height: 12rem;
-        // }
     }
 
     .men-pic,
@@ -105,11 +92,6 @@
             transform: translateX(-0.5%);
             overflow: hidden;
         }
-        //  @include small {
-        //     transform: translateX(-0.5%);
-        //     overflow: hidden;
-        // }
-
         @include mobile {
             transform: translateX(-0.5%);
         }
@@ -119,7 +101,6 @@
         display: flex;
         flex-direction: column;
         font-size: 0.7rem;
-        //width: 22%;
         cursor: pointer;
 
         @include mobile {
@@ -169,14 +150,6 @@
         z-index: 1;
         display: none;
         cursor: pointer;
-
-        // position: relative;
-        // left: 46%;
-        // top: 13rem;
-        // font-size: 3rem;
-        // z-index: 1;
-        // display: none;
-        // cursor: pointer;
         @include small {
             font-size: 1.5rem;
             top: 30%;
@@ -195,14 +168,6 @@
         z-index: 1;
         display: none;
         cursor: pointer;
-
-        // position: relative;
-        // right: 46%;
-        // bottom: 16.8rem;
-        // font-size: 3rem;
-        // z-index: 1;
-        // display: none;
-        // cursor: pointer;
 
         @include small {
             font-size: 1.5rem;
@@ -241,11 +206,6 @@
     @include small {
         padding: 0rem 0.8rem 4rem;
     }
-
-    //     @include mobile {
-    //        padding: 0rem 0.8rem 4rem;
-    //     }
-
     q {
         font-weight: lighter;
         font-style: italic;
@@ -256,12 +216,6 @@
         display: block;
         font-family: "Roboto Slab", serif;
     }
-
-    /*=================media queries=============*/
-
-    //     @include mobile {
-    //        padding: 0rem 0.8rem 4rem;
-    //     }
 }
 
 /*=============================*/
@@ -499,6 +453,4 @@
             margin: auto;
         }
     }
-
-    /*=================media queries=============*/
 }

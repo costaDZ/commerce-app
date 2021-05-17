@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="../style/globalContentStyle.css">
     <link rel="stylesheet" href="../style/footer.css">
 
-    <script src="../script/menData.js" defer></script>
+    <script src="../script/data/menData.js" defer></script>
     <script src="../script/global.js" defer></script>
+    <script src="../script/pagination.js" defer></script>
+    <script src="../script/filter.js" defer></script>
     <script src="../script/localStorage.js" defer></script>
     <script src="../script/navbar.js" defer></script>
-
 </head>
 
 <body>
@@ -62,10 +63,6 @@
                 </li>
                 <!--end contries section-->
             </ul>
-
-
-
-
             <!--section for buying conter-->
             <div class="query-icons">
                 <div class="user-icon" data-kind="LOG">
@@ -77,11 +74,9 @@
                 </div>
             </div>
             <!--end section for buying conter-->
-
             <!--------------end second navbar section----------------->
         </nav>
         <!------------------------------------------------start sections----------------------------------------------->
-
         <!--------------start contries----------------->
         <section class="GBP" data-kind="GBP">
             <h3>Select Contrie</h3>
@@ -163,7 +158,7 @@
                             <img src="../img/men/men1.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -172,7 +167,7 @@
                             <img src="../img/men/men5.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -183,7 +178,7 @@
                             <img src="../img/men/men2.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -193,7 +188,7 @@
                             <img src="../img/men/men3.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -204,7 +199,7 @@
                             <img src="../img/men/men4.jpg" height="150px" alt="athelete">
                             <div class="description">
                                 <p>Breathlite Sport Sorts - Graphic</p>
-                                <pre class="price"><span class="old-price">£30.00</span>   £20.00</pre>
+                                <pre class="price"><span class="old-price">£30.00</span> £20.00</pre>
                                 <stong class="details">+ Details</stong>
                             </div>
                         </div>
@@ -367,16 +362,10 @@
             </ul>
         </div>
     </section>
-
-
-
-
     <!-----------------------------------------------------content----------------------------------------------->
-
     <div class="current-page">
         <P><a href="../index.html">Main Page</a> / Men</P>
     </div>
-
     <section class="items-container">
         <div class="section-title">
             <div class="description">
@@ -390,7 +379,6 @@
                     <option value="grid">Grid</option>
                     <option value="list">List</option>
                 </select>
-
                 <label for="sort">Sort by:</label>
                 <select name="viewlist" id="sort">
                     <option value="rundom">Choose one :</option>
@@ -401,26 +389,21 @@
                 </select>
             </fieldset>
         </div>
-
         <div class="items-tabel">
-
         </div>
-
         <div class="pagination">
-            <button class="pagination-left black-focus">
-                << </button>
-                    <div class="numbers">
+            <div class="pag-wrapper">
+                <button class="pagination-left black-focus">
+                    << </button>
+                        <div class="numbers">
 
-                    </div>
-                    <button class="pagination-right">>></button>
-                    <div class="items-status-info"></div>
+                        </div>
+
+                        <button class="pagination-right">>></button>
+            </div>
+            <div class="items-status-info"></div>
         </div>
-
     </section>
-
-
-
-
     <!-----------------------------------------------------footer----------------------------------------------->
     <footer>
         <div class="social-icons">
@@ -490,5 +473,4 @@
         </div>
     </footer>
     <!-----------------------------------------------------footer----------------------------------------------->
-
 </body>

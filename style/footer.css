@@ -256,7 +256,6 @@ footer {
   font-size: 0.8rem;
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
-  /*=================media queries=============*/
 }
 
 @media (max-width: 800px) {

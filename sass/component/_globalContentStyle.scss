@@ -1,12 +1,12 @@
 /*=============================*/
 /* content */
 /*=============================*/
-
 .items-container {
     padding: 3em 1em;
     position: relative;
     top: 3em;
     margin-bottom: 3em;
+    min-height: 46em;
 
     .section-title {
         @include flex(space-around);
@@ -156,7 +156,6 @@
 .list {
     display: flex;
     justify-content: space-between;
-    // font-size: 0.6rem;
     align-items: center;
 
     .img {

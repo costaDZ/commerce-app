@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 .img
 .notes.txt
 .vscode/
 .tmp.drivedownload/
+=======
+.tmp.drivedownload
+.vscode
+>>>>>>> master
